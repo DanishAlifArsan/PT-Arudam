@@ -6,7 +6,7 @@ using UnityEngine;
 public class ItemInteract : MonoBehaviour
 {
     public CameraController controller;
-    [SerializeField] public Transform playerHand {get; private set;}
+    public Transform playerHand;
     [SerializeField] private float pickupRange;
     public bool isItemInHand = false;
     private Camera cam;
