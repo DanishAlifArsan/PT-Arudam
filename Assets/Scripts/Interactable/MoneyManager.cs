@@ -1,0 +1,36 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class MoneyManager : MonoBehaviour
+{
+    private List<Money> moneys = new List<Money>();
+    private int totalValue = 0;
+    [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private Transform paymentPoint;
+
+    private void Start() {
+        moneyText.text = "";
+    }
+
+    public void CountPayment(Money money) {
+        var temp = Instantiate(money, paymentPoint.position, Quaternion.identity,paymentPoint);
+        temp.isAbleToInteract = false;
+        moneys.Add(temp);
+        totalValue += money.value;
+        moneyText.text = "Rp."+ totalValue;
+    }
+
+    public void ConfirmPayment() {
+        CurrencyManager.instance.AddCurrency(totalValue);
+        foreach (var item in moneys)
+        { 
+            Destroy(item.gameObject);
+        }
+        moneys.Clear();
+        totalValue = 0;
+        moneyText.text = "";
+    }
+}
