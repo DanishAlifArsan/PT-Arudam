@@ -9,6 +9,7 @@ public class ItemInteract : MonoBehaviour
     public Transform playerHand;
     [SerializeField] private float pickupRange;
     public bool isItemInHand = false;
+    public bool canInteract = true;
     private Camera cam;
 
     private void Awake() {
@@ -21,9 +22,9 @@ public class ItemInteract : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, pickupRange))
         { 
-            Debug.Log(hit.transform.gameObject);
+            // Debug.Log(hit.transform.gameObject);
             Interactable item = hit.collider.GetComponent<Interactable>();
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) && canInteract) {
                 Interact(item);
             } else if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape)) {
                 Cancel(item);

@@ -2764,6 +2764,7 @@ MonoBehaviour:
   playerHand: {fileID: 89183524}
   pickupRange: 5
   isItemInHand: 0
+  canInteract: 1
 --- !u!1 &174394787
 GameObject:
   m_ObjectHideFlags: 0
@@ -13794,13 +13795,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1180890241}
-        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
-        m_MethodName: CloseApp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

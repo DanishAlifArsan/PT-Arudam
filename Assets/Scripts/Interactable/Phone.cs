@@ -12,6 +12,7 @@ public class Phone : MonoBehaviour, Interactable
     public void OnInteract(ItemInteract broadcaster)
     {
         broadcaster.controller.enabled = false;
+        broadcaster.canInteract = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         phoneScreen.SetActive(true);
@@ -21,10 +22,12 @@ public class Phone : MonoBehaviour, Interactable
     public void OpenApp(int index) {
         apps[index].SetActive(true);
         backStack.Push(apps[index]);
+        Debug.Log(backStack.Peek());
     }
 
     public void CloseApp() {
         GameObject poppedApp = backStack.Pop();
+        Debug.Log(poppedApp);
         poppedApp.SetActive(false);
 
         if (backStack.Count <= 0) {
@@ -34,6 +37,10 @@ public class Phone : MonoBehaviour, Interactable
 
     public void OnCancel(ItemInteract broadcaster)
     {
+        while (backStack.Count > 0) {
+            CloseApp();
+        }
+        broadcaster.canInteract = true;
         broadcaster.controller.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
