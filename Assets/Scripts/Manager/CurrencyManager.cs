@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -28,6 +29,6 @@ public class CurrencyManager : MonoBehaviour
 
     public void AddCurrency(int value) {
         totalCurrency += value;
-        currencyText.text = "Rp."+ totalCurrency;
+        currencyText.text = totalCurrency.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));
     }
 }

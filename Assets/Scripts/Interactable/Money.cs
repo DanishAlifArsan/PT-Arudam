@@ -7,17 +7,16 @@ public class Money : MonoBehaviour, Interactable
     public bool isAbleToInteract = true;
     public void OnCancel(ItemInteract broadcaster)
     {
-        if (isAbleToInteract)
-        {
-            manager.ConfirmPayment();
-        }
+
     }
 
     public void OnInteract(ItemInteract broadcaster)
     {
-        if (isAbleToInteract)
+        if (isAbleToInteract && TestingShop.instance.isTransaction)
         {
             manager.CountPayment(this);
+        } else {
+            manager.ConfirmPayment();
         }
     }
 }

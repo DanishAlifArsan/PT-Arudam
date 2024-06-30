@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 
@@ -20,11 +21,16 @@ public class MoneyManager : MonoBehaviour
         temp.isAbleToInteract = false;
         moneys.Add(temp);
         totalValue += money.value;
-        moneyText.text = "Rp."+ totalValue;
+        moneyText.text = totalValue.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));
     }
 
     public void ConfirmPayment() {
-        CurrencyManager.instance.AddCurrency(totalValue);
+        if (TestingShop.instance.PaidAmount() == totalValue)
+        {
+            CurrencyManager.instance.AddCurrency(totalValue);
+            TestingShop.instance.TransactionFinish();
+        }
+        
         foreach (var item in moneys)
         { 
             Destroy(item.gameObject);
