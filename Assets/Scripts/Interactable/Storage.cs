@@ -7,7 +7,6 @@ public class Storage : MonoBehaviour, Interactable
 {
     [SerializeField] private int storageSize;
     private List<Item> items = new List<Item>();
-    private Vector3 itemPos = new Vector3(-0.397f, 0.329f, 0.301f);
     public void OnCancel(ItemInteract broadcaster)
     {
         
@@ -39,8 +38,17 @@ public class Storage : MonoBehaviour, Interactable
     }
 
     private void AddItem(Item item) {
+        //masih error. ganti dengan grid system dan dictionary
+        float storageLength = 0 + 0.206f;
+        float columnLength = storageLength / storageSize;
+
+        float itemPosX = columnLength * items.Count;
+
+        Vector3 itemPos = new Vector3(itemPosX,-0.083f,0);
+
         item.transform.parent = transform;
         item.transform.localPosition = itemPos;
+        item.transform.localRotation = Quaternion.identity;
         item.storage = this;
         items.Add(item);
     }

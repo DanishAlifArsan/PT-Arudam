@@ -7,6 +7,7 @@ public class ItemInteract : MonoBehaviour
 {
     public CameraController controller;
     public Transform playerHand;
+    public Transform itemHand;
     [SerializeField] private float pickupRange;
     public Transform itemInHand;
     public bool canInteract = true;

@@ -13,7 +13,7 @@ public class Item : MonoBehaviour, Interactable
     public void OnInteract(ItemInteract broadcaster)
     {
         if (storage != null && broadcaster.itemInHand == null) {
-            transform.SetParent(broadcaster.playerHand);
+            transform.SetParent(broadcaster.itemHand);
             transform.localPosition = Vector3.zero;
             broadcaster.itemInHand = transform;
             storage.RemoveItem(this);
