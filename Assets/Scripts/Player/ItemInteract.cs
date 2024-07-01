@@ -8,7 +8,7 @@ public class ItemInteract : MonoBehaviour
     public CameraController controller;
     public Transform playerHand;
     [SerializeField] private float pickupRange;
-    public bool isItemInHand = false;
+    public Transform itemInHand;
     public bool canInteract = true;
     private Camera cam;
 
@@ -36,6 +36,7 @@ public class ItemInteract : MonoBehaviour
         if (item != null)
         {
             item.OnInteract(this);
+            Debug.Log(itemInHand);
             // switch (getItemTag(hit))
             //     {
             //         case "Hold Item": HoldItemHandler(item); break;
