@@ -15,6 +15,7 @@ public class Item : MonoBehaviour, Interactable
         if (storage != null && broadcaster.itemInHand == null) {
             transform.SetParent(broadcaster.itemHand);
             transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
             broadcaster.itemInHand = transform;
             storage.RemoveItem(this);
         }
