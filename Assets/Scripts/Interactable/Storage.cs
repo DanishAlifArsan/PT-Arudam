@@ -22,12 +22,6 @@ public class Storage : Interactable
             itemDictionary.Add(itemPosX, null);
         } 
     }
-    
-    public override void OnCancel(ItemInteract broadcaster)
-    {
-        
-    }
-
 
     public override void OnInteract(ItemInteract broadcaster)
     {

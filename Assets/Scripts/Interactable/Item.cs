@@ -8,10 +8,6 @@ public class Item : Interactable
     private void Start() {
         EnableHighlight(false);
     }
-    public override void OnCancel(ItemInteract broadcaster)
-    {
-        
-    }
 
     public override void OnInteract(ItemInteract broadcaster)
     {

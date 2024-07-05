@@ -20,9 +20,4 @@ public class Box : Interactable
         transform.localPosition = Vector3.zero;
         broadcaster.itemInHand = transform;
     }
-
-    public override void OnCancel(ItemInteract broadcaster)
-    {
-       
-    }
 }

@@ -15,7 +15,6 @@ public class ItemInteract : MonoBehaviour
     private bool hasHighlighted = false;
 
     private void Awake() {
-        controller = GetComponent<CameraController>();
         cam = Camera.main;
     }
 
@@ -28,8 +27,6 @@ public class ItemInteract : MonoBehaviour
             Interactable item = hit.collider.GetComponent<Interactable>();
             if (Input.GetMouseButtonDown(0) && canInteract) {
                 Interact(item);
-            } else if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape)) {
-                Cancel(item);
             }
         }
     }
@@ -39,10 +36,6 @@ public class ItemInteract : MonoBehaviour
         {
             item.OnInteract(this);
         }
-    }
-
-    private void Cancel(Interactable item) {    // buat hp doang
-        item?.OnCancel(this);
     }
 
     private void OnTriggerStay(Collider other) {

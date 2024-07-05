@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class TrashCan : Interactable
 {
-    public override void OnCancel(ItemInteract broadcaster)
-    {
-        
-    }
-
     public override void OnInteract(ItemInteract broadcaster)
     {
         if (broadcaster.itemInHand != null)
