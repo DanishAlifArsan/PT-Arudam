@@ -8,7 +8,7 @@ public class Storage : Interactable
 {
     [SerializeField] private int storageSize;
 
-    private Dictionary<float, Item> itemDictionary;
+    public Dictionary<float, Item> itemDictionary;
 
     private void Awake() {
         float storageLength = 0.206f + 0.167f;
@@ -62,8 +62,16 @@ public class Storage : Interactable
                 item.storage = this;
                 item.EnableHighlight(true);
                 itemDictionary[itemDictionary.ElementAt(i).Key] = item;
+                AddToList(item);
                 break;      
             }
+        }
+    }
+
+    private void AddToList(Item item) {
+        if (!ItemManager.instance.items.Contains(item.itemName))
+        {
+            ItemManager.instance.items.Add(item.itemName);
         }
     }
 

@@ -11,6 +11,17 @@ public class Phone : Interactable
 
     private Stack<GameObject> backStack = new Stack<GameObject>();
     private ItemInteract broadcaster;
+    private bool isInteract = false;
+
+    private void Update() {
+        if (isInteract)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) ) {
+                ClosePhone();
+            }
+        }
+    }
+
     public override void OnInteract(ItemInteract broadcaster)
     {
         if (TestingShop.instance.isTransaction) return;
@@ -24,6 +35,7 @@ public class Phone : Interactable
         Cursor.visible = true;
         phoneScreen.SetActive(true);
         OpenApp(0);
+        isInteract = true;
     }
 
     public void OpenApp(int index) {
@@ -53,5 +65,6 @@ public class Phone : Interactable
         Cursor.visible = false;
         phoneScreen.SetActive(false);
         broadcaster = null;
+        isInteract = false;
     }
 }
