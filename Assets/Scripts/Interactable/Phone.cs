@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
-public class Phone : MonoBehaviour, Interactable
+public class Phone : Interactable
 {
     [SerializeField] private GameObject phoneScreen;
     [SerializeField] private List<GameObject> apps;
 
     private Stack<GameObject> backStack = new Stack<GameObject>();
-    public void OnInteract(ItemInteract broadcaster)
+    public override void OnInteract(ItemInteract broadcaster)
     {
+        EnableHighlight(false);
         broadcaster.controller.enabled = false;
         broadcaster.canInteract = false;
         Cursor.lockState = CursorLockMode.None;
@@ -35,8 +36,9 @@ public class Phone : MonoBehaviour, Interactable
         }
     }
 
-    public void OnCancel(ItemInteract broadcaster)
+    public override void OnCancel(ItemInteract broadcaster)
     {
+        EnableHighlight(true);
         while (backStack.Count > 0) {
             CloseApp();
         }

@@ -13,6 +13,8 @@ public class Highlight : MonoBehaviour
     //helper list to cache all the materials ofd this object
     private List<Material> materials;
 
+    public bool isAbleToHighlight = true;
+
     //Gets all the materials from each renderer
     private void Awake()
     {
@@ -27,7 +29,7 @@ public class Highlight : MonoBehaviour
 
     public void ToggleHighlight(bool val)
     {
-        if (val)
+        if (val && isAbleToHighlight)
         {
             foreach (var material in materials)
             {

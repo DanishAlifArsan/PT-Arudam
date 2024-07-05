@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Storage : MonoBehaviour, Interactable
+public class Storage : Interactable
 {
     [SerializeField] private int storageSize;
     private List<Item> items = new List<Item>();
-    public void OnCancel(ItemInteract broadcaster)
+    public override void OnCancel(ItemInteract broadcaster)
     {
         
     }
 
-    public void OnInteract(ItemInteract broadcaster)
+    public override void OnInteract(ItemInteract broadcaster)
     {
         if (broadcaster.itemInHand != null &&  items.Count < storageSize)
         {
@@ -50,6 +50,7 @@ public class Storage : MonoBehaviour, Interactable
         item.transform.localPosition = itemPos;
         item.transform.localRotation = Quaternion.identity;
         item.storage = this;
+        item.EnableHighlight(true);
         items.Add(item);
     }
 

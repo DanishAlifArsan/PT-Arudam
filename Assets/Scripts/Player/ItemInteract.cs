@@ -12,6 +12,7 @@ public class ItemInteract : MonoBehaviour
     public Transform itemInHand;
     public bool canInteract = true;
     private Camera cam;
+    private bool hasHighlighted = false;
 
     private void Awake() {
         controller = GetComponent<CameraController>();
@@ -22,7 +23,7 @@ public class ItemInteract : MonoBehaviour
     {
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, pickupRange))
-        { 
+        {
             // Debug.Log(hit.transform.gameObject);
             Interactable item = hit.collider.GetComponent<Interactable>();
             if (Input.GetMouseButtonDown(0) && canInteract) {
@@ -37,34 +38,35 @@ public class ItemInteract : MonoBehaviour
         if (item != null)
         {
             item.OnInteract(this);
-            Debug.Log(itemInHand);
-            // switch (getItemTag(hit))
-            //     {
-            //         case "Hold Item": HoldItemHandler(item); break;
-            //         case "Stack Item": StackItemHandler(item); break;
-            //         default: item.OnInteract(this); break;
-            //     }
+        }
+    }
+
+    private void Cancel(Interactable item) {    // buat hp doang
+        item?.OnCancel(this);
+    }
+
+    private void OnTriggerStay(Collider other) {
+        if (hasHighlighted) return;
+
+        if (other.CompareTag("Item"))
+        {
+            hasHighlighted = true;
+            Interactable item = other.GetComponent<Interactable>();
+            item.ToggleHighlight(true);
+            // if (Input.GetMouseButtonDown(0) && canInteract) {
+            //     Interact(item);
+            // } else if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape)) {   //buat hp doang
+            //     Cancel(item);
             // }
         }
     }
 
-    private void Cancel(Interactable item) {
-        item?.OnCancel(this);
+    private void OnTriggerExit(Collider other) {
+        if (other.CompareTag("Item"))
+        {
+            Interactable item = other.GetComponent<Interactable>();
+            item.ToggleHighlight(false);
+            hasHighlighted = false;
+        }
     }
-
-    // private void HoldItemHandler(Interactable item) {
-    //     if (!isItemInHand)
-    //     {
-    //         item.OnInteract(this);
-    //     } else {
-    //         item.OnCancel(this);
-    //     }
-    // }
-    // private void StackItemHandler(Interactable item) {
-    //     // todo
-    // }
-
-    // private String getItemTag(RaycastHit hit) {
-    //     return hit.transform.gameObject.tag;
-    // }
 }

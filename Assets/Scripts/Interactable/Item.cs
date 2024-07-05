@@ -2,21 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour, Interactable
+public class Item : Interactable
 {
     public Storage storage;
-    public void OnCancel(ItemInteract broadcaster)
+    private void Start() {
+        EnableHighlight(false);
+    }
+    public override void OnCancel(ItemInteract broadcaster)
     {
         
     }
 
-    public void OnInteract(ItemInteract broadcaster)
+    public override void OnInteract(ItemInteract broadcaster)
     {
         if (storage != null && broadcaster.itemInHand == null) {
             transform.SetParent(broadcaster.itemHand);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
             broadcaster.itemInHand = transform;
+            EnableHighlight(false);
             storage.RemoveItem(this);
         }
     }

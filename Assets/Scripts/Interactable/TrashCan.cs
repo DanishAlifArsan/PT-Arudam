@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashCan : MonoBehaviour, Interactable
+public class TrashCan : Interactable
 {
-    public void OnCancel(ItemInteract broadcaster)
+    public override void OnCancel(ItemInteract broadcaster)
     {
         
     }
 
-    public void OnInteract(ItemInteract broadcaster)
+    public override void OnInteract(ItemInteract broadcaster)
     {
         if (broadcaster.itemInHand != null)
         { 

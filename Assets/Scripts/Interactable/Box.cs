@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Box : MonoBehaviour, Interactable
+public class Box : Interactable
 {
     [SerializeField] private Item[] itemList;
     public Stack<Item> itemStack = new Stack<Item>();
@@ -13,15 +13,16 @@ public class Box : MonoBehaviour, Interactable
         }
     }
 
-    public void OnCancel(ItemInteract broadcaster)
+    public override void OnInteract(ItemInteract broadcaster)
     {
-        
-    }
-
-    public void OnInteract(ItemInteract broadcaster)
-    {
+        EnableHighlight(false);
         transform.SetParent(broadcaster.playerHand);
         transform.localPosition = Vector3.zero;
         broadcaster.itemInHand = transform;
+    }
+
+    public override void OnCancel(ItemInteract broadcaster)
+    {
+       
     }
 }
