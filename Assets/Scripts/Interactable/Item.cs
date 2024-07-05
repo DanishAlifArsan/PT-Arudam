@@ -16,12 +16,12 @@ public class Item : Interactable
     public override void OnInteract(ItemInteract broadcaster)
     {
         if (storage != null && broadcaster.itemInHand == null) {
+            storage.RemoveItem(this);
             transform.SetParent(broadcaster.itemHand);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
             broadcaster.itemInHand = transform;
             EnableHighlight(false);
-            storage.RemoveItem(this);
         }
     }
 }

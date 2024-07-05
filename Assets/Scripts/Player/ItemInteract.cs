@@ -24,7 +24,7 @@ public class ItemInteract : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, pickupRange))
         {
-            // Debug.Log(hit.transform.gameObject);
+            
             Interactable item = hit.collider.GetComponent<Interactable>();
             if (Input.GetMouseButtonDown(0) && canInteract) {
                 Interact(item);
@@ -58,11 +58,26 @@ public class ItemInteract : MonoBehaviour
             // } else if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape)) {   //buat hp doang
             //     Cancel(item);
             // }
+        } else if (other.CompareTag("Storage"))
+        {
+            Interactable item = other.GetComponent<Interactable>();
+            if(itemInHand != null) {
+                hasHighlighted = true;
+                item.ToggleHighlight(true);
+            } else {
+                hasHighlighted = false;
+                item.ToggleHighlight(false);
+            }
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if (other.CompareTag("Item"))
+        {
+            Interactable item = other.GetComponent<Interactable>();
+            item.ToggleHighlight(false);
+            hasHighlighted = false;
+        } else if (other.CompareTag("Storage"))
         {
             Interactable item = other.GetComponent<Interactable>();
             item.ToggleHighlight(false);
