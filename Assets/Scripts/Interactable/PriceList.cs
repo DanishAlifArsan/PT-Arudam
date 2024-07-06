@@ -29,7 +29,6 @@ public class PriceList : Interactable
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         isInteract = true;
-        ItemManager.instance.GenerateList();
     }
 
     private void CloseList() {

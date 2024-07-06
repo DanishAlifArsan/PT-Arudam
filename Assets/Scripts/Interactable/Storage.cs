@@ -69,10 +69,7 @@ public class Storage : Interactable
     }
 
     private void AddToList(Item item) {
-        if (!ItemManager.instance.items.Contains(item.itemName))
-        {
-            ItemManager.instance.items.Add(item.itemName);
-        }
+        ItemManager.instance.GenerateList(item);
     }
 
     public void RemoveItem(Item item) {
