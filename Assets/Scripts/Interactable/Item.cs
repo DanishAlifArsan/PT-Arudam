@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Item : Interactable
 {
-    public string itemName;
+    public Goods goods;
+    public int id;
     public Storage storage;
     private void Start() {
         EnableHighlight(false);

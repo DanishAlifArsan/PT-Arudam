@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    [SerializeField] private GameObject priceDisplay;
-    [SerializeField] private RectTransform canvas;
-    [SerializeField] private PriceList priceList;
-
-    private List<string> items = new List<string>();
+    [SerializeField] private Display display;
+    public List<Goods> listGoods = new List<Goods>();
+    public bool isAnyPackage = false;
     public static ItemManager instance;
 
     private void Awake()
@@ -20,13 +18,12 @@ public class ItemManager : MonoBehaviour
 
     }
 
-    public void GenerateList(Item item) {
-        if (!items.Contains(item.itemName))
-        {
-            items.Add(item.itemName);
-            Instantiate(priceDisplay, canvas);
-        }
+    public Goods SetGoods(int id) {
+        int index = listGoods.FindIndex(a => a.id == id);
+        return listGoods[index];
+    }
 
-        //ditambahkan scriptable object untuk menampilkan detail setiap item ke price list
+    public void GenerateList(Item item) {
+        display.GenerateList(item);
     }
 }

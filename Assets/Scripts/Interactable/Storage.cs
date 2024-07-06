@@ -34,6 +34,7 @@ public class Storage : Interactable
                 if (box.itemStack.Count > 0)
                 {   
                     item = box.itemStack.Pop();
+                    item.goods = ItemManager.instance.SetGoods(item.id);
                 } else {
                     item = null;
                 }

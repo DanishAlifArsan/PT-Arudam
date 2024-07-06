@@ -6722,10 +6722,7 @@ MonoBehaviour:
   shopList: {fileID: 8008225352346867775, guid: 9fb1d516586428149b7458b36f808b2f,
     type: 3}
   canvas: {fileID: 2099243399}
-  listGoods:
-  - {fileID: 11400000, guid: babe3161c8ba0e741988545e43f96b39, type: 2}
   packagePoint: {fileID: 2005923231}
-  isAnyPackage: 0
 --- !u!1 &559632090
 GameObject:
   m_ObjectHideFlags: 0
@@ -14155,7 +14152,7 @@ GameObject:
   - component: {fileID: 1717187954}
   - component: {fileID: 1717187953}
   m_Layer: 0
-  m_Name: Price List
+  m_Name: Display
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14525,6 +14522,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 1717187953}
   director: {fileID: 1760674868}
+  displayList: {fileID: 1905295302962247738, guid: b0cb30698327d4946b5c192e5ff6463e,
+    type: 3}
+  canvas: {fileID: 1657875101}
 --- !u!43 &1742360125
 Mesh:
   m_ObjectHideFlags: 0
@@ -17419,10 +17419,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3dbae5008c3fc543baa568640395a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priceDisplay: {fileID: 6784941246082440600, guid: b0cb30698327d4946b5c192e5ff6463e,
-    type: 3}
-  canvas: {fileID: 1657875101}
-  priceList: {fileID: 1717187954}
+  display: {fileID: 1717187954}
+  listGoods:
+  - {fileID: 11400000, guid: babe3161c8ba0e741988545e43f96b39, type: 2}
+  isAnyPackage: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

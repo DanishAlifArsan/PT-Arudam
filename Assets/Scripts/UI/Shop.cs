@@ -6,19 +6,12 @@ public class Shop : MonoBehaviour
 {
     [SerializeField] private ShopList shopList;
     [SerializeField] private RectTransform canvas;
-    [SerializeField] private List<Goods> listGoods = new List<Goods>();
+    private List<Goods> listGoods;
     [SerializeField] private Transform packagePoint;
-    public bool isAnyPackage = false;
-    public static Shop instance;
 
     private void Awake() {
-         if (instance == null)
-            instance = this;
-        else if (instance != this)
-            Destroy(this.gameObject);
-    }
+        listGoods = ItemManager.instance.listGoods;
 
-    private void Start() {
         for (int i = 0; i < listGoods.Count; i++)
         {
             ShopList instantiatedShopList =  Instantiate(shopList, canvas);
@@ -28,10 +21,11 @@ public class Shop : MonoBehaviour
     }
 
     private void OnButtonClick(int index) {
-        if (!isAnyPackage)
+        if (!ItemManager.instance.isAnyPackage)
         {
+            // ubah ke aktifin logic tukang paket
             Instantiate(listGoods[index].prefab,packagePoint.position, Quaternion.identity);
-            isAnyPackage = true;
+            ItemManager.instance.isAnyPackage = true;
         }
     }
 }

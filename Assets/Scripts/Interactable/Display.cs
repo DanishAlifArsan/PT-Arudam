@@ -3,21 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class PriceList : Interactable
+public class Display : Interactable
 {
     [SerializeField] private PlayableDirector director;
+    [SerializeField] private DisplayList displayList;
+    [SerializeField] private RectTransform canvas;
     private bool isInteract = false;
     private ItemInteract broadcaster;
+    private List<Goods> listGoods = new List<Goods>();
 
     private void Update() {
         if (isInteract)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                CloseList();
+                CloseDisplay();
             }
         }
     }
+
+    private void OnButtonClick(int index, int price) {
+        listGoods[index].buyPrice = price;
+    }
+
+    public void GenerateList(Item item) {
+        if (!listGoods.Contains(item.goods))
+        {
+            DisplayList instantiatedDisplayList =  Instantiate(displayList, canvas);
+            instantiatedDisplayList.Setup(item.goods, listGoods.Count);
+            instantiatedDisplayList.OnButtonClick += OnButtonClick;
+            listGoods.Add(item.goods);
+        }
+    }
+
     public override void OnInteract(ItemInteract broadcaster)
     {
         this.broadcaster = broadcaster;
@@ -31,7 +49,7 @@ public class PriceList : Interactable
         isInteract = true;
     }
 
-    private void CloseList() {
+    private void CloseDisplay() {
         director.Stop();
         EnableHighlight(true);
         broadcaster.controller.enabled = true;

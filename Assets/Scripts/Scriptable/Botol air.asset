@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1130b492a38424abdd67097ea0daca, type: 3}
   m_Name: Botol air
   m_EditorClassIdentifier: 
+  id: 0
   goodsName: Botol
   displayImage: {fileID: 21300000, guid: 935cfb9f86e3ee849ac227503ff1fb36, type: 3}
-  sellPrice: 0
+  sellPrice: 2000
   buyPrice: 2000
   prefab: {fileID: 4417039392173204849, guid: 2644c7ceba44a33428b6d6090d2925c7, type: 3}

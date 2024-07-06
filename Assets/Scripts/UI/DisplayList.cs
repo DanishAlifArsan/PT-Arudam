@@ -1,0 +1,27 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class DisplayList : MonoBehaviour
+{
+    [SerializeField] private Image goodsImage;
+    [SerializeField] private TextMeshProUGUI nameText;
+    [SerializeField] private TMP_InputField priceInput;
+    public Action<int, int> OnButtonClick;
+
+    private int index;
+    
+    public void Setup(Goods item, int index) {    
+        goodsImage.sprite = item.displayImage;
+        nameText.text = item.name;
+        priceInput.text = item.sellPrice.ToString();
+        this.index = index;
+    }
+
+    public void SetPrice() {
+        OnButtonClick.Invoke(index, int.Parse(priceInput.text));
+    }
+}
