@@ -29,6 +29,19 @@ public class CurrencyManager : MonoBehaviour
 
     public void AddCurrency(int value) {
         totalCurrency += value;
+        Updatecurrency();
+    }
+
+    public void RemoveCurrency(int value){
+        totalCurrency -= value;
+        Updatecurrency();
+    }
+
+    private void Updatecurrency() {
         currencyText.text = totalCurrency.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));
+    }
+
+    public bool CanBuy(int cost) {
+        return totalCurrency - cost >= 0;
     }
 }

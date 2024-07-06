@@ -21,11 +21,13 @@ public class Shop : MonoBehaviour
     }
 
     private void OnButtonClick(int index) {
-        if (!ItemManager.instance.isAnyPackage)
+        int cost = listGoods[index].buyPrice;
+        if (!ItemManager.instance.isAnyPackage && CurrencyManager.instance.CanBuy(cost))
         {
             // ubah ke aktifin logic tukang paket
             Instantiate(listGoods[index].prefab,packagePoint.position, Quaternion.identity);
             ItemManager.instance.isAnyPackage = true;
+            CurrencyManager.instance.RemoveCurrency(cost);
         }
     }
 }
