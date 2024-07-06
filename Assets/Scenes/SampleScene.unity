@@ -4833,6 +4833,7 @@ MonoBehaviour:
   pickupRange: 5
   itemInHand: {fileID: 0}
   canInteract: 1
+  canvas: {fileID: 1470599819}
 --- !u!114 &330585551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14525,6 +14526,7 @@ MonoBehaviour:
   displayList: {fileID: 1905295302962247738, guid: b0cb30698327d4946b5c192e5ff6463e,
     type: 3}
   canvas: {fileID: 1657875101}
+  priceRate: 0.5
 --- !u!43 &1742360125
 Mesh:
   m_ObjectHideFlags: 0

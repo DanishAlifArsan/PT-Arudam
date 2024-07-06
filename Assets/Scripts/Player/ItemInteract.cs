@@ -11,6 +11,7 @@ public class ItemInteract : MonoBehaviour
     [SerializeField] private float pickupRange;
     public Transform itemInHand;
     public bool canInteract = true;
+    public GameObject canvas;
     private Camera cam;
     private bool hasHighlighted = false;
 

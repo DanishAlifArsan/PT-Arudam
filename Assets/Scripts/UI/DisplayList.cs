@@ -10,7 +10,7 @@ public class DisplayList : MonoBehaviour
     [SerializeField] private Image goodsImage;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TMP_InputField priceInput;
-    public Action<int, int> OnButtonClick;
+    public Func<int, int, int> OnButtonClick;
 
     private int index;
     
@@ -22,6 +22,6 @@ public class DisplayList : MonoBehaviour
     }
 
     public void SetPrice() {
-        OnButtonClick.Invoke(index, int.Parse(priceInput.text));
+        priceInput.text = OnButtonClick.Invoke(index, int.Parse(priceInput.text)).ToString();
     }
 }

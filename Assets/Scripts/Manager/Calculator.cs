@@ -9,10 +9,10 @@ public class Calculator : MonoBehaviour
     [SerializeField] private TextMeshProUGUI answerText;
     public int answer = 0;
 
-    private void OnEnable() {
-        questionText.text = "";
-        answerText.text = "";
-    }
+    // private void OnEnable() {
+    //     questionText.text = "";
+    //     answerText.text = "";
+    // }
 
     public void StartCalculator(int price, int amount, int paid) {
         answer = paid - (price * amount);
