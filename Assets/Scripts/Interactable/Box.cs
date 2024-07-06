@@ -15,9 +15,12 @@ public class Box : Interactable
 
     public override void OnInteract(ItemInteract broadcaster)
     {
-        EnableHighlight(false);
-        transform.SetParent(broadcaster.playerHand);
-        transform.localPosition = Vector3.zero;
-        broadcaster.itemInHand = transform;
+        if (broadcaster.itemInHand == null) {
+            EnableHighlight(false);
+            transform.SetParent(broadcaster.playerHand);
+            transform.localPosition = Vector3.zero;
+            broadcaster.itemInHand = transform;
+            Shop.instance.isAnyPackage = false;
+        }   
     }
 }

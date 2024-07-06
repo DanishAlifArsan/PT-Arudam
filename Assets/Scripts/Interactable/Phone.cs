@@ -41,12 +41,12 @@ public class Phone : Interactable
     public void OpenApp(int index) {
         apps[index].SetActive(true);
         backStack.Push(apps[index]);
-        Debug.Log(backStack.Peek());
+        // Debug.Log(backStack.Peek());
     }
 
     public void CloseApp() {
         GameObject poppedApp = backStack.Pop();
-        Debug.Log(poppedApp);
+        // Debug.Log(poppedApp);
         poppedApp.SetActive(false);
 
         if (backStack.Count <= 0) {
