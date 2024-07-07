@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class CustomerWalk : IState
+{
+    private Vector3 destination;
+    public void EnterState(CustomerAI customer, StateManager stateManager)
+    {
+        if (customer.isBuying)
+        {
+            destination = customer.homePoint.position;
+        } else {
+            destination = customer.cashierPoint.position;
+        }
+        customer.agent.SetDestination(destination);
+    }
+
+    public void UpdateState(CustomerAI customer, StateManager stateManager)
+    {
+       float dist = customer.agent.remainingDistance;
+       if (dist!=Mathf.Infinity && customer.agent.pathStatus == NavMeshPathStatus.PathComplete && customer.agent.remainingDistance == 0)
+       {
+            customer.isWalking = false;
+            customer.isBuying = !customer.isBuying;
+            stateManager.SwitchState(customer, stateManager.idle);
+       }
+    }
+}
