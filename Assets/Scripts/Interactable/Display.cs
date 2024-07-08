@@ -72,4 +72,8 @@ public class Display : Interactable
         Cursor.visible = false;
         isInteract = false;
     }
+
+    public List<Goods> GetGoodsOnSale() {
+        return listGoods;
+    }
 }

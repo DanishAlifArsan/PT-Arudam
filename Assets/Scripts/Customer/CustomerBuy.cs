@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomerBuy : MonoBehaviour
+public class CustomerBuy : IState
 {
-    // Start is called before the first frame update
-    void Start()
+    public void EnterState(CustomerAI customer, StateManager stateManager)
     {
-        
+        customer.dialogueBubbleUI.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateState(CustomerAI customer, StateManager stateManager)
     {
-        
+        if (customer.isWalking)
+        {
+            customer.isBuying = true;
+            stateManager.SwitchState(customer, stateManager.walk);
+        }
     }
 }

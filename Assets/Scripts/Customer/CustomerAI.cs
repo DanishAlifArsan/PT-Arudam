@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
-public class CustomerAI : MonoBehaviour
+public class CustomerAI : Interactable
 {
     public NavMeshAgent agent;
     public Transform cashierPoint;
@@ -13,17 +14,30 @@ public class CustomerAI : MonoBehaviour
     public bool isWalking = false;
     public bool isBuying = false;
     private StateManager stateManager;
+    [SerializeField] private DialogueBubble dialogueBubble;
+    [SerializeField] private RectTransform boxHolder;
+    [SerializeField] private Image patienceBar;
+    public GameObject dialogueBubbleUI;
+    private bool setupFlag = true;
 
     // Start is called before the first frame update
     private void Start()
     {
         waitTimer = waitDuration;
-        stateManager = new StateManager();
-        stateManager.StartState(this);
-        // StartCoroutine(MoveAI());
+        
     }
 
     private void Update() {
+        if (setupFlag)
+        {
+            if (ItemManager.instance.listGoodsOnSale.Count > 0)
+            {
+                Setup();
+            } else {
+                return;
+            }
+        }
+
         stateManager.currentState.UpdateState(this, stateManager);
 
         if (isWalking)
@@ -32,27 +46,42 @@ public class CustomerAI : MonoBehaviour
         }
 
         waitTimer -= Time.deltaTime;
+        patienceBar.fillAmount = waitTimer/waitDuration;
         if (waitTimer <= 0)
         {
+            patienceBar.fillAmount = 1;
             waitTimer = waitDuration;
             isWalking = true;
         }
     }
 
-    // private IEnumerator MoveAI() {
-    //     agent.SetDestination(cashierPoint.position);
-    //     yield return new WaitUntil(() => IsArrived(cashierPoint.position));
-    //     yield return new WaitForSeconds(waitDuration);
-    //     StartCoroutine(BackToHome());
-    // }  
+    private Goods SetGoodsToBuy() {
+        return ItemManager.instance.listGoodsOnSale[Random.Range(0, ItemManager.instance.listGoodsOnSale.Count-1)];
+    }
 
-    // private IEnumerator BackToHome() {
-    //     agent.SetDestination(homePoint.position);
-    //     yield return new WaitUntil(() => IsArrived(homePoint.position));
-    //     yield return new WaitForSeconds(waitDuration);
-    // } 
+    private int SetNumberOfGoods() {
+        return Random.Range(1,3);
+    }
 
-    // private bool IsArrived(Vector3 pos) {
-    //     return agent.transform.position.x - pos.x < .01f;
-    // }
+    private void Setup() {
+        stateManager = new StateManager();
+        stateManager.StartState(this);
+        int numberOfGoods = SetNumberOfGoods();
+        for (int i = 0; i < numberOfGoods; i++)
+        {
+            DialogueBubble instantiatedDialogueBubble = Instantiate(dialogueBubble, boxHolder);
+            instantiatedDialogueBubble.Setup(SetGoodsToBuy());
+        }
+        boxHolder.anchoredPosition = new Vector3(98, (114 * (numberOfGoods - 1)) -14, 0);
+        setupFlag = false;
+    }
+
+    public override void OnInteract(ItemInteract broadcaster)
+    {
+        if (stateManager.currentState == stateManager.buy)
+        {
+            //logic pembelian
+            Debug.Log("Interact with player");
+        }
+    }
 }

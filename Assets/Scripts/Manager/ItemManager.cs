@@ -5,7 +5,8 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     [SerializeField] private Display display;
-    public List<Goods> listGoods = new List<Goods>();
+    public List<Goods> listGoods = new List<Goods>(); 
+    public List<Goods> listGoodsOnSale = new List<Goods>(); 
     public bool isAnyPackage = false;
     public static ItemManager instance;
 
@@ -25,5 +26,6 @@ public class ItemManager : MonoBehaviour
 
     public void GenerateList(Item item) {
         display.GenerateList(item);
+        listGoodsOnSale = display.GetGoodsOnSale();
     }
 }
