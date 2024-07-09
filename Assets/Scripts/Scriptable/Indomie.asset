@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe1130b492a38424abdd67097ea0daca, type: 3}
-  m_Name: Botol air
+  m_Name: Indomie
   m_EditorClassIdentifier: 
-  id: 0
-  goodsName: Botol
-  displayImage: {fileID: 21300000, guid: 555b01eb45ec1d144be9b172ffa930be, type: 3}
+  id: 1
+  goodsName: Indomie
+  displayImage: {fileID: 21300000, guid: 200bbd948796f41478fa3c4580ad6890, type: 3}
   sellPrice: 2000
   buyPrice: 2000
   deliveryPrice: 5000
-  amountOnBox: 5
-  prefab: {fileID: 4417039392173204849, guid: 2644c7ceba44a33428b6d6090d2925c7, type: 3}
+  amountOnBox: 6
+  prefab: {fileID: 4417039392173204849, guid: 37e3ed90e07ad4d4c8db539716a16176, type: 3}

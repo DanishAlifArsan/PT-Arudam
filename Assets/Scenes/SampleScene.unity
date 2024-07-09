@@ -2801,11 +2801,11 @@ Transform:
   m_GameObject: {fileID: 160381178}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2, y: -0.348, z: -0.21008158}
+  m_LocalPosition: {x: 3.7, y: 0.16199994, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1279287398}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &167476964
 GameObject:
@@ -12704,7 +12704,6 @@ Transform:
   - {fileID: 1717187947}
   - {fileID: 1180890240}
   - {fileID: 293110349}
-  - {fileID: 160381179}
   - {fileID: 239849852}
   - {fileID: 1357527487}
   m_Father: {fileID: 1138704089}
@@ -17651,7 +17650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currencyText: {fileID: 1250171194}
-  startingCurrency: 10000
+  startingCurrency: 1000000
 --- !u!4 &2117257318
 Transform:
   m_ObjectHideFlags: 0
@@ -17697,6 +17696,8 @@ MonoBehaviour:
   display: {fileID: 1717187954}
   listGoods:
   - {fileID: 11400000, guid: babe3161c8ba0e741988545e43f96b39, type: 2}
+  - {fileID: 11400000, guid: cf3d8a36c0620a743b26b39e8f780110, type: 2}
+  listGoodsOnSale: []
   isAnyPackage: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -17718,3 +17719,4 @@ SceneRoots:
   - {fileID: 2117257318}
   - {fileID: 1760674867}
   - {fileID: 2005923231}
+  - {fileID: 160381179}

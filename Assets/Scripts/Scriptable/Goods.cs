@@ -10,5 +10,7 @@ public class Goods : ScriptableObject
     public Sprite displayImage;
     public int sellPrice;
     public int buyPrice;
+    public int deliveryPrice;
+    public int amountOnBox;
     public Box prefab;
 }

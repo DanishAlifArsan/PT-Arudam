@@ -11,6 +11,6 @@ public class DialogueBubble : MonoBehaviour
 
     public void Setup(Goods item) {
         goodsImage.sprite = item.displayImage;
-        countText.text = Random.Range(1,3).ToString();
+        countText.text = "x " + Random.Range(1,3).ToString();
     }
 }

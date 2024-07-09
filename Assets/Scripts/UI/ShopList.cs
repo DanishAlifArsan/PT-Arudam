@@ -15,11 +15,13 @@ public class ShopList : MonoBehaviour
     public Action<int> OnButtonClick;
 
     private int index;
+    private int totalPrice;
     
-    public void Setup(Goods item, int index) {    
+    public void Setup(Goods item, int index, int totalPrice) {    
+        this.totalPrice = totalPrice;
         goodsImage.sprite = item.displayImage;
         nameText.text = item.name;
-        priceText.text = item.buyPrice.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));
+        priceText.text = totalPrice.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));
         this.index = index;
     }
 
