@@ -18,6 +18,7 @@ public class CustomerAI : Interactable
     [SerializeField] private DialogueBubble dialogueBubble;
     [SerializeField] private RectTransform boxHolder;
     [SerializeField] private Image patienceBar;
+    private List<DialogueBubble> dialogueBubbles = new List<DialogueBubble>();
     public GameObject dialogueBubbleUI;
     private bool setupFlag = true;
 
@@ -68,10 +69,18 @@ public class CustomerAI : Interactable
         int numberOfGoods = goodsToBuy.Count;
         for (int i = 0; i < numberOfGoods; i++) // todo buat fungsi untuk hapus dialogue bubble sebelum generate baru
         {
-            DialogueBubble instantiatedDialogueBubble = Instantiate(dialogueBubble, boxHolder);
-            instantiatedDialogueBubble.Setup(goodsToBuy.ElementAt(i));
+            dialogueBubbles.Add(Instantiate(dialogueBubble, boxHolder));
+            dialogueBubbles[i].Setup(goodsToBuy.ElementAt(i));
         }
         boxHolder.anchoredPosition = new Vector3(98, (114 * (numberOfGoods - 1)) -14, 0);
+    }
+
+    public void ClearGoodsToBuy() {
+        foreach (var item in dialogueBubbles)
+        {
+            Destroy(item.gameObject);
+        }
+        dialogueBubbles.Clear();
     }
 
     public override void OnInteract(ItemInteract broadcaster)

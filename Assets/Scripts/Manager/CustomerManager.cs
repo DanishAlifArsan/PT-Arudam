@@ -38,10 +38,10 @@ public class CustomerManager : MonoBehaviour
     }
 
     private int SetNumberOfGoods() {
-        return Random.Range(1, ItemManager.instance.listGoodsOnSale.Count);
+        return Random.Range(1, ItemManager.instance.listGoodsOnSale.Count + 1);
     }
 
     private int SetAmountOfGoods() {
-        return Random.Range(1,3);
+        return Random.Range(1,4);
     }
 }
