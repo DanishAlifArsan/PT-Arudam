@@ -9,8 +9,8 @@ public class DialogueBubble : MonoBehaviour
     [SerializeField] private Image goodsImage;
     [SerializeField] private TextMeshProUGUI countText;
 
-    public void Setup(Goods item) {
-        goodsImage.sprite = item.displayImage;
-        countText.text = "x " + Random.Range(1,3).ToString();
+    public void Setup(KeyValuePair<Goods, int> goodsToBuy) {
+        goodsImage.sprite = goodsToBuy.Key.displayImage;
+        countText.text = "x " + goodsToBuy.Value;
     }
 }

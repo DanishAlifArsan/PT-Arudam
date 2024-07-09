@@ -5,7 +5,8 @@ using UnityEngine;
 public class CustomerManager : MonoBehaviour
 {
     [SerializeField] private List<CustomerAI> customerList;
-    [SerializeField] private Transform homePoint;
+    public Transform homePoint;
+    public Transform cashierPoint;
     public Queue<CustomerAI> customerQueue = new Queue<CustomerAI>();
     public static CustomerManager instance;
 
@@ -21,15 +22,26 @@ public class CustomerManager : MonoBehaviour
         foreach (var item in customerList)
         {
             CustomerAI instantiatedCustomer =  Instantiate(item, homePoint.position, Quaternion.identity);
-            instantiatedCustomer.gameObject.SetActive(false);
+            instantiatedCustomer.cashierPoint = cashierPoint;
+            instantiatedCustomer.homePoint = homePoint;
+            // instantiatedCustomer.gameObject.SetActive(false); //pindah ke setup queue
         }
     }
 
-    private Goods SetGoodsToBuy() {
-        return ItemManager.instance.listGoodsOnSale[Random.Range(0, ItemManager.instance.listGoodsOnSale.Count-1)];
+    public Dictionary<Goods, int> SetGoodsToBuy() {
+        Dictionary<Goods, int> goodsToBuy = new Dictionary<Goods, int>();
+        for (int i = 0; i < SetNumberOfGoods(); i++)
+        {
+            goodsToBuy.Add(ItemManager.instance.listGoodsOnSale[i], SetAmountOfGoods());
+        }
+        return goodsToBuy;
     }
 
     private int SetNumberOfGoods() {
+        return Random.Range(1, ItemManager.instance.listGoodsOnSale.Count);
+    }
+
+    private int SetAmountOfGoods() {
         return Random.Range(1,3);
     }
 }

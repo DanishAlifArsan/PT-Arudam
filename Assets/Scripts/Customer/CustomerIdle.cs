@@ -2,6 +2,7 @@ public class CustomerIdle : IState
 {
     public void EnterState(CustomerAI customer, StateManager stateManager)
     {
+        customer.SetGoodsToBuy();
         customer.dialogueBubbleUI.SetActive(false);
         customer.isBuying = false;
     }
