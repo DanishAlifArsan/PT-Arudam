@@ -12,20 +12,27 @@ public class CustomerAI : Interactable
     public Transform homePoint;
     public float waitDuration;
     private float waitTimer;
-    public bool isWalking = false;
-    public bool isBuying = false;
+    public bool isWalking;
+    public bool isBuying;
     private StateManager stateManager;
     [SerializeField] private DialogueBubble dialogueBubble;
     [SerializeField] private RectTransform boxHolder;
     [SerializeField] private Image patienceBar;
     private List<DialogueBubble> dialogueBubbles = new List<DialogueBubble>();
     public GameObject dialogueBubbleUI;
-    private bool setupFlag = true;
+    private bool setupFlag;
 
-    // Start is called before the first frame update
-    private void Start()
-    {
+    private void OnEnable() {
         waitTimer = waitDuration;
+        isWalking = false;
+        isBuying = false;
+        setupFlag = true;
+        CustomerManager.instance.isSpawned = true;
+    }
+
+    private void OnDisable() {
+        stateManager = null;
+        CustomerManager.instance.isSpawned = false;
     }
 
     private void Update() {
@@ -57,7 +64,6 @@ public class CustomerAI : Interactable
     }
 
     private void Setup() {
-        gameObject.SetActive(true); //pindah ke setup queue
         stateManager = new StateManager();
         stateManager.StartState(this);
         setupFlag = false;

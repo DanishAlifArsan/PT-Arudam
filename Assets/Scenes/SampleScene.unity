@@ -17239,8 +17239,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerList:
   - {fileID: 7346390698439875580, guid: 5d7d0124007d9b34b8a430d8089d5c38, type: 3}
+  - {fileID: 7346390698439875580, guid: 8f6cc4d9beec7f649a44d958e672927a, type: 3}
+  spawnInterval: 2
+  numberOfSameCustomer: 2
   homePoint: {fileID: 620260393}
   cashierPoint: {fileID: 160381179}
+  customerQueue: []
+  isSpawned: 0
 --- !u!1001 &5328551402004072870
 PrefabInstance:
   m_ObjectHideFlags: 0

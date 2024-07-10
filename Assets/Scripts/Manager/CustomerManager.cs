@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class CustomerManager : MonoBehaviour
 {
     [SerializeField] private List<CustomerAI> customerList;
+    [SerializeField] private float spawnInterval;
+    [SerializeField] private int numberOfSameCustomer;
+    private float spawnTimer = 0;
     public Transform homePoint;
     public Transform cashierPoint;
-    public Queue<CustomerAI> customerQueue = new Queue<CustomerAI>();
+    public List<CustomerAI> customerQueue = new List<CustomerAI>();
     public static CustomerManager instance;
+    public bool isSpawned = false;
 
     private void Awake()
     {
@@ -19,12 +24,27 @@ public class CustomerManager : MonoBehaviour
     }
 
     private void Start() {
+        spawnTimer = spawnInterval;
+
         foreach (var item in customerList)
         {
-            CustomerAI instantiatedCustomer =  Instantiate(item, homePoint.position, Quaternion.identity);
-            instantiatedCustomer.cashierPoint = cashierPoint;
-            instantiatedCustomer.homePoint = homePoint;
-            // instantiatedCustomer.gameObject.SetActive(false); //pindah ke setup queue
+            for (int i = 0; i < numberOfSameCustomer; i++)
+            {  
+                CustomerAI instantiatedCustomer =  Instantiate(item, homePoint.position, Quaternion.identity);
+                instantiatedCustomer.cashierPoint = cashierPoint;
+                instantiatedCustomer.homePoint = homePoint;
+                instantiatedCustomer.gameObject.SetActive(false);
+                customerQueue.Add(instantiatedCustomer);
+            }
+        }
+    }
+
+    private void Update() {
+        spawnTimer -= Time.deltaTime;
+        if (spawnTimer <= 0 && !isSpawned)
+        {
+            SpawnCustomer();
+            spawnTimer = spawnInterval;
         }
     }
 
@@ -43,5 +63,10 @@ public class CustomerManager : MonoBehaviour
 
     private int SetAmountOfGoods() {
         return Random.Range(1,4);
+    }
+
+    private void SpawnCustomer() {
+        int index = Random.Range(0, customerQueue.Count);
+        customerQueue[index].gameObject.SetActive(true);
     }
 }

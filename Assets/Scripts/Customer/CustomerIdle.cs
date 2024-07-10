@@ -5,7 +5,10 @@ public class CustomerIdle : IState
         customer.ClearGoodsToBuy();
         customer.SetGoodsToBuy();
         customer.dialogueBubbleUI.SetActive(false);
-        customer.isBuying = false;
+        if (customer.isBuying)
+        {
+            customer.gameObject.SetActive(false);
+        }
     }
 
     public void UpdateState(CustomerAI customer, StateManager stateManager)
