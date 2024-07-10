@@ -9605,6 +9605,8 @@ MonoBehaviour:
   waitDuration: 2
   isWalking: 0
   isBuying: 0
+  maxNumberOfGoods: 0
+  buyAmountPerGoods: 0
   dialogueBubble: {fileID: 0}
   boxHolder: {fileID: 0}
   patienceBar: {fileID: 0}
@@ -17238,10 +17240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerList:
-  - {fileID: 7346390698439875580, guid: 5d7d0124007d9b34b8a430d8089d5c38, type: 3}
-  - {fileID: 7346390698439875580, guid: 8f6cc4d9beec7f649a44d958e672927a, type: 3}
+  - {fileID: 11400000, guid: 06d3d6f9cef215f489f9e32576919c5e, type: 2}
   spawnInterval: 2
-  numberOfSameCustomer: 2
   homePoint: {fileID: 620260393}
   cashierPoint: {fileID: 160381179}
   customerQueue: []

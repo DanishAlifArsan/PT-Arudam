@@ -120,8 +120,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
-  m_Acceleration: 20
+  m_Speed: 0
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 0
   m_StoppingDistance: 0
@@ -148,9 +148,11 @@ MonoBehaviour:
   agent: {fileID: 6920609623701913258}
   cashierPoint: {fileID: 0}
   homePoint: {fileID: 0}
-  waitDuration: 1
+  waitDuration: 0
   isWalking: 0
   isBuying: 0
+  maxNumberOfGoods: 0
+  buyAmountPerGoods: 0
   dialogueBubble: {fileID: 7133795642640440935, guid: 1e6a1abf1f100034ba26d85b61637f59,
     type: 3}
   boxHolder: {fileID: 9039864561149305326}

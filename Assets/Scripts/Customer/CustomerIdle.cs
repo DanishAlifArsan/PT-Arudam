@@ -13,9 +13,6 @@ public class CustomerIdle : IState
 
     public void UpdateState(CustomerAI customer, StateManager stateManager)
     {
-       if (customer.isWalking)
-       {
-            stateManager.SwitchState(customer, stateManager.walk);
-       }
+        stateManager.SwitchState(customer, stateManager.walk);
     }
 }

@@ -14,6 +14,8 @@ public class CustomerAI : Interactable
     private float waitTimer;
     public bool isWalking;
     public bool isBuying;
+    public int maxNumberOfGoods;
+    public int buyAmountPerGoods;
     private StateManager stateManager;
     [SerializeField] private DialogueBubble dialogueBubble;
     [SerializeField] private RectTransform boxHolder;
@@ -70,10 +72,10 @@ public class CustomerAI : Interactable
     }
 
     public void SetGoodsToBuy() {
-        Dictionary<Goods, int> goodsToBuy = CustomerManager.instance.SetGoodsToBuy();
+        Dictionary<Goods, int> goodsToBuy = CustomerManager.instance.SetGoodsToBuy(maxNumberOfGoods, buyAmountPerGoods);
 
         int numberOfGoods = goodsToBuy.Count;
-        for (int i = 0; i < numberOfGoods; i++) // todo buat fungsi untuk hapus dialogue bubble sebelum generate baru
+        for (int i = 0; i < numberOfGoods; i++)
         {
             dialogueBubbles.Add(Instantiate(dialogueBubble, boxHolder));
             dialogueBubbles[i].Setup(goodsToBuy.ElementAt(i));

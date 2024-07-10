@@ -8,6 +8,7 @@ public class CustomerWalk : IState
     private Vector3 destination;
     public void EnterState(CustomerAI customer, StateManager stateManager)
     {
+        customer.isWalking = true;
         customer.dialogueBubbleUI.SetActive(false);
         if (customer.isBuying)
         {
