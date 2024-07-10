@@ -13,8 +13,9 @@ public class CustomerBuy : IState
     {
         if (customer.isWalking)
         {
-            customer.isBuying = true;
-            stateManager.SwitchState(customer, stateManager.walk);
+            // customer.isBuying = true;
+            // stateManager.SwitchState(customer, stateManager.walk);
+            stateManager.SwitchState(customer, stateManager.pay);
         }
     }
 }

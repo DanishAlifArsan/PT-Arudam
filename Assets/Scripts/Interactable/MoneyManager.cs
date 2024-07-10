@@ -26,10 +26,10 @@ public class MoneyManager : MonoBehaviour
     }
 
     public void ConfirmPayment() {
-        if (TestingShop.instance.PaidAmount() == totalValue)
+        if (SaleManager.instance.PaidAmount() == totalValue)
         {
             CurrencyManager.instance.AddCurrency(totalValue);
-            TestingShop.instance.TransactionFinish();
+            SaleManager.instance.TransactionFinish();
         }
         
         foreach (var item in moneys)

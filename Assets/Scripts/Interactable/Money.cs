@@ -8,7 +8,7 @@ public class Money : Interactable
 
     public override void OnInteract(ItemInteract broadcaster)
     {
-        if (isAbleToInteract && TestingShop.instance.isTransaction)
+        if (isAbleToInteract && SaleManager.instance.isTransaction)
         {
             manager.CountPayment(this);
         } else {

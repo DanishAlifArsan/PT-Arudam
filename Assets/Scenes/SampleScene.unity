@@ -17155,9 +17155,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2117257318}
   - component: {fileID: 2117257317}
-  - component: {fileID: 2117257319}
   - component: {fileID: 2117257320}
   - component: {fileID: 2117257321}
+  - component: {fileID: 2117257322}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -17194,21 +17194,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2117257319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117257316}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a7b6fd6507b93b43910fad1fb51d337, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interval: 2
-  calculator: {fileID: 243373042}
-  isTransaction: 0
 --- !u!114 &2117257320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17241,11 +17226,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerList:
   - {fileID: 11400000, guid: 06d3d6f9cef215f489f9e32576919c5e, type: 2}
+  - {fileID: 11400000, guid: c7d2a5f94599b204095e2050ceff152e, type: 2}
   spawnInterval: 2
   homePoint: {fileID: 620260393}
   cashierPoint: {fileID: 160381179}
   customerQueue: []
   isSpawned: 0
+--- !u!114 &2117257322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117257316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58768d684f51c0c44a2616dee9ed5c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calculator: {fileID: 243373042}
+  isTransaction: 0
 --- !u!1001 &5328551402004072870
 PrefabInstance:
   m_ObjectHideFlags: 0

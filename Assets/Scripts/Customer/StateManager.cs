@@ -9,6 +9,7 @@ public class StateManager : MonoBehaviour
     public CustomerIdle idle = new CustomerIdle();
     public CustomerWalk walk = new CustomerWalk();
     public CustomerBuy buy = new CustomerBuy();
+    public CustomerPay pay = new CustomerPay();
 
     public void StartState(CustomerAI customer) {
         currentState = idle;

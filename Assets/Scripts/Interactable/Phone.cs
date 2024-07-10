@@ -24,7 +24,7 @@ public class Phone : Interactable
 
     public override void OnInteract(ItemInteract broadcaster)
     {
-        if (TestingShop.instance.isTransaction) return;
+        if (SaleManager.instance.isTransaction) return;
         
         this.broadcaster = broadcaster;
         ToggleHighlight(false);

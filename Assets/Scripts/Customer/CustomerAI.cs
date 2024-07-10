@@ -21,6 +21,7 @@ public class CustomerAI : Interactable
     [SerializeField] private RectTransform boxHolder;
     [SerializeField] private Image patienceBar;
     private List<DialogueBubble> dialogueBubbles = new List<DialogueBubble>();
+    private Dictionary<Goods, int> goodsToBuy = new Dictionary<Goods, int>();
     public GameObject dialogueBubbleUI;
     private bool setupFlag;
 
@@ -72,7 +73,7 @@ public class CustomerAI : Interactable
     }
 
     public void SetGoodsToBuy() {
-        Dictionary<Goods, int> goodsToBuy = CustomerManager.instance.SetGoodsToBuy(maxNumberOfGoods, buyAmountPerGoods);
+        goodsToBuy = CustomerManager.instance.SetGoodsToBuy(maxNumberOfGoods, buyAmountPerGoods);
 
         int numberOfGoods = goodsToBuy.Count;
         for (int i = 0; i < numberOfGoods; i++)
@@ -91,11 +92,28 @@ public class CustomerAI : Interactable
         dialogueBubbles.Clear();
     }
 
+    public int CountTotalPrice() {
+        int totalPrice = 0;
+        for (int i = 0; i < goodsToBuy.Count; i++)
+        {
+            int price = goodsToBuy.ElementAt(i).Key.sellPrice;
+            int amount = goodsToBuy[goodsToBuy.ElementAt(i).Key];
+            totalPrice += price * amount;
+        }
+    
+        return totalPrice;
+    }
+    
     public override void OnInteract(ItemInteract broadcaster)
     {
         if (stateManager.currentState == stateManager.buy)
         {
             //logic pembelian
+            Item item = broadcaster.itemInHand.GetComponent<Item>();
+            if (item!= null)
+            {
+                 
+            }
             Debug.Log("Interact with player");
         }
     }
