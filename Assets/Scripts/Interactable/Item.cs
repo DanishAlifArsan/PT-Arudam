@@ -7,14 +7,24 @@ public class Item : Interactable
     public Goods goods;
     public int id;
     public Storage storage;
+    public Table table;
+    public bool isOnBox = true;
     private void Start() {
         EnableHighlight(false);
     }
 
     public override void OnInteract(ItemInteract broadcaster)
     {
-        if (storage != null && broadcaster.itemInHand == null) {
-            storage.RemoveItem(this);
+        if (!isOnBox && broadcaster.itemInHand == null) {
+            if (storage != null )
+            {
+                storage.RemoveItem(this);
+            }
+            if (table != null)
+            {
+                table.RemoveItem(this);    
+            }
+
             transform.SetParent(broadcaster.itemHand);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;

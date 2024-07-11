@@ -5101,6 +5101,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &371251054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 371251055}
+  - component: {fileID: 371251056}
+  m_Layer: 0
+  m_Name: Cashier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &371251055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371251054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.579, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1279287398}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &371251056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371251054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24478e422e4a442448e58127a67a5df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &375983622
 Mesh:
   m_ObjectHideFlags: 0
@@ -12482,6 +12526,7 @@ Transform:
   - {fileID: 293110349}
   - {fileID: 239849852}
   - {fileID: 1357527487}
+  - {fileID: 371251055}
   m_Father: {fileID: 1138704089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1296825598
@@ -17245,6 +17290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   calculator: {fileID: 243373042}
+  table: {fileID: 371251056}
   isTransaction: 0
 --- !u!1001 &5328551402004072870
 PrefabInstance:

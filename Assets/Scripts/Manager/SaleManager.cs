@@ -5,6 +5,7 @@ using UnityEngine;
 public class SaleManager : MonoBehaviour
 {
     [SerializeField] private Calculator calculator;
+    [SerializeField] private Table table;
     public static SaleManager instance;
     public bool isTransaction = false;
 
@@ -35,5 +36,17 @@ public class SaleManager : MonoBehaviour
 
     public int PaidAmount() {
         return calculator.answer;
+    }
+
+    public void SetupTable(int width, int height) {
+        table.SetupTable(width, height);
+    }
+
+    public void PlaceItem(Item item) {
+        table.PlaceItem(item);
+    }
+
+    public bool IsGridNull() {
+        return table.IsGridNull();
     }
 }

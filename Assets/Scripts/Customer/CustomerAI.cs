@@ -21,7 +21,7 @@ public class CustomerAI : Interactable
     [SerializeField] private RectTransform boxHolder;
     [SerializeField] private Image patienceBar;
     private List<DialogueBubble> dialogueBubbles = new List<DialogueBubble>();
-    private Dictionary<Goods, int> goodsToBuy = new Dictionary<Goods, int>();
+    public Dictionary<Goods, int> goodsToBuy = new Dictionary<Goods, int>();
     public GameObject dialogueBubbleUI;
     private bool setupFlag;
 
@@ -110,11 +110,12 @@ public class CustomerAI : Interactable
         {
             //logic pembelian
             Item item = broadcaster.itemInHand.GetComponent<Item>();
-            if (item!= null)
+            if (item!= null && SaleManager.instance.IsGridNull())
             {
-                 
+                broadcaster.itemInHand = null;
+                SaleManager.instance.PlaceItem(item);
+                Debug.Log("Interact with player");
             }
-            Debug.Log("Interact with player");
         }
     }
 }

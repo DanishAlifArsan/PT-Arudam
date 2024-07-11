@@ -52,7 +52,6 @@ public class Storage : Interactable
     private void AddItem(Item item) {
         for (int i = 0; i < storageSize; i++)
         {
-            Debug.Log(itemDictionary[itemDictionary.ElementAt(i).Key]);
             if (itemDictionary[itemDictionary.ElementAt(i).Key] == null)
             {
                 Vector3 itemPos = new Vector3(itemDictionary.ElementAt(i).Key,-0.159f,0);
@@ -61,6 +60,7 @@ public class Storage : Interactable
                 item.transform.localPosition = itemPos;
                 item.transform.localRotation = Quaternion.identity;
                 item.storage = this;
+                item.isOnBox = false;
                 item.EnableHighlight(true);
                 itemDictionary[itemDictionary.ElementAt(i).Key] = item;
                 AddToList(item);
@@ -75,8 +75,6 @@ public class Storage : Interactable
 
     public void RemoveItem(Item item) {
         itemDictionary[item.transform.localPosition.x] = null;
-        Debug.Log(item.transform.localPosition.x);
-        Debug.Log(itemDictionary[itemDictionary.ElementAt(0).Key]);
         item.storage = null;
     }
 }
