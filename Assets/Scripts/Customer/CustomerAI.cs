@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -107,9 +108,9 @@ public class CustomerAI : Interactable
     public override void OnInteract(ItemInteract broadcaster)
     {
         if (stateManager.currentState == stateManager.buy)
-        {
+        {            
             //logic pembelian
-            Item item = broadcaster.itemInHand.GetComponent<Item>();
+            Item item = broadcaster.itemInHand?.GetComponent<Item>();
             if (item!= null && SaleManager.instance.IsGridNull())
             {
                 broadcaster.itemInHand = null;

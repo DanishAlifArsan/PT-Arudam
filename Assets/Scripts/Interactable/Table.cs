@@ -24,7 +24,7 @@ public class Table : MonoBehaviour
                     item.transform.localPosition = new Vector3(grid[i, j].Key.y, 0f, grid[i, j].Key.x) ;
                     item.transform.localRotation = Quaternion.identity;
                     item.EnableHighlight(true);
-                    break;
+                    return;
                 }
             }
         }
@@ -50,13 +50,13 @@ public class Table : MonoBehaviour
         {
             for (int j = 0; j < grid.height; j++)
             {
-                if (grid[i,j].Value != null)
+                if (grid[i,j].Value == null)
                 {
-                    return false;
+                    return true;
                 }
             }
         }
-        return true;
+        return false;
     }
 }
 

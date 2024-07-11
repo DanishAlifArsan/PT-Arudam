@@ -9,6 +9,7 @@ public class TrashCan : Interactable
         if (broadcaster.itemInHand != null)
         { 
             Destroy(broadcaster.itemInHand.gameObject);
+            broadcaster.itemInHand = null;
         }
     }
 }
