@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SaleManager : MonoBehaviour
@@ -8,7 +10,8 @@ public class SaleManager : MonoBehaviour
     [SerializeField] private Table table;
     public static SaleManager instance;
     public bool isTransaction = false;
-
+    private Dictionary<Goods, int> goodsToBuy = new Dictionary<Goods, int>();
+    private Dictionary<Goods, int> goodsPlaced = new Dictionary<Goods, int>();
     private void Awake()
     {
         if (instance == null)
@@ -19,6 +22,7 @@ public class SaleManager : MonoBehaviour
     }
 
     public void StartTransaction(int totalPrice) {
+        table.EmptyTable();
         calculator.gameObject.SetActive(true);
         calculator.StartCalculator(totalPrice, GeneratePaid(totalPrice));
         isTransaction = true;
@@ -42,11 +46,31 @@ public class SaleManager : MonoBehaviour
         table.SetupTable(width, height);
     }
 
-    public void PlaceItem(Item item) {
+    public void PlaceItem(Dictionary<Goods, int> goodsToBuy, Item item) {
         table.PlaceItem(item);
+        goodsPlaced.Clear();
+        this.goodsToBuy = goodsToBuy;
+        if (goodsPlaced.ContainsKey(item.goods))
+        {
+            goodsPlaced[item.goods] += 1;
+        } else {
+            goodsPlaced.Add(item.goods, 1);
+        }     
+    }
+
+    public void RemovePlacedGoods(Item item) {
+        goodsPlaced.Remove(item.goods);
+    }
+
+    public void ClearPlacedGoods() {
+        goodsPlaced.Clear();
     }
 
     public bool IsGridNull() {
         return table.IsGridNull();
+    }
+
+    public bool CompareItem() {
+        return goodsPlaced.Count == goodsToBuy.Count && !goodsPlaced.Except(goodsToBuy).Any();
     }
 }

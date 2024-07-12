@@ -13,11 +13,13 @@ public class CustomerBuy : IState
 
     public void UpdateState(CustomerAI customer, StateManager stateManager)
     {
-        if (customer.isWalking)
+        customer.isBuying = true;
+        if (customer.isPaying)
         {
-            // customer.isBuying = true;
-            // stateManager.SwitchState(customer, stateManager.walk);
-            // stateManager.SwitchState(customer, stateManager.pay);
+            stateManager.SwitchState(customer, stateManager.pay);
+        } else if(customer.isWalking) {    
+            SaleManager.instance.ClearPlacedGoods();
+            stateManager.SwitchState(customer, stateManager.walk);
         }
     }
 }

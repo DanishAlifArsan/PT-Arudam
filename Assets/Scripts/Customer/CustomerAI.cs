@@ -15,6 +15,7 @@ public class CustomerAI : Interactable
     private float waitTimer;
     public bool isWalking;
     public bool isBuying;
+    public bool isPaying;
     public int maxNumberOfGoods;
     public int buyAmountPerGoods;
     private StateManager stateManager;
@@ -30,6 +31,7 @@ public class CustomerAI : Interactable
         waitTimer = waitDuration;
         isWalking = false;
         isBuying = false;
+        isPaying = false;
         setupFlag = true;
         CustomerManager.instance.isSpawned = true;
     }
@@ -114,8 +116,11 @@ public class CustomerAI : Interactable
             if (item!= null && SaleManager.instance.IsGridNull())
             {
                 broadcaster.itemInHand = null;
-                SaleManager.instance.PlaceItem(item);
-                Debug.Log("Interact with player");
+                SaleManager.instance.PlaceItem(goodsToBuy, item);
+                if (SaleManager.instance.CompareItem())
+                {
+                    isPaying = true;
+                }
             }
         }
     }

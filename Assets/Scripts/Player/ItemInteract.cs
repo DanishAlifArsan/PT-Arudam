@@ -46,12 +46,7 @@ public class ItemInteract : MonoBehaviour
         {
             hasHighlighted = true;
             Interactable item = other.GetComponent<Interactable>();
-            item.ToggleHighlight(true);
-            // if (Input.GetMouseButtonDown(0) && canInteract) {
-            //     Interact(item);
-            // } else if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape)) {   //buat hp doang
-            //     Cancel(item);
-            // }
+            item?.ToggleHighlight(true);
         } else if (other.CompareTag("Storage"))
         {
             Interactable item = other.GetComponent<Interactable>();
@@ -69,7 +64,7 @@ public class ItemInteract : MonoBehaviour
         if (other.CompareTag("Item"))
         {
             Interactable item = other.GetComponent<Interactable>();
-            item.ToggleHighlight(false);
+            item?.ToggleHighlight(false);
             hasHighlighted = false;
         } else if (other.CompareTag("Storage"))
         {

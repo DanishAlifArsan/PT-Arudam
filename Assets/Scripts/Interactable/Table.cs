@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+// to do: benerin bug ketika customer pergi, sementara di meja masih ada barang
 public class Table : MonoBehaviour
 {
     Grid grid;
@@ -25,11 +26,23 @@ public class Table : MonoBehaviour
                 break;      
             }
         }
+        Debug.Log(grid.dictionary.Values);
     }
 
     public void RemoveItem(Item item) {
         grid.dictionary[item.transform.localPosition] = null;
         item.storage = null;
+        SaleManager.instance.RemovePlacedGoods(item);
+        Debug.Log(grid.dictionary.Values);
+    }
+
+    public void EmptyTable() {
+        foreach (var item in grid.dictionary)
+        {
+           Destroy(item.Value.gameObject);
+        }
+        grid.dictionary.Clear();
+        Debug.Log(grid.dictionary.Values);
     }
 
     public bool IsGridNull() {
@@ -38,13 +51,12 @@ public class Table : MonoBehaviour
 }
 
 class Grid{
-    public Dictionary<Vector3, Item> dictionary;
+    public Dictionary<Vector3, Item> dictionary = new Dictionary<Vector3, Item>();
     public int width;
     public int height;
     public Grid(int width, int height) {
         this.width = width;
         this.height = height;
-        dictionary = new Dictionary<Vector3, Item>();
 
         float xLength = 0.18f + 0.5f;
         float xColumnLength = xLength / width;

@@ -9649,6 +9649,7 @@ MonoBehaviour:
   waitDuration: 2
   isWalking: 0
   isBuying: 0
+  isPaying: 0
   maxNumberOfGoods: 0
   buyAmountPerGoods: 0
   dialogueBubble: {fileID: 0}
