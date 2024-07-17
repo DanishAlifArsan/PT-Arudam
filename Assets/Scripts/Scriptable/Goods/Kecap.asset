@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe1130b492a38424abdd67097ea0daca, type: 3}
-  m_Name: Botol air
+  m_Name: Kecap
   m_EditorClassIdentifier: 
-  id: 0
-  goodsName: Botol
-  displayImage: {fileID: 21300000, guid: c231cbae41f67d446b707e2db3999673, type: 3}
-  sellPrice: 2000
-  buyPrice: 2000
+  id: 2
+  goodsName: Kecap
+  displayImage: {fileID: 21300000, guid: afd9d79f133265e4ea8e12425d4dc963, type: 3}
+  sellPrice: 5000
+  buyPrice: 5000
   deliveryPrice: 5000
   amountOnBox: 5
-  prefab: {fileID: 4417039392173204849, guid: 2644c7ceba44a33428b6d6090d2925c7, type: 3}
+  prefab: {fileID: 4417039392173204849, guid: 99c72cb7be8d0a24eb6432a801edce34, type: 3}

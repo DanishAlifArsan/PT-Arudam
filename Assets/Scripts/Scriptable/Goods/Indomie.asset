@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   goodsName: Indomie
-  displayImage: {fileID: 21300000, guid: 200bbd948796f41478fa3c4580ad6890, type: 3}
+  displayImage: {fileID: 21300000, guid: 19a4a06142a3a0442af57834886df505, type: 3}
   sellPrice: 2000
   buyPrice: 2000
   deliveryPrice: 5000

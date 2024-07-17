@@ -15,5 +15,5 @@ MonoBehaviour:
   walkSpeed: 10
   patience: 10
   maxNumberOfGoods: 2
-  buyAmountPerGoods: 3
+  buyAmountPerGoods: 2
   prefab: {fileID: 7346390698439875580, guid: 8f6cc4d9beec7f649a44d958e672927a, type: 3}

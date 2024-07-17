@@ -22,7 +22,6 @@ public class SaleManager : MonoBehaviour
     }
 
     public void StartTransaction(int totalPrice) {
-        table.EmptyTable();
         calculator.gameObject.SetActive(true);
         calculator.StartCalculator(totalPrice, GeneratePaid(totalPrice));
         isTransaction = true;
@@ -48,7 +47,6 @@ public class SaleManager : MonoBehaviour
 
     public void PlaceItem(Dictionary<Goods, int> goodsToBuy, Item item) {
         table.PlaceItem(item);
-        goodsPlaced.Clear();
         this.goodsToBuy = goodsToBuy;
         if (goodsPlaced.ContainsKey(item.goods))
         {
@@ -61,8 +59,9 @@ public class SaleManager : MonoBehaviour
     public void RemovePlacedGoods(Item item) {
         goodsPlaced.Remove(item.goods);
     }
-
-    public void ClearPlacedGoods() {
+    
+    public void EmptyTable() {
+        table.EmptyTable();
         goodsPlaced.Clear();
     }
 
@@ -71,6 +70,15 @@ public class SaleManager : MonoBehaviour
     }
 
     public bool CompareItem() {
+        foreach (var item in goodsPlaced)
+        {
+            Debug.Log(item.Key +","+item.Value);
+        }
+        foreach (var item in goodsToBuy)
+        {
+            Debug.Log(item.Key +","+item.Value);
+        }
+        Debug.Log(goodsPlaced.Count == goodsToBuy.Count && !goodsPlaced.Except(goodsToBuy).Any());
         return goodsPlaced.Count == goodsToBuy.Count && !goodsPlaced.Except(goodsToBuy).Any();
     }
 }

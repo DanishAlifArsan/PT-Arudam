@@ -13262,7 +13262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1319987319
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13281,7 +13281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -332, y: 221}
+  m_AnchoredPosition: {x: -332, y: 322}
   m_SizeDelta: {x: 550, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1357527483
@@ -17256,6 +17256,7 @@ MonoBehaviour:
   listGoods:
   - {fileID: 11400000, guid: babe3161c8ba0e741988545e43f96b39, type: 2}
   - {fileID: 11400000, guid: cf3d8a36c0620a743b26b39e8f780110, type: 2}
+  - {fileID: 11400000, guid: 19627cb03be60a048b5ba7cf6563c5ff, type: 2}
   listGoodsOnSale: []
   isAnyPackage: 0
 --- !u!114 &2117257321

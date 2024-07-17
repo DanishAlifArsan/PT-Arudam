@@ -26,23 +26,20 @@ public class Table : MonoBehaviour
                 break;      
             }
         }
-        Debug.Log(grid.dictionary.Values);
     }
 
     public void RemoveItem(Item item) {
         grid.dictionary[item.transform.localPosition] = null;
         item.storage = null;
         SaleManager.instance.RemovePlacedGoods(item);
-        Debug.Log(grid.dictionary.Values);
     }
 
     public void EmptyTable() {
         foreach (var item in grid.dictionary)
         {
-           Destroy(item.Value.gameObject);
+           Destroy(item.Value?.gameObject);
         }
         grid.dictionary.Clear();
-        Debug.Log(grid.dictionary.Values);
     }
 
     public bool IsGridNull() {
