@@ -46,25 +46,31 @@ public class DeliveryManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!isCanSpawn)
+        if (!CheckAvailability())
         {
             return;
         }
 
         spawnTimer -= Time.deltaTime;
-        if (spawnTimer <= 0 && CanDeliver() && CanCheckout())
+        if (spawnTimer <= 0 && CanDeliver())
         {
-            postmanList[0].gameObject.SetActive(true);
-            postmanList[0].box = boxQueue.Dequeue();
-            postmanList.RemoveAt(0);
-            spawnTimer = spawnInterval;
-            isCanSpawn = CanDeliver() && CanCheckout();
+            for (int i = 0; i < postmanList.Count; i++)
+            {
+                if (postmanList[i].packagePoint.childCount == 0)
+                {
+                    postmanList[i].gameObject.SetActive(true);
+                    postmanList[i].box = boxQueue.Dequeue();
+                    postmanList.RemoveAt(i);
+                    spawnTimer = spawnInterval;
+                    break;
+                }
+            }
         }
     }
 
     public void StartDelivery(Box box) {
-        isCanSpawn = true;
         boxQueue.Enqueue(box);
+        
     }
 
     public bool CanCheckout() {
@@ -77,8 +83,18 @@ public class DeliveryManager : MonoBehaviour
         return postmanList.Count > 0 && boxQueue.Count > 0;
     }
 
+    private bool CheckAvailability() {
+        return postmanList.Any(p =>
+            p.deliverPoint.childCount == 0
+        );
+    }
+
     public void FinishDelivery(PostmanAI postman) {
-        postman.gameObject.SetActive(false);
         postmanList.Add(postman);
+        postman.gameObject.SetActive(false);
+        foreach (var item in boxQueue)
+        {
+            Debug.Log(item);
+        }
     }
 }
