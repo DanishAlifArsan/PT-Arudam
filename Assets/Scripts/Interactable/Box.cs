@@ -20,7 +20,6 @@ public class Box : Interactable
             transform.SetParent(broadcaster.playerHand);
             transform.localPosition = Vector3.zero;
             broadcaster.itemInHand = transform;
-            ItemManager.instance.isAnyPackage = false;
         }   
     }
 }

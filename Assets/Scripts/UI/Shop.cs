@@ -23,11 +23,9 @@ public class Shop : MonoBehaviour
     }
 
     private void OnButtonClick(int index) {
-        if (!ItemManager.instance.isAnyPackage && CurrencyManager.instance.CanBuy(totalPrice))
+        if (DeliveryManager.instance.CanCheckout() && CurrencyManager.instance.CanBuy(totalPrice))
         {
-            // ubah ke aktifin logic tukang paket
-            Instantiate(listGoods[index].prefab,packagePoint.position, Quaternion.identity);
-            ItemManager.instance.isAnyPackage = true;
+            DeliveryManager.instance.StartDelivery(listGoods[index].prefab);
             CurrencyManager.instance.RemoveCurrency(totalPrice);
         }
     }

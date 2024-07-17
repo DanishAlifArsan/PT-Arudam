@@ -7,7 +7,6 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private Display display;
     public List<Goods> listGoods = new List<Goods>(); 
     public List<Goods> listGoodsOnSale = new List<Goods>(); 
-    public bool isAnyPackage = false;
     public static ItemManager instance;
 
     private void Awake()
