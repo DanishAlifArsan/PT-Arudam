@@ -9,6 +9,7 @@ public class Display : Interactable
     [SerializeField] private DisplayList displayList;
     [SerializeField] private RectTransform canvas;
     [SerializeField] private float priceRate;
+    [SerializeField] private GameObject displayUI;
     private bool isInteract = false;
     private ItemInteract broadcaster;
     private List<Goods> listGoods = new List<Goods>();
@@ -23,19 +24,26 @@ public class Display : Interactable
         }
     }
 
-    private int OnButtonClick(int index, int price) {
+    private int OnButtonClick(int index, int price, bool isPlus) {
         int buyPrice = listGoods[index].buyPrice;
         int minPrice = (int) (buyPrice - (buyPrice * priceRate));
         int maxPrice = (int) (buyPrice + (buyPrice * priceRate));
 
-        if (price <= maxPrice && price >= minPrice)
-        {
-            listGoods[index].sellPrice = price;
-            return price;
+        if(isPlus){
+            return Mathf.Clamp(listGoods[index].sellPrice += 500, minPrice, maxPrice);
         } else {
-            listGoods[index].sellPrice = buyPrice;
-            return buyPrice;
+            return Mathf.Clamp(listGoods[index].sellPrice -= 500, minPrice, maxPrice);
         }
+
+
+        // if (price <= maxPrice && price >= minPrice)
+        // {
+        //     listGoods[index].sellPrice = price;
+        //     return price;
+        // } else {
+        //     listGoods[index].sellPrice = buyPrice;
+        //     return buyPrice;
+        // }
     }
 
     public void GenerateList(Item item) {
@@ -50,6 +58,7 @@ public class Display : Interactable
 
     public override void OnInteract(ItemInteract broadcaster)
     {
+        displayUI.SetActive(true);
         this.broadcaster = broadcaster;
         director.Play();
         ToggleHighlight(false);
@@ -63,6 +72,7 @@ public class Display : Interactable
     }
 
     private void CloseDisplay() {
+        displayUI.SetActive(false);
         director.Stop();
         EnableHighlight(true);
         broadcaster.canvas.SetActive(true);
