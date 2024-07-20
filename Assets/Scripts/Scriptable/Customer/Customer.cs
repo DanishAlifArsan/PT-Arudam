@@ -10,4 +10,5 @@ public class Customer : ScriptableObject
     public int maxNumberOfGoods = 1;
     public int buyAmountPerGoods = 1;
     public CustomerAI prefab;
+    public bool isEvil = false;
 }

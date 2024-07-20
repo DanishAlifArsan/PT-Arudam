@@ -8,6 +8,7 @@ public class CustomerBuy : IState
     public void EnterState(CustomerAI customer, StateManager stateManager)
     {
         customer.dialogueBubbleUI.SetActive(true);
+        CustomerManager.instance.currentCustomer = customer;
         SaleManager.instance.SetupTable(customer.goodsToBuy.Values.Max(), customer.goodsToBuy.Count);
     }
 
@@ -19,6 +20,7 @@ public class CustomerBuy : IState
             stateManager.SwitchState(customer, stateManager.pay);
         } else if(customer.isWalking) {    
             SaleManager.instance.EmptyTable();
+            CustomerManager.instance.currentCustomer = null;
             stateManager.SwitchState(customer, stateManager.walk);
         }
     }

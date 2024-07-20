@@ -18,6 +18,7 @@ public class CustomerAI : Interactable
     public bool isPaying;
     public int maxNumberOfGoods;
     public int buyAmountPerGoods;
+    public bool isEvil;
     private StateManager stateManager;
     [SerializeField] private DialogueBubble dialogueBubble;
     [SerializeField] private RectTransform boxHolder;

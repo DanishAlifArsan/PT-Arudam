@@ -13,6 +13,7 @@ public class CustomerManager : MonoBehaviour
     public List<CustomerAI> customerQueue = new List<CustomerAI>();
     public static CustomerManager instance;
     public bool isSpawned = false;
+    public CustomerAI currentCustomer;
 
     private void Awake()
     {
@@ -35,6 +36,7 @@ public class CustomerManager : MonoBehaviour
             instantiatedCustomer.waitDuration = item.patience;
             instantiatedCustomer.maxNumberOfGoods = item.maxNumberOfGoods;
             instantiatedCustomer.buyAmountPerGoods = item.buyAmountPerGoods;
+            instantiatedCustomer.isEvil = item.isEvil;
             instantiatedCustomer.gameObject.SetActive(false);
             customerQueue.Add(instantiatedCustomer);
         }

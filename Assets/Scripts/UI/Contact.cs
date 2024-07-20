@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Contact : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Call() {
+        if (CustomerManager.instance.currentCustomer != null)
+        {
+            CustomerAI currentCustomer = CustomerManager.instance.currentCustomer;
+            if (currentCustomer.isEvil)
+            {
+                ScrollingText.instance.Show("Tangkap dia jangan sampai kabur");
+            } else {
+                ScrollingText.instance.Show("Perhatikan lagi sketsa yang ku kasih");
+            }
+        } else {
+             ScrollingText.instance.Show("Waspada sosok penjahat");
+        }       
     }
 }

@@ -16,6 +16,7 @@ public class CustomerPay : IState
         if (!SaleManager.instance.isTransaction)
         {
             SaleManager.instance.EmptyTable();
+            CustomerManager.instance.currentCustomer = null;
             stateManager.SwitchState(customer, stateManager.walk);
         }
     }
