@@ -117,6 +117,8 @@ public class CustomerAI : Interactable
             {
                 broadcaster.itemInHand = null;
                 SaleManager.instance.PlaceItem(goodsToBuy, item);
+                patienceBar.fillAmount = 1;
+                waitTimer = waitDuration;
                 if (SaleManager.instance.CompareItem())
                 {
                     isPaying = true;

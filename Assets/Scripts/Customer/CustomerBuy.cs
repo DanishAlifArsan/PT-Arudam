@@ -16,7 +16,6 @@ public class CustomerBuy : IState
         customer.isBuying = true;
         if (customer.isPaying)
         {
-            SaleManager.instance.EmptyTable();
             stateManager.SwitchState(customer, stateManager.pay);
         } else if(customer.isWalking) {    
             SaleManager.instance.EmptyTable();
