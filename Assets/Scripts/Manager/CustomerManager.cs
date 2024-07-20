@@ -77,4 +77,9 @@ public class CustomerManager : MonoBehaviour
         int index = Random.Range(0, customerQueue.Count);
         customerQueue[index].gameObject.SetActive(true);
     }
+
+    public void DespawnCustomer(CustomerAI customer) {
+        Destroy(customer.gameObject);
+        customerQueue.Remove(customer);
+    }
 }
