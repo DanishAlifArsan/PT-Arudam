@@ -10,7 +10,7 @@ public class SectionTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Wall")) {
             GameObject random = groundSection[Random.Range(0, groundSection.Count)];
 
-            Instantiate(random, new Vector3(18f, -1.331278f, -2.9f), Quaternion.identity);
+            Instantiate(random, new Vector3(20f, -1.331278f, -2.9f), Quaternion.identity);
         }
     }
 }
