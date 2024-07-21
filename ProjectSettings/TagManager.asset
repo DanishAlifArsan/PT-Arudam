@@ -9,6 +9,7 @@ TagManager:
   - People
   - Wall
   - Destroy
+  - Obstacle
   layers:
   - Default
   - TransparentFX
