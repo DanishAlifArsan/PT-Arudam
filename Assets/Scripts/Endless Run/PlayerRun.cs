@@ -10,6 +10,7 @@ public class PlayerRun : MonoBehaviour
     [SerializeField] Collider standingCollider;
     [SerializeField] Collider crouchCollider;
     [SerializeField] private float crouchDuration;
+    [SerializeField] private ProgressBar progressBar;
     private Rigidbody rb;
     private bool isJump, isCrouch;
     private void Start() {
@@ -50,7 +51,7 @@ public class PlayerRun : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Obstacle")) {
-            Debug.Log("Hit Obstacle");
+            progressBar.DamagePlayer();
         }
     }
 }
