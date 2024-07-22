@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProgressBar : MonoBehaviour
 {
-    [SerializeField] private float endPos;
+    [SerializeField] private RectTransform endPos;
     [SerializeField] private RectTransform playerIcon;
     [SerializeField] private RectTransform enemyIcon;
     [SerializeField] private float startingSpeed;
@@ -14,6 +14,7 @@ public class ProgressBar : MonoBehaviour
     [SerializeField] private float accelerationRate;
     [SerializeField] private float decreasingRate;
     [SerializeField] private float stopTime;
+    [SerializeField] private float distance;
     private float decreasingCooldown = 4;
     private float decreasingTime = 0;
     private bool isStopped = false;
@@ -52,6 +53,11 @@ public class ProgressBar : MonoBehaviour
 
         float playerPosX = playerIcon.transform.localPosition.x + Time.deltaTime * startingSpeed;
         playerIcon.transform.localPosition = new Vector2(playerPosX, playerIcon.transform.localPosition.y);
+
+        if (Vector2.Distance(enemyIcon.localPosition, endPos.localPosition) <= distance)
+        {
+            Debug.Log("Player lose");
+        }
     }
 
     public void DamagePlayer() {
@@ -62,5 +68,9 @@ public class ProgressBar : MonoBehaviour
         isStopped = true;
         yield return new WaitForSeconds(stopTime);
         isStopped = false;
+    }
+
+    public bool CheckDistance() {
+        return Vector2.Distance(playerIcon.localPosition, enemyIcon.localPosition) <= distance;
     }
 }
