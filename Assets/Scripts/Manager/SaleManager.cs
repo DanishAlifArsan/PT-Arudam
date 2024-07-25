@@ -65,6 +65,10 @@ public class SaleManager : MonoBehaviour
         goodsPlaced.Clear();
     }
 
+    public void DisableInteract() {
+        table.DisableInteract();
+    }
+
     public bool IsGridNull() {
         return table.IsGridNull();
     }

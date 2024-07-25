@@ -6,6 +6,7 @@ public class CustomerPay : IState
 {
     public void EnterState(CustomerAI customer, StateManager stateManager)
     {
+        SaleManager.instance.DisableInteract();
         customer.dialogueBubbleUI.SetActive(false);
         customer.isWalking = false;
         SaleManager.instance.StartTransaction(customer.CountTotalPrice());

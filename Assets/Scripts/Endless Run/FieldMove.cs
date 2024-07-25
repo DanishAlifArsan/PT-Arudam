@@ -7,7 +7,7 @@ public class FieldMove : MonoBehaviour
    [SerializeField] private float moveSpeed;
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
         transform.Translate(Vector3.left * moveSpeed, Space.World);
     }

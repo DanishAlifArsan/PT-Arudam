@@ -19,6 +19,7 @@ public class Box : Interactable
             EnableHighlight(false);
             transform.SetParent(broadcaster.playerHand);
             transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;  
             broadcaster.itemInHand = transform;
         }   
     }

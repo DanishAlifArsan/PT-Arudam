@@ -42,6 +42,13 @@ public class Table : MonoBehaviour
         grid.dictionary.Clear();
     }
 
+    public void DisableInteract() {
+        foreach (var item in grid.dictionary)
+        {
+            item.Value.canInteract = false;
+        }
+    }
+
     public bool IsGridNull() {
         return grid.dictionary.ContainsValue(null);
     }

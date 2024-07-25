@@ -9,13 +9,14 @@ public class Item : Interactable
     public Storage storage;
     public Table table;
     public bool isOnBox = true;
+    public bool canInteract = true;
     private void Start() {
         EnableHighlight(false);
     }
 
     public override void OnInteract(ItemInteract broadcaster)
     {
-        if (!isOnBox && broadcaster.itemInHand == null) {
+        if (!isOnBox && broadcaster.itemInHand == null && canInteract) {
             if (storage != null )
             {
                 storage.RemoveItem(this);

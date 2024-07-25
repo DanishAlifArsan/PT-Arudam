@@ -23,6 +23,7 @@ public class CustomerBuy : IState
             SaleManager.instance.EmptyTable();
             CustomerManager.instance.currentCustomer = null;
             stateManager.SwitchState(customer, stateManager.walk);
+            MinigameManager.instance.EndlessRun();
         }
     }
 }

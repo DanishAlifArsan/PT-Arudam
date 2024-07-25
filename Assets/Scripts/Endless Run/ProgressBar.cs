@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ProgressBar : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class ProgressBar : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
 
         float enemyPosX = enemyIcon.transform.localPosition.x + Time.deltaTime * enemySpeed;
@@ -56,7 +57,7 @@ public class ProgressBar : MonoBehaviour
 
         if (Vector2.Distance(enemyIcon.localPosition, endPos.localPosition) <= distance)
         {
-            Debug.Log("Player lose");
+            SceneManager.LoadScene(0);
         }
     }
 

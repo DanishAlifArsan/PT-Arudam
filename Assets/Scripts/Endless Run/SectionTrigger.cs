@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SectionTrigger : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class SectionTrigger : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("People"))
         {
-            Debug.Log("Player wins");
+            SceneManager.LoadScene(0);
         }
     }
 }
