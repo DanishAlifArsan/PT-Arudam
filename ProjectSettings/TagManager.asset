@@ -10,6 +10,8 @@ TagManager:
   - Wall
   - Destroy
   - Obstacle
+  - Full
+  - Half
   layers:
   - Default
   - TransparentFX
