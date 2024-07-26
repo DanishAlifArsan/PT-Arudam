@@ -8,10 +8,11 @@ public class Slider : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Vector3 start;
     [SerializeField] private Vector3 end;
+    [SerializeField] private Health health;
     private bool colliderFlag = false;
     private Status sliderStatus;
 
-    enum Status
+    public enum Status
     {
         Full,
         Half,
@@ -35,7 +36,7 @@ public class Slider : MonoBehaviour
     }
 
     private void ResetPosition() {
-        Debug.Log(sliderStatus);
+        health.Damage(sliderStatus);
         transform.localPosition = start;
         colliderFlag = false;
     }
@@ -44,16 +45,16 @@ public class Slider : MonoBehaviour
         switch (other.tag)
            {
             case "Full":
-            sliderStatus = Status.Full;
-            colliderFlag = true;
+                sliderStatus = Status.Full;
+                colliderFlag = true;
                 break;
             case "Half":
-            sliderStatus = Status.Half;
-            colliderFlag = true;
+                sliderStatus = Status.Half;
+                colliderFlag = true;
                 break;
             default:
-            sliderStatus = Status.Miss;
-            colliderFlag = true;
+                sliderStatus = Status.Miss;
+                colliderFlag = true;
                 break;
            }
     }

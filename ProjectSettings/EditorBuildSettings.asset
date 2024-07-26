@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChasingScene.unity
     guid: c49709bd6585cf14e9352e70cf7c041d
+  - enabled: 1
+    path: Assets/Scenes/BattleScene.unity
+    guid: 5f0bfaf558d29c347a15c7a333f19850
   m_configObjects: {}
