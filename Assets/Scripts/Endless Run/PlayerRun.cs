@@ -7,8 +7,7 @@ public class PlayerRun : MonoBehaviour
     [SerializeField] private float jumpPower;
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
-    [SerializeField] Collider standingCollider;
-    [SerializeField] Collider crouchCollider;
+    [SerializeField] CapsuleCollider playerCollider;
     [SerializeField] private float crouchDuration;
     [SerializeField] private ProgressBar progressBar;
     private Rigidbody rb;
@@ -40,12 +39,12 @@ public class PlayerRun : MonoBehaviour
     }
 
     private IEnumerator Crouch() {
-        standingCollider.enabled = false;
-        crouchCollider.enabled = true;
+        playerCollider.center = new Vector3(0, -0.5f, 0);
+        playerCollider.height = 1;
         isCrouch = true;
         yield return new WaitForSeconds(crouchDuration);
-        standingCollider.enabled = true;
-        crouchCollider.enabled = false;
+        playerCollider.center = Vector3.zero;
+        playerCollider.height = 2;
         isCrouch = false;
     }
 
