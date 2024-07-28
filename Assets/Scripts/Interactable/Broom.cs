@@ -28,9 +28,9 @@ public class Broom : Interactable
             transform.SetParent(hand);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
-            broadcaster.itemInHand = transform;
+            broadcaster.itemInHand = this;
             isInteract = true;
-            EnableHighlight(false);
+            ToggleHighlight(broadcaster.centerIndicator, false);
        }
     }
 
@@ -41,6 +41,14 @@ public class Broom : Interactable
         transform.localPosition = startingPos;
         transform.localRotation = Quaternion.identity;
         isInteract = false;
-        EnableHighlight(true);
+        // ToggleHighlight(broadcaster.centerIndicator, true);
+    }
+
+    public override void OnHighlight(ItemInteract broadcaster, bool status)
+    {
+        if (broadcaster.itemInHand == null)
+        {
+            ToggleHighlight(broadcaster.centerIndicator, status);
+        }
     }
 }

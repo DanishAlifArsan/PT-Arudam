@@ -16,11 +16,19 @@ public class Box : Interactable
     public override void OnInteract(ItemInteract broadcaster)
     {
         if (broadcaster.itemInHand == null) {
-            EnableHighlight(false);
+            ToggleHighlight(broadcaster.centerIndicator, false);
             transform.SetParent(broadcaster.playerHand);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;  
-            broadcaster.itemInHand = transform;
+            broadcaster.itemInHand = this;
         }   
+    }
+
+    public override void OnHighlight(ItemInteract broadcaster, bool status)
+    {
+        if (broadcaster.itemInHand == null)
+        {   
+            ToggleHighlight(broadcaster.centerIndicator, status);
+        }
     }
 }

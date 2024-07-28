@@ -9,13 +9,13 @@ public class ItemInteract : MonoBehaviour
     public Transform playerHand;
     public Transform itemHand;
     [SerializeField] private float pickupRange;
-    public Transform itemInHand;
+    public Interactable itemInHand;
     public bool canInteract = true;
     public GameObject canvas;
     private Camera cam;
     private bool hasHighlighted = false;
-    [SerializeField] private InteractIndicator centerIndicator;
-    [SerializeField] private InteractIndicator sideIndicator;
+    public InteractIndicator centerIndicator;
+    public InteractIndicator sideIndicator;
 
     private void Awake() {
         cam = Camera.main;
@@ -45,34 +45,46 @@ public class ItemInteract : MonoBehaviour
 
         if (other.CompareTag("Item"))
         {
+            Interactable item = other.GetComponent<Interactable>();
+            item.OnHighlight(this, true);
             hasHighlighted = true;
-            Interactable item = other.GetComponent<Interactable>();
-            item?.ToggleHighlight(true, centerIndicator);
-        } else if (other.CompareTag("Storage"))
-        {
-            Interactable item = other.GetComponent<Interactable>();
-            if(itemInHand != null) {
-                hasHighlighted = true;
-                item.ToggleHighlight(true, centerIndicator);
-            } else {
-                hasHighlighted = false;
-                item.ToggleHighlight(false, centerIndicator);
-            }
         }
+
+        // if (other.CompareTag("Item"))
+        // {
+        //     hasHighlighted = true;
+        //     item?.OnHighlight(this);
+        // } else if (other.CompareTag("Storage"))
+        // {
+        //     if(itemInHand != null) {
+        //         hasHighlighted = true;
+        //         item.ToggleHighlight(true, centerIndicator);
+        //     } else {
+        //         hasHighlighted = false;
+        //         item.ToggleHighlight(false, centerIndicator);
+        //     }
+        // }
     }
 
     private void OnTriggerExit(Collider other) {
         if (other.CompareTag("Item"))
         {
             Interactable item = other.GetComponent<Interactable>();
-            item?.ToggleHighlight(false, centerIndicator);
-            hasHighlighted = false;
-        } else if (other.CompareTag("Storage"))
-        {
-            Interactable item = other.GetComponent<Interactable>();
-            item.ToggleHighlight(false, centerIndicator);
+            item?.OnHighlight(this, false);
             hasHighlighted = false;
         }
+
+        // if (other.CompareTag("Item"))
+        // {
+        //     Interactable item = other.GetComponent<Interactable>();
+        //     item?.ToggleHighlight(false, centerIndicator);
+        //     hasHighlighted = false;
+        // } else if (other.CompareTag("Storage"))
+        // {
+        //     Interactable item = other.GetComponent<Interactable>();
+        //     item.ToggleHighlight(false, centerIndicator);
+        //     hasHighlighted = false;
+        // }
     }
 
     public void SetIndicator(bool status, string name = "") {

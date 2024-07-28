@@ -28,8 +28,7 @@ public class Phone : Interactable
         
         this.broadcaster = broadcaster;
         broadcaster.SetIndicator(true,"Tutup");
-        // ToggleHighlight(false);
-        EnableHighlight(false);
+        ToggleHighlight(broadcaster.centerIndicator, false);
         broadcaster.controller.enabled = false;
         broadcaster.canInteract = false;
         Cursor.lockState = CursorLockMode.None;
@@ -42,12 +41,10 @@ public class Phone : Interactable
     public void OpenApp(int index) {
         apps[index].SetActive(true);
         backStack.Push(apps[index]);
-        // Debug.Log(backStack.Peek());
     }
 
     public void CloseApp() {
         GameObject poppedApp = backStack.Pop();
-        // Debug.Log(poppedApp);
         poppedApp.SetActive(false);
 
         if (backStack.Count <= 0) {
@@ -56,7 +53,7 @@ public class Phone : Interactable
     }
 
     public void ClosePhone() {
-        EnableHighlight(true);
+        ToggleHighlight(broadcaster.centerIndicator, true);
         while (backStack.Count > 0) {
             CloseApp();
         }
@@ -68,5 +65,11 @@ public class Phone : Interactable
         phoneScreen.SetActive(false);
         broadcaster = null;
         isInteract = false;
+    }
+
+    public override void OnHighlight(ItemInteract broadcaster, bool status)
+    {
+        if (SaleManager.instance.isTransaction) return;
+        ToggleHighlight(broadcaster.centerIndicator, status);
     }
 }

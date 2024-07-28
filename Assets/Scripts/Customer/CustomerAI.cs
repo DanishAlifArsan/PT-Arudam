@@ -133,4 +133,9 @@ public class CustomerAI : Interactable
             MinigameManager.instance.Battle();
         }
     }
+
+    public override void OnHighlight(ItemInteract broadcaster, bool status)
+    {
+        throw new System.NotImplementedException();
+    }
 }

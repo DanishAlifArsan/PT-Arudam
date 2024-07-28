@@ -7,7 +7,6 @@ using UnityEngine;
 public class Storage : Interactable
 {
     [SerializeField] private int storageSize;
-
     public Dictionary<float, Item> itemDictionary;
 
     private void Awake() {
@@ -25,22 +24,31 @@ public class Storage : Interactable
 
     public override void OnInteract(ItemInteract broadcaster)
     {
-        if (broadcaster.itemInHand != null && itemDictionary.ContainsValue(null))
+        Interactable itemInHand = broadcaster.itemInHand;
+        if (itemInHand != null && itemDictionary.ContainsValue(null) && ItemManager.instance.IsHoldItem(itemInHand.itemType))
         {
-            //masukkan item ke storage
-            var box = broadcaster.itemInHand.GetComponent<Box>();
+            //masukkan item ke storage         
             Item item;
-            if (box != null) {
-                if (box.itemStack.Count > 0)
-                {   
-                    item = box.itemStack.Pop();
-                    item.goods = ItemManager.instance.SetGoods(item.id);
-                } else {
+
+            switch (itemInHand.itemType)
+            {
+                case ItemType.Box:
+                    var box = broadcaster.itemInHand.GetComponent<Box>();
+                    if (box.itemStack.Count > 0)
+                    {   
+                        item = box.itemStack.Pop();
+                        item.goods = ItemManager.instance.SetGoods(item.id);
+                    } else {
+                        item = null;
+                    }
+                    break;
+                case ItemType.Goods:
+                    item = broadcaster.itemInHand.GetComponent<Item>();
+                    broadcaster.itemInHand = null;
+                    break;
+                default:
                     item = null;
-                }
-            } else {
-                item = broadcaster.itemInHand.GetComponent<Item>();
-                broadcaster.itemInHand = null;
+                    break;
             }
 
             if (item != null) {
@@ -61,7 +69,6 @@ public class Storage : Interactable
                 item.transform.localRotation = Quaternion.identity;
                 item.storage = this;
                 item.isOnBox = false;
-                item.EnableHighlight(true);
                 itemDictionary[itemDictionary.ElementAt(i).Key] = item;
                 AddToList(item);
                 break;      
@@ -76,5 +83,13 @@ public class Storage : Interactable
     public void RemoveItem(Item item) {
         itemDictionary[item.transform.localPosition.x] = null;
         item.storage = null;
+    }
+
+    public override void OnHighlight(ItemInteract broadcaster, bool status)
+    {
+        Interactable item = broadcaster.itemInHand;
+        if (item != null && itemDictionary.ContainsValue(null) && ItemManager.instance.IsHoldItem(item.itemType)){
+            ToggleHighlight(broadcaster.centerIndicator, status);
+        }
     }
 }

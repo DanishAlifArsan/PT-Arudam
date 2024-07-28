@@ -10,9 +10,6 @@ public class Item : Interactable
     public Table table;
     public bool isOnBox = true;
     public bool canInteract = true;
-    private void Start() {
-        EnableHighlight(false);
-    }
 
     public override void OnInteract(ItemInteract broadcaster)
     {
@@ -29,8 +26,16 @@ public class Item : Interactable
             transform.SetParent(broadcaster.itemHand);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
-            broadcaster.itemInHand = transform;
-            EnableHighlight(false);
+            broadcaster.itemInHand = this;
+            ToggleHighlight(broadcaster.centerIndicator, false);
+        }
+    }
+
+    public override void OnHighlight(ItemInteract broadcaster, bool status)
+    {
+        if (!isOnBox && broadcaster.itemInHand == null && canInteract)
+        {
+            ToggleHighlight(broadcaster.centerIndicator, status);
         }
     }
 }

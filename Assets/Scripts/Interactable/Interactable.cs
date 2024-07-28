@@ -4,15 +4,10 @@ public abstract class Interactable : MonoBehaviour
 {
     [SerializeField] protected Highlight highlight;
     public abstract void OnInteract(ItemInteract broadcaster);
+    public abstract void OnHighlight(ItemInteract broadcaster, bool status);
+    public ItemType itemType;
 
-    public void ToggleHighlight(bool status, InteractIndicator indicator) {
-        highlight?.ToggleHighlight(status, indicator);
-    }
-
-    public void EnableHighlight(bool status) {
-        if (highlight != null)
-        {
-            highlight.isAbleToHighlight = status;
-        }
+    public void ToggleHighlight(InteractIndicator indicator, bool status) {
+        highlight?.ToggleHighlight(indicator, status); 
     }
 }

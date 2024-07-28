@@ -9,12 +9,10 @@ public class Highlight : MonoBehaviour
     private List<Renderer> renderers;
     [SerializeField]
     private Color color = Color.white;
-    [SerializeField] private string highlightName;
+    public string highlightName;
 
     //helper list to cache all the materials ofd this object
     private List<Material> materials;
-
-    public bool isAbleToHighlight = true;
 
     //Gets all the materials from each renderer
     private void Awake()
@@ -28,9 +26,9 @@ public class Highlight : MonoBehaviour
         }
     }
 
-    public void ToggleHighlight(bool val, InteractIndicator indicator)
+    public void ToggleHighlight(InteractIndicator indicator, bool val)
     {
-        if (val && isAbleToHighlight)
+        if (val)
         {
             foreach (var material in materials)
             {

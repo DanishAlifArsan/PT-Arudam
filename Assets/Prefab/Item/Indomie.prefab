@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 7806997109439263385}
+  itemType: 2
   itemList:
   - {fileID: 8967504833332141127}
   - {fileID: 422987599322188789}
@@ -374,7 +375,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 7315459721059951450}
   color: {r: 1, g: 1, b: 1, a: 1}
-  highlightName: Kardus
+  highlightName: Ambil
   isAbleToHighlight: 1
 --- !u!65 &985187745502749977
 BoxCollider:
@@ -534,6 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 5351866289336982897}
+  itemType: 1
   goods: {fileID: 0}
   id: 1
   storage: {fileID: 0}
@@ -677,6 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 4429499395558842479}
+  itemType: 1
   goods: {fileID: 0}
   id: 1
   storage: {fileID: 0}
@@ -820,6 +823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 7844021891945790219}
+  itemType: 1
   goods: {fileID: 0}
   id: 1
   storage: {fileID: 0}
@@ -963,6 +967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 7517894486007320631}
+  itemType: 1
   goods: {fileID: 0}
   id: 1
   storage: {fileID: 0}
@@ -1106,6 +1111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 5773427149193216519}
+  itemType: 1
   goods: {fileID: 0}
   id: 1
   storage: {fileID: 0}
@@ -1249,6 +1255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 7704673641730457458}
+  itemType: 1
   goods: {fileID: 0}
   id: 1
   storage: {fileID: 0}

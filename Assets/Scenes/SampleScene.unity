@@ -588,6 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 16003349}
+  itemType: 0
   manager: {fileID: 313875237}
   value: 5000
   isAbleToInteract: 1
@@ -607,7 +608,6 @@ MonoBehaviour:
   - {fileID: 16003345}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Rp.5000
-  isAbleToHighlight: 1
 --- !u!1 &44159877
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +925,7 @@ GameObject:
   - component: {fileID: 52760180}
   m_Layer: 0
   m_Name: Cube (7)
-  m_TagString: Storage
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1395,6 +1395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 52760180}
+  itemType: 0
   storageSize: 3
 --- !u!114 &52760180
 MonoBehaviour:
@@ -1412,7 +1413,6 @@ MonoBehaviour:
   - {fileID: 52760176}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Simpan
-  isAbleToHighlight: 1
 --- !u!1 &73585650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,7 +1431,7 @@ GameObject:
   - component: {fileID: 73585658}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Storage
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1901,6 +1901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 73585658}
+  itemType: 0
   storageSize: 3
 --- !u!114 &73585658
 MonoBehaviour:
@@ -1918,7 +1919,6 @@ MonoBehaviour:
   - {fileID: 73585654}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Simpan
-  isAbleToHighlight: 1
 --- !u!1 &77102261
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,7 +2327,7 @@ GameObject:
   - component: {fileID: 112922826}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Storage
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2797,6 +2797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 112922826}
+  itemType: 0
   storageSize: 3
 --- !u!114 &112922826
 MonoBehaviour:
@@ -2814,7 +2815,6 @@ MonoBehaviour:
   - {fileID: 112922822}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Simpan
-  isAbleToHighlight: 1
 --- !u!1 &125909506
 GameObject:
   m_ObjectHideFlags: 0
@@ -3873,6 +3873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 167476972}
+  itemType: 0
 --- !u!114 &167476972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3888,8 +3889,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 167476968}
   color: {r: 1, g: 1, b: 1, a: 1}
-  highlightName: Tong Sampah
-  isAbleToHighlight: 1
+  highlightName: Buang
 --- !u!1 &169262283
 GameObject:
   m_ObjectHideFlags: 0
@@ -5375,8 +5375,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 295663454}
   color: {r: 1, g: 1, b: 1, a: 1}
-  highlightName: Saklar
-  isAbleToHighlight: 1
+  highlightName: Nyalakan
 --- !u!114 &295663459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5390,6 +5389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 295663458}
+  itemType: 0
   lamp: {fileID: 89524271}
 --- !u!1 &313875236
 GameObject:
@@ -5627,7 +5627,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60.000004
+  field of view: 56.7
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -5653,8 +5653,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.093493424, y: 0.69938326, z: -0.08999628, w: 0.7028675}
-  m_LocalPosition: {x: 1.06, y: 1.7364775, z: 5.063543}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2.54, y: 1.995, z: 5.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7002,6 +7002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 448813400}
+  itemType: 0
   manager: {fileID: 313875237}
   value: 1000
   isAbleToInteract: 1
@@ -7021,7 +7022,6 @@ MonoBehaviour:
   - {fileID: 448813396}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Rp.1000
-  isAbleToHighlight: 1
 --- !u!1 &451842779
 GameObject:
   m_ObjectHideFlags: 0
@@ -7040,7 +7040,7 @@ GameObject:
   - component: {fileID: 451842787}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Storage
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7510,6 +7510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 451842787}
+  itemType: 0
   storageSize: 3
 --- !u!114 &451842787
 MonoBehaviour:
@@ -7527,7 +7528,6 @@ MonoBehaviour:
   - {fileID: 451842782}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Simpan
-  isAbleToHighlight: 1
 --- !u!1 &455996437
 GameObject:
   m_ObjectHideFlags: 3
@@ -8273,7 +8273,7 @@ GameObject:
   - component: {fileID: 585206156}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Storage
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8743,6 +8743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 585206156}
+  itemType: 0
   storageSize: 3
 --- !u!114 &585206156
 MonoBehaviour:
@@ -8760,7 +8761,6 @@ MonoBehaviour:
   - {fileID: 585206152}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Simpan
-  isAbleToHighlight: 1
 --- !u!1 &602963470
 GameObject:
   m_ObjectHideFlags: 0
@@ -10535,6 +10535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 726203620}
+  itemType: 0
   manager: {fileID: 313875237}
   value: 2000
   isAbleToInteract: 1
@@ -10554,7 +10555,6 @@ MonoBehaviour:
   - {fileID: 726203616}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Rp.2000
-  isAbleToHighlight: 1
 --- !u!1 &792643657
 GameObject:
   m_ObjectHideFlags: 0
@@ -11697,6 +11697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 0}
+  itemType: 0
   agent: {fileID: 0}
   cashierPoint: {fileID: 160381179}
   homePoint: {fileID: 620260393}
@@ -12441,6 +12442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1084671325}
+  itemType: 3
   hand: {fileID: 1998105294}
   startingPos: {x: -1.715757, y: -1.671032, z: -1.295564}
   room: {fileID: 1138704089}
@@ -12460,7 +12462,6 @@ MonoBehaviour:
   - {fileID: 1084671320}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Sapu
-  isAbleToHighlight: 1
 --- !u!95 &1084671326
 Animator:
   serializedVersion: 5
@@ -14087,6 +14088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1180890242}
+  itemType: 0
   phoneScreen: {fileID: 1319987318}
   apps:
   - {fileID: 1665389390}
@@ -14108,7 +14110,6 @@ MonoBehaviour:
   - {fileID: 1180890237}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Ponsel
-  isAbleToHighlight: 1
 --- !u!1 &1216820913
 GameObject:
   m_ObjectHideFlags: 0
@@ -14284,7 +14285,7 @@ GameObject:
   - component: {fileID: 1221871810}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: Storage
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14754,6 +14755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1221871810}
+  itemType: 0
   storageSize: 3
 --- !u!114 &1221871810
 MonoBehaviour:
@@ -14771,7 +14773,6 @@ MonoBehaviour:
   - {fileID: 1221871806}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Simpan
-  isAbleToHighlight: 1
 --- !u!1 &1250171192
 GameObject:
   m_ObjectHideFlags: 0
@@ -16553,6 +16554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1305283587}
+  itemType: 0
   manager: {fileID: 313875237}
   value: 10000
   isAbleToInteract: 1
@@ -16572,7 +16574,6 @@ MonoBehaviour:
   - {fileID: 1305283583}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Rp.10000
-  isAbleToHighlight: 1
 --- !u!1 &1319987318
 GameObject:
   m_ObjectHideFlags: 0
@@ -18855,7 +18856,6 @@ MonoBehaviour:
   - {fileID: 1717187950}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Atur Harga
-  isAbleToHighlight: 1
 --- !u!114 &1717187954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18869,6 +18869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1717187953}
+  itemType: 0
   director: {fileID: 1760674868}
   displayList: {fileID: 1905295302962247738, guid: b0cb30698327d4946b5c192e5ff6463e,
     type: 3}
@@ -19752,7 +19753,7 @@ GameObject:
   - component: {fileID: 1818647624}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Storage
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20222,6 +20223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1818647624}
+  itemType: 0
   storageSize: 3
 --- !u!114 &1818647624
 MonoBehaviour:
@@ -20239,7 +20241,6 @@ MonoBehaviour:
   - {fileID: 1818647620}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Simpan
-  isAbleToHighlight: 1
 --- !u!43 &1834094957
 Mesh:
   m_ObjectHideFlags: 0
@@ -21124,7 +21125,7 @@ GameObject:
   - component: {fileID: 2011420558}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: Storage
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21594,6 +21595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 2011420558}
+  itemType: 0
   storageSize: 3
 --- !u!114 &2011420558
 MonoBehaviour:
@@ -21611,7 +21613,6 @@ MonoBehaviour:
   - {fileID: 2011420554}
   color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Simpan
-  isAbleToHighlight: 1
 --- !u!1 &2019527282
 GameObject:
   m_ObjectHideFlags: 0

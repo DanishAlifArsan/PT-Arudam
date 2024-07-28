@@ -18,8 +18,8 @@ public class MoneyManager : MonoBehaviour
 
     public void CountPayment(Money money) {
         var temp = Instantiate(money, paymentPoint.position, Quaternion.identity,paymentPoint);
-        temp.EnableHighlight(false);
         temp.isAbleToInteract = false;
+        temp.SetName("Bayar");
         moneys.Add(temp);
         totalValue += money.value;
         moneyText.text = totalValue.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));

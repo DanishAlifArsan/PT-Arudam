@@ -21,7 +21,7 @@ public class Table : MonoBehaviour
                 item.transform.localPosition = grid.dictionary.ElementAt(i).Key;
                 item.transform.localRotation = Quaternion.identity;
                 item.table = this;
-                item.EnableHighlight(true);
+                // item.EnableHighlight(true);
                 grid.dictionary[grid.dictionary.ElementAt(i).Key] = item;
                 break;      
             }

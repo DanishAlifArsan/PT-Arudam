@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Money : Interactable
@@ -8,11 +9,27 @@ public class Money : Interactable
 
     public override void OnInteract(ItemInteract broadcaster)
     {
-        if (isAbleToInteract && SaleManager.instance.isTransaction)
+        if (SaleManager.instance.isTransaction)
         {
-            manager.CountPayment(this);
-        } else {
-            manager.ConfirmPayment();
+            if (isAbleToInteract)
+            {
+                manager.CountPayment(this);
+            } else {
+                manager.ConfirmPayment();
+                ToggleHighlight(broadcaster.centerIndicator, false);
+            }
         }
+    }
+
+    public override void OnHighlight(ItemInteract broadcaster, bool status)
+    {
+        if (SaleManager.instance.isTransaction)
+        {
+            ToggleHighlight(broadcaster.centerIndicator, status);
+        }
+    }
+
+    public void SetName(String name) {
+        highlight.highlightName = name;
     }
 }

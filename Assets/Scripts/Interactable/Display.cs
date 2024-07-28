@@ -34,16 +34,6 @@ public class Display : Interactable
         } else {
             return Mathf.Clamp(listGoods[index].sellPrice -= 500, minPrice, maxPrice);
         }
-
-
-        // if (price <= maxPrice && price >= minPrice)
-        // {
-        //     listGoods[index].sellPrice = price;
-        //     return price;
-        // } else {
-        //     listGoods[index].sellPrice = buyPrice;
-        //     return buyPrice;
-        // }
     }
 
     public void GenerateList(Item item) {
@@ -62,8 +52,7 @@ public class Display : Interactable
         this.broadcaster = broadcaster;
         broadcaster.SetIndicator(true,"Kembali");
         director.Play();
-        // ToggleHighlight(false);
-        EnableHighlight(false);
+        ToggleHighlight(broadcaster.centerIndicator, false);
         broadcaster.canvas.SetActive(false);
         broadcaster.controller.enabled = false;
         broadcaster.canInteract = false;
@@ -76,7 +65,7 @@ public class Display : Interactable
         broadcaster.SetIndicator(false);
         displayUI.SetActive(false);
         director.Stop();
-        EnableHighlight(true);
+        ToggleHighlight(broadcaster.centerIndicator, true);
         broadcaster.canvas.SetActive(true);
         broadcaster.controller.enabled = true;
         broadcaster.canInteract = true;
@@ -87,5 +76,10 @@ public class Display : Interactable
 
     public List<Goods> GetGoodsOnSale() {
         return listGoods;
+    }
+
+    public override void OnHighlight(ItemInteract broadcaster, bool status)
+    {
+        ToggleHighlight(broadcaster.centerIndicator, status);
     }
 }

@@ -26,5 +26,9 @@ public class ItemManager : MonoBehaviour
     public void GenerateList(Item item) {
         display.GenerateList(item);
         listGoodsOnSale = display.GetGoodsOnSale();
+    }   
+
+    public bool IsHoldItem(ItemType type) {
+        return type.Equals(ItemType.Goods) || type.Equals(ItemType.Box);
     }
 }
