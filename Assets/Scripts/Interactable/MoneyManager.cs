@@ -18,7 +18,7 @@ public class MoneyManager : MonoBehaviour
 
     public void CountPayment(Money money) {
         var temp = Instantiate(money, paymentPoint.position, Quaternion.identity,paymentPoint);
-        temp.ToggleHighlight(false);
+        temp.EnableHighlight(false);
         temp.isAbleToInteract = false;
         moneys.Add(temp);
         totalValue += money.value;

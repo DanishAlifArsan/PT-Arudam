@@ -56,6 +56,10 @@ public class SaleManager : MonoBehaviour
         }     
     }
 
+    public bool CheckIsTableEmpty() {
+        return table.CheckIsTableEmpty();
+    }
+
     public void RemovePlacedGoods(Item item) {
         goodsPlaced.Remove(item.goods);
     }

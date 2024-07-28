@@ -17,7 +17,7 @@ public class Display : Interactable
     private void Update() {
         if (isInteract)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetMouseButtonDown(1))
             {
                 CloseDisplay();
             }
@@ -60,8 +60,9 @@ public class Display : Interactable
     {
         displayUI.SetActive(true);
         this.broadcaster = broadcaster;
+        broadcaster.SetIndicator(true,"Kembali");
         director.Play();
-        ToggleHighlight(false);
+        // ToggleHighlight(false);
         EnableHighlight(false);
         broadcaster.canvas.SetActive(false);
         broadcaster.controller.enabled = false;
@@ -72,6 +73,7 @@ public class Display : Interactable
     }
 
     private void CloseDisplay() {
+        broadcaster.SetIndicator(false);
         displayUI.SetActive(false);
         director.Stop();
         EnableHighlight(true);

@@ -374,6 +374,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 7315459721059951450}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Kardus
   isAbleToHighlight: 1
 --- !u!65 &985187745502749977
 BoxCollider:
@@ -518,6 +519,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 8540034369672595896}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Mie Instan
   isAbleToHighlight: 1
 --- !u!114 &304744783955754975
 MonoBehaviour:
@@ -537,6 +539,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!1 &2979611266421013442
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +662,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 7781113677657159397}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Mie Instan
   isAbleToHighlight: 1
 --- !u!114 &582012081993376678
 MonoBehaviour:
@@ -678,6 +682,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!1 &6658939528451094297
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,6 +805,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 4077061142080243383}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Mie Instan
   isAbleToHighlight: 1
 --- !u!114 &422987599322188789
 MonoBehaviour:
@@ -819,6 +825,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!1 &7918702938328610617
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,6 +948,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 5208380062410496153}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Mie Instan
   isAbleToHighlight: 1
 --- !u!114 &268854952882542689
 MonoBehaviour:
@@ -960,6 +968,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!1 &8441047188252065590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1091,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 8261855703700145311}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Mie Instan
   isAbleToHighlight: 1
 --- !u!114 &6166665507900840860
 MonoBehaviour:
@@ -1101,6 +1111,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!1 &8531823207728458985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1234,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 7883512049714138428}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Mie Instan
   isAbleToHighlight: 1
 --- !u!114 &8967504833332141127
 MonoBehaviour:
@@ -1242,3 +1254,4 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1

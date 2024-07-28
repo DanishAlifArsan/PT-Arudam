@@ -372,6 +372,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 7315459721059951450}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Kardus
   isAbleToHighlight: 1
 --- !u!65 &4496843182952902038
 BoxCollider:
@@ -521,6 +522,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!114 &7648194495919780606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,6 +538,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 780997573566241226}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Kecap
   isAbleToHighlight: 1
 --- !u!1 &874468877060531431
 GameObject:
@@ -664,6 +667,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!114 &8264553554407634461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,6 +683,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 1666966004233422130}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Kecap
   isAbleToHighlight: 1
 --- !u!1 &4809417239678502860
 GameObject:
@@ -807,6 +812,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!114 &2107217218219520848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,6 +828,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 7581559374345899027}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Kecap
   isAbleToHighlight: 1
 --- !u!1 &9098666284521700455
 GameObject:
@@ -950,6 +957,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!114 &7660144357729620154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,6 +973,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 4609771811212398633}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Kecap
   isAbleToHighlight: 1
 --- !u!1 &9222314697092952935
 GameObject:
@@ -1093,6 +1102,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!114 &4555871430120100168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,4 +1118,5 @@ MonoBehaviour:
   renderers:
   - {fileID: 1139906185624202124}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Kecap
   isAbleToHighlight: 1

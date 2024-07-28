@@ -372,6 +372,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 7315459721059951450}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Kardus
   isAbleToHighlight: 1
 --- !u!65 &4496843182952902038
 BoxCollider:
@@ -498,6 +499,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!114 &5483096615185313908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +515,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 8605730705248053420}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Air Mineral
   isAbleToHighlight: 1
 --- !u!136 &7162887693881637536
 CapsuleCollider:
@@ -641,6 +644,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!114 &5801944461285192345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,6 +660,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 4469285567939421840}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Air Mineral
   isAbleToHighlight: 1
 --- !u!136 &7378146069052764800
 CapsuleCollider:
@@ -784,6 +789,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!114 &5186196571404473220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,6 +805,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 4913980297043721232}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Air Mineral
   isAbleToHighlight: 1
 --- !u!136 &6000313895554980072
 CapsuleCollider:
@@ -927,6 +934,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!114 &4353541181822701664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,6 +950,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 8142031120931193207}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Air Mineral
   isAbleToHighlight: 1
 --- !u!136 &5374585270099684454
 CapsuleCollider:
@@ -1070,6 +1079,7 @@ MonoBehaviour:
   storage: {fileID: 0}
   table: {fileID: 0}
   isOnBox: 1
+  canInteract: 1
 --- !u!114 &146973363235076704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1085,6 +1095,7 @@ MonoBehaviour:
   renderers:
   - {fileID: 3800690298531154955}
   color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: Air Mineral
   isAbleToHighlight: 1
 --- !u!136 &4662483427146934048
 CapsuleCollider:

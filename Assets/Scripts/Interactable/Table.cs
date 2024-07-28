@@ -42,6 +42,10 @@ public class Table : MonoBehaviour
         grid.dictionary.Clear();
     }
 
+    public bool CheckIsTableEmpty() {
+        return grid.dictionary.Values.All (x => x == null);
+    }
+
     public void DisableInteract() {
         foreach (var item in grid.dictionary)
         {

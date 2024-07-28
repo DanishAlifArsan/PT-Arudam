@@ -14,6 +14,8 @@ public class ItemInteract : MonoBehaviour
     public GameObject canvas;
     private Camera cam;
     private bool hasHighlighted = false;
+    [SerializeField] private InteractIndicator centerIndicator;
+    [SerializeField] private InteractIndicator sideIndicator;
 
     private void Awake() {
         cam = Camera.main;
@@ -23,8 +25,7 @@ public class ItemInteract : MonoBehaviour
     {
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, pickupRange))
-        {
-            
+        {   
             Interactable item = hit.collider.GetComponent<Interactable>();
             if (Input.GetMouseButtonDown(0) && canInteract) {
                 Interact(item);
@@ -46,16 +47,16 @@ public class ItemInteract : MonoBehaviour
         {
             hasHighlighted = true;
             Interactable item = other.GetComponent<Interactable>();
-            item?.ToggleHighlight(true);
+            item?.ToggleHighlight(true, centerIndicator);
         } else if (other.CompareTag("Storage"))
         {
             Interactable item = other.GetComponent<Interactable>();
             if(itemInHand != null) {
                 hasHighlighted = true;
-                item.ToggleHighlight(true);
+                item.ToggleHighlight(true, centerIndicator);
             } else {
                 hasHighlighted = false;
-                item.ToggleHighlight(false);
+                item.ToggleHighlight(false, centerIndicator);
             }
         }
     }
@@ -64,13 +65,18 @@ public class ItemInteract : MonoBehaviour
         if (other.CompareTag("Item"))
         {
             Interactable item = other.GetComponent<Interactable>();
-            item?.ToggleHighlight(false);
+            item?.ToggleHighlight(false, centerIndicator);
             hasHighlighted = false;
         } else if (other.CompareTag("Storage"))
         {
             Interactable item = other.GetComponent<Interactable>();
-            item.ToggleHighlight(false);
+            item.ToggleHighlight(false, centerIndicator);
             hasHighlighted = false;
         }
+    }
+
+    public void SetIndicator(bool status, string name = "") {
+        sideIndicator.gameObject.SetActive(status);
+        sideIndicator.SetName(name);
     }
 }

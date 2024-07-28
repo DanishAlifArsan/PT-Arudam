@@ -16,7 +16,7 @@ public class Phone : Interactable
     private void Update() {
         if (isInteract)
         {
-            if (Input.GetKeyDown(KeyCode.Escape) ) {
+            if (Input.GetMouseButtonDown(1) ) {
                 ClosePhone();
             }
         }
@@ -27,7 +27,8 @@ public class Phone : Interactable
         if (SaleManager.instance.isTransaction) return;
         
         this.broadcaster = broadcaster;
-        ToggleHighlight(false);
+        broadcaster.SetIndicator(true,"Tutup");
+        // ToggleHighlight(false);
         EnableHighlight(false);
         broadcaster.controller.enabled = false;
         broadcaster.canInteract = false;
@@ -59,6 +60,7 @@ public class Phone : Interactable
         while (backStack.Count > 0) {
             CloseApp();
         }
+        broadcaster.SetIndicator(false);
         broadcaster.canInteract = true;
         broadcaster.controller.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;

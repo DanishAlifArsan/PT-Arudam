@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MinigameManager : MonoBehaviour
 {
     [SerializeField] private PlayableDirector endlessrunDirector;
-
+    [SerializeField] private PlayableDirector battleDirector;
     public static MinigameManager instance;
 
     private void Awake()
@@ -25,5 +25,9 @@ public class MinigameManager : MonoBehaviour
 
     public void SwitchScene(int scene) {
         SceneManager.LoadScene(scene);
+    }
+
+    public void Battle() {
+        battleDirector.Play();
     }
 }

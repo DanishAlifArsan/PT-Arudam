@@ -20,10 +20,13 @@ public class CustomerBuy : IState
             stateManager.SwitchState(customer, stateManager.pay);
         } else if(customer.isWalking) {    
             //kasih minigame kejar kejaran
+            if (!SaleManager.instance.CheckIsTableEmpty())
+            {
+                MinigameManager.instance.EndlessRun();
+            }
             SaleManager.instance.EmptyTable();
             CustomerManager.instance.currentCustomer = null;
             stateManager.SwitchState(customer, stateManager.walk);
-            MinigameManager.instance.EndlessRun();
         }
     }
 }

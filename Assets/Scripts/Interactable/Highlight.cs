@@ -9,6 +9,7 @@ public class Highlight : MonoBehaviour
     private List<Renderer> renderers;
     [SerializeField]
     private Color color = Color.white;
+    [SerializeField] private string highlightName;
 
     //helper list to cache all the materials ofd this object
     private List<Material> materials;
@@ -27,7 +28,7 @@ public class Highlight : MonoBehaviour
         }
     }
 
-    public void ToggleHighlight(bool val)
+    public void ToggleHighlight(bool val, InteractIndicator indicator)
     {
         if (val && isAbleToHighlight)
         {
@@ -38,6 +39,8 @@ public class Highlight : MonoBehaviour
                 //before we can set the color
                 material.SetColor("_EmissionColor", color);
             }
+            indicator?.gameObject.SetActive(true);
+            indicator?.SetName(highlightName);
         }
         else
         {
@@ -47,6 +50,8 @@ public class Highlight : MonoBehaviour
                 //if we don't use emission color anywhere else
                 material.DisableKeyword("_EMISSION");
             }
+            indicator?.gameObject.SetActive(false);
+            indicator?.SetName("");
         }
     }
 }
