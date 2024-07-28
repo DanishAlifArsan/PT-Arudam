@@ -36,7 +36,7 @@ public class Storage : Interactable
                     var box = broadcaster.itemInHand.GetComponent<Box>();
                     if (box.itemStack.Count > 0)
                     {   
-                        item = box.itemStack.Pop();
+                        item = box.TakeItem();
                         item.goods = ItemManager.instance.SetGoods(item.id);
                     } else {
                         item = null;

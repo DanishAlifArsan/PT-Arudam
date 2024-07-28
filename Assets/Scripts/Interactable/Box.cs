@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class Box : Interactable
 {
+    [SerializeField] private TextMeshProUGUI amountText;
     [SerializeField] private Item[] itemList;
     public Stack<Item> itemStack = new Stack<Item>();
     private void Start() {
@@ -11,6 +14,7 @@ public class Box : Interactable
         {
             itemStack.Push(item);
         }
+        amountText.text = itemStack.Count + "/" + itemList.Length;
     }
 
     public override void OnInteract(ItemInteract broadcaster)
@@ -30,5 +34,11 @@ public class Box : Interactable
         {   
             ToggleHighlight(broadcaster.centerIndicator, status);
         }
+    }
+
+    public Item TakeItem() {
+        Item item = itemStack.Pop();
+        amountText.text = itemStack.Count + "/" + itemList.Length;
+        return item;
     }
 }
