@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 8500321926399127889}
   - component: {fileID: 6920609623701913258}
   - component: {fileID: 7346390698439875580}
+  - component: {fileID: 3719607098405811239}
   m_Layer: 6
   m_Name: Bu Haji
-  m_TagString: People
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,20 +145,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816d62bfd530bea41b3f47d6e0c34bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlight: {fileID: 0}
+  highlight: {fileID: 3719607098405811239}
+  itemType: 0
   agent: {fileID: 6920609623701913258}
   cashierPoint: {fileID: 0}
   homePoint: {fileID: 0}
   waitDuration: 0
   isWalking: 0
   isBuying: 0
+  isPaying: 0
   maxNumberOfGoods: 0
   buyAmountPerGoods: 0
+  isEvil: 0
   dialogueBubble: {fileID: 7133795642640440935, guid: 1e6a1abf1f100034ba26d85b61637f59,
     type: 3}
   boxHolder: {fileID: 9039864561149305326}
   patienceBar: {fileID: 348954459200392200}
   dialogueBubbleUI: {fileID: 5806562121835454019}
+--- !u!114 &3719607098405811239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400526148999669279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751336dd8bbf3384f93cc4604cdb3dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 3658671712906741444}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  highlightName: 
 --- !u!1 &5806562121835454019
 GameObject:
   m_ObjectHideFlags: 0

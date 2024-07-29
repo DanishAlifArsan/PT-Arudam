@@ -7,6 +7,7 @@ public class CustomerBuy : IState
 {
     public void EnterState(CustomerAI customer, StateManager stateManager)
     {
+        customer.SetGoodsToBuy();
         customer.dialogueBubbleUI.SetActive(true);
         CustomerManager.instance.currentCustomer = customer;
         SaleManager.instance.SetupTable(customer.goodsToBuy.Values.Max(), customer.goodsToBuy.Count);
@@ -17,9 +18,10 @@ public class CustomerBuy : IState
         customer.isBuying = true;
         if (customer.isPaying)
         {
+            customer.ClearGoodsToBuy();
             stateManager.SwitchState(customer, stateManager.pay);
-        } else if(customer.isWalking) {    
-            //kasih minigame kejar kejaran
+        } else if(customer.isWalking) {   
+            customer.ClearGoodsToBuy(); 
             if (!SaleManager.instance.CheckIsTableEmpty())
             {
                 MinigameManager.instance.EndlessRun();

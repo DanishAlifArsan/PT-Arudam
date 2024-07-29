@@ -6,9 +6,12 @@ using UnityEngine;
 public class CustomerManager : MonoBehaviour
 {
     [SerializeField] private List<Customer> customerList;
+    [SerializeField] private List<Customer> evilCustomerList;
     [SerializeField] private float spawnInterval;
+    [SerializeField] private int spawnCount;
     private float spawnTimer = 0;
-    public Transform homePoint;
+    // public Transform homePoint;
+    public List<Transform> homePoint;
     public Transform cashierPoint;
     public List<CustomerAI> customerQueue = new List<CustomerAI>();
     public static CustomerManager instance;
@@ -25,20 +28,17 @@ public class CustomerManager : MonoBehaviour
 
     private void Start() {
         spawnTimer = spawnInterval;
+        Customer evilCustomer = evilCustomerList[Random.Range(0, evilCustomerList.Count)];
+        Transform evilSpawnPoint = homePoint[Random.Range(0, homePoint.Count)];
+        CustomerAI intantiatedEvilCustomer = Instantiate(evilCustomer.prefab, evilSpawnPoint.position, Quaternion.identity);
+        SetupCustomer(intantiatedEvilCustomer, evilCustomer, evilSpawnPoint);
 
-        foreach (var item in customerList)
+        for (int i = 0; i < spawnCount; i++)
         {
-            CustomerAI instantiatedCustomer =  Instantiate(item.prefab, homePoint.position, Quaternion.identity);
-            instantiatedCustomer.cashierPoint = cashierPoint;
-            instantiatedCustomer.homePoint = homePoint;
-            instantiatedCustomer.agent.speed = item.walkSpeed;
-            instantiatedCustomer.agent.acceleration = item.walkSpeed;
-            instantiatedCustomer.waitDuration = item.patience;
-            instantiatedCustomer.maxNumberOfGoods = item.maxNumberOfGoods;
-            instantiatedCustomer.buyAmountPerGoods = item.buyAmountPerGoods;
-            instantiatedCustomer.isEvil = item.isEvil;
-            instantiatedCustomer.gameObject.SetActive(false);
-            customerQueue.Add(instantiatedCustomer);
+            Customer customer = customerList[Random.Range(0, customerList.Count)];
+            Transform spawnPoint = homePoint[Random.Range(0, homePoint.Count)];
+            CustomerAI instantiatedCustomer =  Instantiate(customer.prefab, spawnPoint.position, Quaternion.identity);
+            SetupCustomer(instantiatedCustomer, customer, spawnPoint);
         }
     }
 
@@ -49,6 +49,19 @@ public class CustomerManager : MonoBehaviour
             SpawnCustomer();
             spawnTimer = spawnInterval;
         }
+    }
+
+    private void SetupCustomer(CustomerAI instantiatedCustomer, Customer origin, Transform homePoint) {
+        instantiatedCustomer.cashierPoint = cashierPoint;
+        instantiatedCustomer.homePoint = homePoint;
+        instantiatedCustomer.agent.speed = origin.walkSpeed;
+        instantiatedCustomer.agent.acceleration = origin.walkSpeed;
+        instantiatedCustomer.waitDuration = origin.patience;
+        instantiatedCustomer.maxNumberOfGoods = origin.maxNumberOfGoods;
+        instantiatedCustomer.buyAmountPerGoods = origin.buyAmountPerGoods;
+        instantiatedCustomer.isEvil = origin.isEvil;
+        instantiatedCustomer.gameObject.SetActive(false);
+        customerQueue.Add(instantiatedCustomer);
     }
 
     public Dictionary<Goods, int> SetGoodsToBuy(int maxNumberOfGoods, int buyAmountPerGoods) {

@@ -132,10 +132,24 @@ public class CustomerAI : Interactable
         {
             MinigameManager.instance.Battle();
         }
+
+        ToggleHighlight(broadcaster.centerIndicator, false);
     }
 
     public override void OnHighlight(ItemInteract broadcaster, bool status)
     {
-        throw new System.NotImplementedException();
+        Interactable item = broadcaster.itemInHand;
+
+        if (item != null)
+        {
+            if (stateManager.currentState == stateManager.buy && item.itemType.Equals(ItemType.Goods))
+            {
+                highlight.highlightName = "Taruh";   
+                ToggleHighlight(broadcaster.centerIndicator, status);
+            } else if(item.itemType.Equals(ItemType.Broom)) {
+                highlight.highlightName = "Usir";   
+                ToggleHighlight(broadcaster.centerIndicator, status);
+            }
+        }
     }
 }

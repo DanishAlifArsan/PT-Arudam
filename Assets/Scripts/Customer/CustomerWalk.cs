@@ -27,12 +27,7 @@ public class CustomerWalk : IState
             customer.isWalking = false;
             if (customer.isBuying)
             {
-                if (customer.isEvil)
-                {
-                    CustomerManager.instance.DespawnCustomer(customer);
-                    return;
-                }
-                stateManager.SwitchState(customer, stateManager.idle);
+                CustomerManager.instance.DespawnCustomer(customer);
             } else {
                 stateManager.SwitchState(customer, stateManager.buy);
             }
