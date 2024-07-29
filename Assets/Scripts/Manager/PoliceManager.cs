@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class PoliceManager : MonoBehaviour
 {
     public static PoliceManager instance;
     [SerializeField] private PoliceAI police;
+    [SerializeField] private PlayableDirector endlessrunDirector;
+    [SerializeField] private PlayableDirector battleDirector;
+    [SerializeField] private PlayableDirector catchDirector;
 
     private void Awake()
     {
@@ -20,26 +24,28 @@ public class PoliceManager : MonoBehaviour
         switch (random)
         {
             case 0:
-                ScrollingText.instance.Show("Laporan diterima segera menuju lokasi");
-                police.StartChasing();
+                StartPolice();
                 break;
             case 1:
-                StartCoroutine(StartBattle());
+                StartBattle();
                 break;
             case 2:   
-                StartCoroutine(StartEndlessRun());
+                StartEndlessRun();
                 break;       
         }
     }
 
-    private IEnumerator StartEndlessRun() {
+    private void StartEndlessRun() {
+        endlessrunDirector.Play();
         ScrollingText.instance.Show("Tangkap dia jangan sampai kabur");
-        yield return new WaitUntil(() => !ScrollingText.instance.isCalling);
-        MinigameManager.instance.EndlessRun();
     }
-    private IEnumerator StartBattle() {
+    private void StartBattle() {
+        battleDirector.Play();
         ScrollingText.instance.Show("Hati-hati dia bersenjata");
-        yield return new WaitUntil(() => !ScrollingText.instance.isCalling);
-        MinigameManager.instance.Battle();
+    }
+    private void StartPolice() {
+        catchDirector.Play();
+        ScrollingText.instance.Show("Laporan diterima segera menuju lokasi");
+        police.StartChasing();
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Contact : MonoBehaviour
 {
+    [SerializeField] private Phone phone;
     public void Call() {
         if (CustomerManager.instance.currentCustomer != null)
         {
@@ -16,6 +17,7 @@ public class Contact : MonoBehaviour
             }
         } else {
              ScrollingText.instance.Show("Waspada sosok penjahat");
-        }       
+        } 
+        phone.ClosePhone();      
     }
 }
