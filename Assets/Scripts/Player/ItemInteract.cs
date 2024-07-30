@@ -49,21 +49,6 @@ public class ItemInteract : MonoBehaviour
             item.OnHighlight(this, true);
             hasHighlighted = true;
         }
-
-        // if (other.CompareTag("Item"))
-        // {
-        //     hasHighlighted = true;
-        //     item?.OnHighlight(this);
-        // } else if (other.CompareTag("Storage"))
-        // {
-        //     if(itemInHand != null) {
-        //         hasHighlighted = true;
-        //         item.ToggleHighlight(true, centerIndicator);
-        //     } else {
-        //         hasHighlighted = false;
-        //         item.ToggleHighlight(false, centerIndicator);
-        //     }
-        // }
     }
 
     private void OnTriggerExit(Collider other) {
@@ -73,18 +58,6 @@ public class ItemInteract : MonoBehaviour
             item?.OnHighlight(this, false);
             hasHighlighted = false;
         }
-
-        // if (other.CompareTag("Item"))
-        // {
-        //     Interactable item = other.GetComponent<Interactable>();
-        //     item?.ToggleHighlight(false, centerIndicator);
-        //     hasHighlighted = false;
-        // } else if (other.CompareTag("Storage"))
-        // {
-        //     Interactable item = other.GetComponent<Interactable>();
-        //     item.ToggleHighlight(false, centerIndicator);
-        //     hasHighlighted = false;
-        // }
     }
 
     public void SetIndicator(bool status, string name = "") {
