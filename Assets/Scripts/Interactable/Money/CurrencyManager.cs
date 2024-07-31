@@ -13,7 +13,7 @@ public class CurrencyManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI decreaseText;
     [SerializeField] private int startingCurrency;
     private Animator increaseAnim, decreaseAnim;
-    private int totalCurrency = 0;
+    public int totalCurrency = 0;
 
     private void Awake()
     {

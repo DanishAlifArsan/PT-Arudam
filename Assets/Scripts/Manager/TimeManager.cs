@@ -14,6 +14,17 @@ public class TimeManager : MonoBehaviour
     private int hours;
     private float minutes;
     private float cycle;
+    public static TimeManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(this.gameObject);
+
+    }
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -33,10 +44,10 @@ public class TimeManager : MonoBehaviour
             minutes = 0;
         }
 
-        if (hours >= endHour)
-        {
-            Setup();
-        }
+        // if (hours >= endHour)
+        // {
+        //     Setup();
+        // }
         SunCycle(cycle/1440);
 
     }
@@ -51,5 +62,13 @@ public class TimeManager : MonoBehaviour
     private void SunCycle(float timePercent) {
         float newRotationX = (timePercent * 360) - 90;
         sunlight.rotation = Quaternion.Euler(newRotationX, sunlight.rotation.eulerAngles.y, sunlight.rotation.eulerAngles.z);
+    }
+
+    public bool NightHour() {
+        return hours >= 19;
+    }
+
+    public bool Midnight() {
+        return hours >= endHour;
     }
 }
