@@ -23,7 +23,8 @@ public class Shop : MonoBehaviour
     }
 
     private void OnButtonClick(int index) {
-        if (DeliveryManager.instance.CanCheckout() && CurrencyManager.instance.CanBuy(totalPrice))
+        //kasih tanda kalau player gak bisa beli, misalnya muncul warning
+        if (DeliveryManager.instance.CanCheckout() && CurrencyManager.instance.CanBuy(totalPrice) && !TimeManager.instance.NightHour())
         {
             DeliveryManager.instance.StartDelivery(listGoods[index].prefab);
             CurrencyManager.instance.RemoveCurrency(totalPrice);

@@ -17,5 +17,10 @@ public class ResultScreen : MonoBehaviour
         electricBillAmountText.text = electricBill.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));
         int result = money - (tax + electricBill);
         resultAmountText.text = result.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));
+
+        if (result <= 0)
+        {
+            //gameover karena bangkrut
+        }
     } 
 }

@@ -16,10 +16,6 @@ public class Bed : Interactable
     {
         if (TimeManager.instance.NightHour() && broadcaster.itemInHand == null)
         {
-            broadcaster.controller.enabled = false;
-            broadcaster.canInteract = false;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
             GameManager.instance.EndDay();
         }
     }
