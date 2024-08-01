@@ -41,12 +41,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void EndDay() {
+        resultScreen.gameObject.SetActive(true);
         player.controller.enabled = false;
         player.canInteract = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0;
-        resultScreen.gameObject.SetActive(true);
         int money = CurrencyManager.instance.totalCurrency; 
         resultScreen.CountMoneyResult(money, tax, 50000);   // todo buat kodingan untuk mengatur listrik
     }
