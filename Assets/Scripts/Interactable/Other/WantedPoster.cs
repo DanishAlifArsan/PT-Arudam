@@ -40,7 +40,6 @@ public class WantedPoster : Interactable
     }
 
     private void ClosePoster() {
-        ToggleHighlight(broadcaster.centerIndicator, true);
         rend.enabled = true;
         broadcaster.canInteract = true;
         broadcaster.controller.enabled = true;
