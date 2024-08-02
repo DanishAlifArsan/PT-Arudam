@@ -30,21 +30,21 @@ public class CustomerManager : MonoBehaviour
         spawnTimer = spawnInterval;
         Customer evilCustomer = evilCustomerList[Random.Range(0, evilCustomerList.Count)];
         Transform evilSpawnPoint = homePoint[Random.Range(0, homePoint.Count)];
-        CustomerAI intantiatedEvilCustomer = Instantiate(evilCustomer.prefab, evilSpawnPoint.position, Quaternion.identity);
+        CustomerAI intantiatedEvilCustomer = Instantiate(evilCustomer.prefab, evilSpawnPoint.position, Quaternion.identity, transform.parent);
         SetupCustomer(intantiatedEvilCustomer, evilCustomer, evilSpawnPoint);
 
         for (int i = 0; i < spawnCount; i++)
         {
             Customer customer = customerList[Random.Range(0, customerList.Count)];
             Transform spawnPoint = homePoint[Random.Range(0, homePoint.Count)];
-            CustomerAI instantiatedCustomer =  Instantiate(customer.prefab, spawnPoint.position, Quaternion.identity);
+            CustomerAI instantiatedCustomer =  Instantiate(customer.prefab, spawnPoint.position, Quaternion.identity, transform.parent);
             SetupCustomer(instantiatedCustomer, customer, spawnPoint);
         }
     }
 
     private void Update() {
         spawnTimer -= Time.deltaTime;
-        if (spawnTimer <= 0 && !isSpawned)
+        if (spawnTimer <= 0 && !isSpawned && customerQueue.Count > 0)
         {
             SpawnCustomer();
             spawnTimer = spawnInterval;

@@ -8,8 +8,10 @@ using UnityEngine;
 public class Table : MonoBehaviour
 {
     Grid grid;
+    public int returnedItemPrice {get; private set;} 
     public void SetupTable(int width, int height) {
         grid = new Grid(width, height);
+        returnedItemPrice = 0;
     }
 
     public void PlaceItem(Item item) {
@@ -37,7 +39,11 @@ public class Table : MonoBehaviour
     public void EmptyTable() {
         foreach (var item in grid.dictionary)
         {
-           Destroy(item.Value?.gameObject);
+            if (item.Value != null)
+            {
+                returnedItemPrice += item.Value.goods.sellPrice;
+            }
+            Destroy(item.Value?.gameObject);
         }
         grid.dictionary.Clear();
     }
@@ -49,7 +55,10 @@ public class Table : MonoBehaviour
     public void DisableInteract() {
         foreach (var item in grid.dictionary)
         {
-            item.Value.canInteract = false;
+            if (item.Value != null)
+            {
+                item.Value.canInteract = false;
+            }
         }
     }
 

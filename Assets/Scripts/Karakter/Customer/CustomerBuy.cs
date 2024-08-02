@@ -24,10 +24,9 @@ public class CustomerBuy : IState
             customer.ClearGoodsToBuy(); 
             if (!SaleManager.instance.CheckIsTableEmpty())
             {
-                MinigameManager.instance.EndlessRun();
+                MinigameManager.instance.StartRunning(false);
             }
             SaleManager.instance.EmptyTable();
-            CustomerManager.instance.currentCustomer = null;
             stateManager.SwitchState(customer, stateManager.walk);
         }
     }

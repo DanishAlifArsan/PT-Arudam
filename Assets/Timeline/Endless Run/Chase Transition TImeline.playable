@@ -306,7 +306,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Police Camera
+    m_DisplayName: Player camera static
   m_Markers:
     m_Objects: []
 --- !u!114 &2089205073281121984
@@ -331,9 +331,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips: []
   m_Markers:
-    m_Objects:
-    - {fileID: 3085468316358812063}
-    - {fileID: 8447685273418309657}
+    m_Objects: []
 --- !u!114 &2637370377185588318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,22 +348,6 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: 873f64677ad14cd4bb5293f27eeee515
     defaultValue: {fileID: 0}
---- !u!114 &3085468316358812063
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
-  m_Name: Signal Emitter
-  m_EditorClassIdentifier: 
-  m_Time: 0.48333333333333334
-  m_Retroactive: 0
-  m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: 229af7536092efd4cae50ae62055892c, type: 2}
 --- !u!114 &3642885704295393903
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -382,19 +364,3 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: 24c2a0f6a3152e842a6070c46ed5d95d
     defaultValue: {fileID: 0}
---- !u!114 &8447685273418309657
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
-  m_Name: Signal Emitter
-  m_EditorClassIdentifier: 
-  m_Time: 0.48333333333333334
-  m_Retroactive: 0
-  m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: 229af7536092efd4cae50ae62055892c, type: 2}

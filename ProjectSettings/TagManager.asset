@@ -12,6 +12,7 @@ TagManager:
   - Obstacle
   - Full
   - Half
+  - Platform
   layers:
   - Default
   - TransparentFX

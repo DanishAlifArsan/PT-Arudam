@@ -20,19 +20,20 @@ public class PoliceManager : MonoBehaviour
     }
     
     public void StartChasing() {
-        int random = Random.Range(0,3);
-        switch (random)
-        {
-            case 0:
-                StartPolice();
-                break;
-            case 1:
-                StartBattle();
-                break;
-            case 2:   
-                StartEndlessRun();
-                break;       
-        }
+        // int random = Random.Range(0,3);
+        // switch (random)
+        // {
+        //     case 0:
+        //         StartPolice();
+        //         break;
+        //     case 1:
+        //         StartBattle();
+        //         break;
+        //     case 2:   
+        //         StartEndlessRun();
+        //         break;       
+        // }
+        StartEndlessRun();
     }
 
     private void StartEndlessRun() {
