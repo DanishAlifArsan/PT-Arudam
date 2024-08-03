@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float enemyHealth;
     [SerializeField] private Image playerHealthBar;
     [SerializeField] private Image enemyHealthBar;
+    [SerializeField] private PlayableDirector battleEndDirector;
 
     private float currentPlayerHealth, currentEnemyHealth;
 
@@ -41,7 +43,7 @@ public class Health : MonoBehaviour
 
         if (currentPlayerHealth <= 0)
         {
-            SceneManager.LoadScene(0);
+            battleEndDirector.Play();
         }
     }
 
@@ -51,7 +53,11 @@ public class Health : MonoBehaviour
 
         if (currentEnemyHealth <= 0)
         {
-            SceneManager.LoadScene(0);
+            battleEndDirector.Play();
         }
+    }
+
+    public void BattleEnd() {
+        SceneManager.LoadScene(0);
     }
 }

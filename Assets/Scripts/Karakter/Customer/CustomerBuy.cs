@@ -27,11 +27,13 @@ public class CustomerBuy : IState
             if (!SaleManager.instance.CheckIsTableEmpty() && !isRunning)
             {
                 EndlessRunManager.instance.StartRunning(false);
+                EndlessRunManager.instance.chasedCustomer = customer;
                 isRunning = true;
             } else {
                 SaleManager.instance.EmptyTable();
-                stateManager.SwitchState(customer, stateManager.walk);
             }
+            stateManager.SwitchState(customer, stateManager.walk);
+            CustomerManager.instance.currentCustomer = null;
         }
     }
 }

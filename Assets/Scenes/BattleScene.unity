@@ -382,6 +382,7 @@ MonoBehaviour:
   enemyHealth: 5
   playerHealthBar: {fileID: 670334816}
   enemyHealthBar: {fileID: 1858835279}
+  battleEndDirector: {fileID: 924628993}
 --- !u!114 &39368577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,8 +403,8 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 39368576}
           m_TargetAssemblyTypeName: Health, Assembly-CSharp
-          m_MethodName: BattleEnd
-          m_Mode: 6
+          m_MethodName: BattleFinish
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

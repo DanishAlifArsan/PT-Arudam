@@ -1600,14 +1600,15 @@ MonoBehaviour:
   endPos: {fileID: 861688968}
   playerIcon: {fileID: 1191804952}
   enemyIcon: {fileID: 157791097}
-  startingSpeed: 20
-  enemySpeed: 50
+  playerStartingSpeed: 10
+  enemyStartingSpeed: 50
   minSpeed: 10
   maxSpeed: 50
   accelerationRate: 0.3
   decreasingRate: 0.2
   stopTime: 1
   distance: 50
+  isShopScene: 0
 --- !u!95 &1520979182
 Animator:
   serializedVersion: 5
@@ -1988,6 +1989,7 @@ MonoBehaviour:
   enemySection: {fileID: 795609646054195460, guid: b321a7e64e11094448c8684eff120aee,
     type: 3}
   progressBar: {fileID: 1520979181}
+  isShopScene: 0
 --- !u!114 &1921091616
 MonoBehaviour:
   m_ObjectHideFlags: 0

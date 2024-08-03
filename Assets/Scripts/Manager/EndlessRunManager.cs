@@ -17,6 +17,7 @@ public class EndlessRunManager : MonoBehaviour
     public static EndlessRunManager instance;
     private FieldMove initialPlatform;
     private bool isPolice;
+    public CustomerAI chasedCustomer;
 
     private void Awake()
     {
@@ -67,10 +68,7 @@ public class EndlessRunManager : MonoBehaviour
         endlessRunObject.SetActive(false);
         chaseEffect.enabled = false;
         SaleManager.instance.EmptyTable();
-        if (CustomerManager.instance.currentCustomer)
-        {
-            CustomerManager.instance.DespawnCustomer(CustomerManager.instance.currentCustomer);
-        }
+        CustomerManager.instance.DespawnCustomer(chasedCustomer);
         
         if (isSuccess)
         {
@@ -87,7 +85,5 @@ public class EndlessRunManager : MonoBehaviour
             // kalau kabur
             Debug.Log("Kabur");
         }
-        
-        CustomerManager.instance.currentCustomer = null;
     }
 }
