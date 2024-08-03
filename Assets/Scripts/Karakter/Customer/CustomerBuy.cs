@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class CustomerBuy : IState
 {
+    public bool isRunning;
     public void EnterState(CustomerAI customer, StateManager stateManager)
     {
+        isRunning = false;
         customer.SetGoodsToBuy();
         customer.dialogueBubbleUI.SetActive(true);
         CustomerManager.instance.currentCustomer = customer;
@@ -22,12 +24,14 @@ public class CustomerBuy : IState
             stateManager.SwitchState(customer, stateManager.pay);
         } else if(customer.isWalking) {   
             customer.ClearGoodsToBuy(); 
-            if (!SaleManager.instance.CheckIsTableEmpty())
+            if (!SaleManager.instance.CheckIsTableEmpty() && !isRunning)
             {
-                MinigameManager.instance.StartRunning(false);
+                EndlessRunManager.instance.StartRunning(false);
+                isRunning = true;
+            } else {
+                SaleManager.instance.EmptyTable();
+                stateManager.SwitchState(customer, stateManager.walk);
             }
-            SaleManager.instance.EmptyTable();
-            stateManager.SwitchState(customer, stateManager.walk);
         }
     }
 }

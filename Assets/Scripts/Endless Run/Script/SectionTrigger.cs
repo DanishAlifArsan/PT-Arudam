@@ -41,7 +41,8 @@ public class SectionTrigger : MonoBehaviour
         {
             if (isShopScene)
             {
-                MinigameManager.instance.EndlessRunEnd();
+                EndlessRunManager.instance.EndlessRunEnd(true);
+                endOfRun = false;
             } else {
                 SceneManager.LoadScene(0); // to do ke home screen
             }

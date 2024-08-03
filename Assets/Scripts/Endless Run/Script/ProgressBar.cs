@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,8 +9,8 @@ public class ProgressBar : MonoBehaviour
     [SerializeField] private RectTransform endPos;
     [SerializeField] private RectTransform playerIcon;
     [SerializeField] private RectTransform enemyIcon;
-    [SerializeField] private float startingSpeed;
-    [SerializeField] private float enemySpeed;
+    [SerializeField] private float playerStartingSpeed;
+    [SerializeField] private float enemyStartingSpeed;
     [SerializeField] private float minSpeed;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float accelerationRate;
@@ -20,16 +21,25 @@ public class ProgressBar : MonoBehaviour
     private float decreasingCooldown = 4;
     private float decreasingTime = 0;
     private bool isStopped = false;
+    private float startingSpeed, enemySpeed;
 
     public void Setup() {
         playerIcon.anchoredPosition = new Vector3( -419.8003f, 21f, 0);
         enemyIcon.anchoredPosition = new Vector3( -305f, 21f, 0);
+        decreasingTime = decreasingCooldown;
+        startingSpeed = playerStartingSpeed;
+        enemySpeed = enemyStartingSpeed;
     }
 
     // Start is called before the first frame update
     private void Start()
     {
-        decreasingTime = decreasingCooldown;
+        if (!isShopScene)
+        {
+            decreasingTime = decreasingCooldown;
+            startingSpeed = playerStartingSpeed;
+            enemySpeed = enemyStartingSpeed;
+        }
     }
 
     // Update is called once per frame
@@ -65,7 +75,7 @@ public class ProgressBar : MonoBehaviour
         {
             if (isShopScene)
             {
-               MinigameManager.instance.EndlessRunEnd();
+               EndlessRunManager.instance.EndlessRunEnd(false);
             } else {
                 SceneManager.LoadScene(0); // to do ke home screen
             }

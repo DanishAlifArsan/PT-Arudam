@@ -1,0 +1,93 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
+
+public class EndlessRunManager : MonoBehaviour
+{
+    [SerializeField] private PlayableDirector endlessrunDirector;
+    [SerializeField] private PlayableDirector battleDirector;
+    [SerializeField] private GameObject endlessRunObject;
+    [SerializeField] private GameObject shopObject;
+    [SerializeField] private SpriteRenderer chaseEffect;
+    [SerializeField] private FieldMove startingPlatform;
+    [SerializeField] private ProgressBar progressBar;
+    public static EndlessRunManager instance;
+    private FieldMove initialPlatform;
+    private bool isPolice;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(this.gameObject);
+    }
+
+    public void StartRunning(bool isPolice) {
+        this.isPolice = isPolice;
+        chaseEffect.enabled = true;
+        initialPlatform = Instantiate(startingPlatform, new Vector3(-1.05f, -1.329018f, -2.87f) + endlessRunObject.transform.position, Quaternion.identity, endlessRunObject.transform);
+        initialPlatform.enabled = false;
+        progressBar.Setup();
+        endlessrunDirector.Play();
+    }
+
+    public void SetupEndlessRun() {
+        shopObject.SetActive(false);
+        endlessRunObject.SetActive(true);
+    }
+
+    public void MovePlatform() {
+        initialPlatform.enabled = true;
+    }
+
+    public void SwitchScene(int scene) {
+        SceneManager.LoadScene(scene);
+    }
+
+    public void Battle() {
+        battleDirector.Play();
+    }
+
+    public void EndlessRunEnd(bool isSuccess) {
+        GameObject[] activePlatforms = GameObject.FindGameObjectsWithTag("Platform");
+        if (activePlatforms.Length > 0)
+        {
+            foreach (var item in activePlatforms)
+            {
+                Destroy(item);
+            }
+        }
+
+        endlessrunDirector.Stop();
+        shopObject.SetActive(true);
+        endlessRunObject.SetActive(false);
+        chaseEffect.enabled = false;
+        SaleManager.instance.EmptyTable();
+        if (CustomerManager.instance.currentCustomer)
+        {
+            CustomerManager.instance.DespawnCustomer(CustomerManager.instance.currentCustomer);
+        }
+        
+        if (isSuccess)
+        {
+            // kalau ketangkap
+            if (isPolice)
+            {
+                Debug.Log("Ketangkap polisi");
+            } else {
+                int getMoney = SaleManager.instance.GetReturnedItemPrice();
+                Debug.Log(getMoney);
+                CurrencyManager.instance.AddCurrency(getMoney);
+            }
+        } else {
+            // kalau kabur
+            Debug.Log("Kabur");
+        }
+        
+        CustomerManager.instance.currentCustomer = null;
+    }
+}
