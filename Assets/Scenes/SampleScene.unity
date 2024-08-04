@@ -2800,6 +2800,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1953048862}
+  - {fileID: 495921866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112922818
@@ -3560,7 +3561,7 @@ Animator:
   m_GameObject: {fileID: 125909506}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e69357ecc4385ad409ab88d95e2aa037, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5656,7 +5657,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
@@ -7934,7 +7935,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -9299,6 +9300,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489849833}
   m_CullTransparentMesh: 1
+--- !u!1 &495921865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 495921866}
+  - component: {fileID: 495921867}
+  m_Layer: 0
+  m_Name: Battle Timeline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &495921866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495921865}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.725168, y: -0.6580596, z: 2.2572947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 662513433}
+  m_Father: {fileID: 112429053}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &495921867
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495921865}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 6196890929a22e84eb88a9098a8155c2, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -711075948087078698, guid: 5e86fd26e9698b146a4249e6ef12299c, type: 2}
+    value: {fileID: 843955726}
+  - key: {fileID: 1703938680944889893, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5826494972190333637, guid: 6196890929a22e84eb88a9098a8155c2, type: 2}
+    value: {fileID: 843955726}
+  m_ExposedReferences:
+    m_References:
+    - c754db37b35996e408af330bb4c83751: {fileID: 6760613887674295751}
+    - 0cfd6f34e42c79b4b927275015c66d5e: {fileID: 1231747889}
+    - 8f83947dd4c38ce48b9b4b293629f85a: {fileID: 662513432}
+    - f89d6da42979b414497246fe245cd8a4: {fileID: 662513432}
+    - 2c3a2348009ffe3419a92a77319bc4de: {fileID: 0}
+    - 592c804b4b85f7f4391390303602fa3e: {fileID: 1755095111}
+    - 573516d6bf40b5f4e8da02bc57996043: {fileID: 5892901458714956561}
 --- !u!1 &503282731
 GameObject:
   m_ObjectHideFlags: 0
@@ -10850,11 +10914,11 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 1703938680944889893, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
     value: {fileID: 330585551}
-  - key: {fileID: 4818667127415883686, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2117257326}
-  - key: {fileID: -6780134214388574356, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 726115951}
-  - key: {fileID: 7659517617268539359, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 125909510}
   - key: {fileID: 1703938680944889893, guid: d25f0000adde6b34da5ea2fe6b57eed8, type: 2}
     value: {fileID: 330585551}
@@ -11044,12 +11108,12 @@ GameObject:
   - component: {fileID: 662513433}
   - component: {fileID: 662513434}
   m_Layer: 0
-  m_Name: Battle Timeline
+  m_Name: Battle Transition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &662513433
 Transform:
   m_ObjectHideFlags: 0
@@ -11059,11 +11123,11 @@ Transform:
   m_GameObject: {fileID: 662513432}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7394623, y: 0.1946593, z: 2.9390292}
+  m_LocalPosition: {x: 1.7394638, y: 0.19465923, z: 2.9390297}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1755095112}
+  m_Father: {fileID: 495921866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!320 &662513434
 PlayableDirector:
@@ -11076,7 +11140,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
   m_InitialState: 0
-  m_WrapMode: 0
+  m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -11090,12 +11154,6 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 1703938680944889893, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
     value: {fileID: 330585551}
-  - key: {fileID: 4818667127415883686, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
-    value: {fileID: 2117257326}
-  - key: {fileID: -6780134214388574356, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
-    value: {fileID: 726115951}
-  - key: {fileID: 7659517617268539359, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
-    value: {fileID: 125909510}
   m_ExposedReferences:
     m_References:
     - dec3bb43ac27a814daf916571750275c: {fileID: 1952256560}
@@ -12188,7 +12246,7 @@ GameObject:
   - component: {fileID: 726115953}
   - component: {fileID: 726115952}
   m_Layer: 5
-  m_Name: Battle Transition
+  m_Name: Battle Transition Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12264,8 +12322,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726115951}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -12.276057}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12274,7 +12332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -4.665253, y: -6.4346023}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &726203611
@@ -12843,7 +12901,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 5ffb97d4cfc012e44935ebb3b0f4fb49, type: 2}
   m_InitialState: 0
-  m_WrapMode: 0
+  m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -12875,7 +12933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &792643658
 Transform:
   m_ObjectHideFlags: 0
@@ -13625,6 +13683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 843955724}
   - component: {fileID: 843955725}
+  - component: {fileID: 843955727}
   - component: {fileID: 843955726}
   m_Layer: 0
   m_Name: Minigame Manager
@@ -13661,7 +13720,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endlessrunDirector: {fileID: 1953048863}
-  battleDirector: {fileID: 662513434}
   endlessRunObject: {fileID: 420599868}
   shopObject: {fileID: 25616144}
   chaseEffect: {fileID: 1781526002}
@@ -13685,6 +13743,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: 229af7536092efd4cae50ae62055892c, type: 2}
     - {fileID: 11400000, guid: 110c46611295c934ab8c247961938fd1, type: 2}
+    - {fileID: 11400000, guid: 7262a4c9aa4ecca4bbbab3cb773dc3a6, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -13714,6 +13773,41 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 843955727}
+          m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+          m_MethodName: SetupBattle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &843955727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843955723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfce8f89e1e36d948a5ea7698459ab3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleDirector: {fileID: 495921867}
+  battleEndDirector: {fileID: 790036075}
+  battleObject: {fileID: 876960809}
+  shopObject: {fileID: 25616144}
+  battleTransition: {fileID: 726115951}
+  leftImage: {fileID: 427985838}
+  rightImage: {fileID: 284124498}
+  health: {fileID: 1782498950}
+  battledCustomer: {fileID: 0}
 --- !u!1 &845851213
 GameObject:
   m_ObjectHideFlags: 0
@@ -14386,11 +14480,11 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 1703938680944889893, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
     value: {fileID: 330585551}
-  - key: {fileID: 4818667127415883686, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2117257326}
-  - key: {fileID: -6780134214388574356, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 726115951}
-  - key: {fileID: 7659517617268539359, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 125909510}
   - key: {fileID: 1703938680944889893, guid: d25f0000adde6b34da5ea2fe6b57eed8, type: 2}
     value: {fileID: 330585551}
@@ -23407,11 +23501,11 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 1703938680944889893, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
     value: {fileID: 330585551}
-  - key: {fileID: 4818667127415883686, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2117257326}
-  - key: {fileID: -6780134214388574356, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 726115951}
-  - key: {fileID: 7659517617268539359, guid: ddc825385f8081a4a980af6988445a9e, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 125909510}
   - key: {fileID: 1703938680944889893, guid: d25f0000adde6b34da5ea2fe6b57eed8, type: 2}
     value: {fileID: 330585551}
@@ -25694,7 +25788,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1760674867}
-  - {fileID: 662513433}
   - {fileID: 319170387}
   - {fileID: 1575454714}
   m_Father: {fileID: 25616145}
@@ -26452,6 +26545,7 @@ MonoBehaviour:
   playerHealthBar: {fileID: 1982433648}
   enemyHealthBar: {fileID: 1400711517}
   battleEndDirector: {fileID: 790036075}
+  isShop: 1
 --- !u!114 &1782498951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26472,7 +26566,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1782498950}
           m_TargetAssemblyTypeName: Health, Assembly-CSharp
-          m_MethodName: BattleFinish
+          m_MethodName: BattleEnd
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -30584,37 +30678,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Events:
     m_Signals:
-    - {fileID: 11400000, guid: 7262a4c9aa4ecca4bbbab3cb773dc3a6, type: 2}
     - {fileID: 11400000, guid: 1c9a740c52c2b1d458a20e5a96139776, type: 2}
     - {fileID: 11400000, guid: 07789d605aa30504a93b0c9fa115b81f, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: MinigameManager, Assembly-CSharp
-          m_MethodName: SwitchScene
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 2
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: MinigameManager, Assembly-CSharp
-          m_MethodName: Battle
-          m_Mode: 1
+        - m_Target: {fileID: 843955727}
+          m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+          m_MethodName: StartBattle
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:

@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class EndlessRunManager : MonoBehaviour
 {
     [SerializeField] private PlayableDirector endlessrunDirector;
-    [SerializeField] private PlayableDirector battleDirector;
     [SerializeField] private GameObject endlessRunObject;
     [SerializeField] private GameObject shopObject;
     [SerializeField] private SpriteRenderer chaseEffect;
@@ -49,10 +48,6 @@ public class EndlessRunManager : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
-    public void Battle() {
-        battleDirector.Play();
-    }
-
     public void EndlessRunEnd(bool isSuccess) {
         GameObject[] activePlatforms = GameObject.FindGameObjectsWithTag("Platform");
         if (activePlatforms.Length > 0)
@@ -76,11 +71,9 @@ public class EndlessRunManager : MonoBehaviour
             if (isPolice)
             {
                 Debug.Log("Ketangkap polisi");
-            } else {
-                int getMoney = SaleManager.instance.GetReturnedItemPrice();
-                Debug.Log(getMoney);
-                CurrencyManager.instance.AddCurrency(getMoney);
             }
+            int getMoney = SaleManager.instance.GetReturnedItemPrice();
+            CurrencyManager.instance.AddCurrency(getMoney);
         } else {
             // kalau kabur
             Debug.Log("Kabur");

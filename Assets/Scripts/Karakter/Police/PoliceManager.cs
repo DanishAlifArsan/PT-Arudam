@@ -19,7 +19,7 @@ public class PoliceManager : MonoBehaviour
             Destroy(this.gameObject);
     }
     
-    public void StartChasing() {
+    public void StartChasing(CustomerAI currentCustomer) {
         // int random = Random.Range(0,3);
         // switch (random)
         // {
@@ -30,17 +30,19 @@ public class PoliceManager : MonoBehaviour
         //         StartBattle();
         //         break;
         //     case 2:   
-        //         StartEndlessRun();
+        //         StartEndlessRun(currentCustomer);
         //         break;       
         // }
-        StartEndlessRun();
+        StartBattle(currentCustomer);
     }
 
-    private void StartEndlessRun() {
+    private void StartEndlessRun(CustomerAI currentCustomer) {
+        EndlessRunManager.instance.chasedCustomer = currentCustomer;
         endlessrunDirector.Play();
         ScrollingText.instance.Show("Tangkap dia jangan sampai kabur");
     }
-    private void StartBattle() {
+    private void StartBattle(CustomerAI currentCustomer) {
+        BattleManager.instance.battledCustomer = currentCustomer;
         battleDirector.Play();
         ScrollingText.instance.Show("Hati-hati dia bersenjata");
     }
