@@ -6,6 +6,19 @@ using UnityEngine.SceneManagement;
 public class HomeScreen : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScene;
+    [SerializeField] private bool inGame = false;
+
+    private void Awake() {
+        Time.timeScale = 1;
+        if (inGame)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        } else {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
 
     public void LoadScene(int sceneId) {
         StartCoroutine(LoadSceneAsync(sceneId));
