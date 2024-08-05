@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         int money = CurrencyManager.instance.totalCurrency; 
         resultScreen.CountMoneyResult(money, tax, 50000);   // todo buat kodingan untuk mengatur listrik
-        resultScreen.SaveGame();
     }
 
     private Vignette GetVignette() {

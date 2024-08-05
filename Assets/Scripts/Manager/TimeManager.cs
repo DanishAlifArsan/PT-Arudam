@@ -8,6 +8,7 @@ public class TimeManager : MonoBehaviour
 {
     [SerializeField] private Transform sunlight;
     [SerializeField] private int startingDay;
+    [SerializeField] private int endingDay;
     [SerializeField] private int startHour;
     [SerializeField] private int endHour;
     [SerializeField] private float cycleRate;
@@ -81,5 +82,9 @@ public class TimeManager : MonoBehaviour
 
     public bool Midnight() {
         return hours >= endHour;
+    }
+
+    public bool Ending() {
+        return currentDay >= endingDay;
     }
 }

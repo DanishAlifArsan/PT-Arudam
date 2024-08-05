@@ -13471,7 +13471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lanjut
+  m_text: Kembali
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 430912ff3568648478843c1660f4bc68, type: 2}
   m_sharedMaterial: {fileID: 8725112946769416613, guid: 430912ff3568648478843c1660f4bc68,
@@ -16275,7 +16275,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kembali
+  m_text: Keluar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 430912ff3568648478843c1660f4bc68, type: 2}
   m_sharedMaterial: {fileID: 8725112946769416613, guid: 430912ff3568648478843c1660f4bc68,
@@ -29304,7 +29304,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1954484320}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2042575500}
+        m_TargetAssemblyTypeName: ResultScreen, Assembly-CSharp
+        m_MethodName: Continue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1954484320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31212,6 +31224,7 @@ MonoBehaviour:
   taxAmountText: {fileID: 1718172420}
   electricBillAmountText: {fileID: 535500250}
   resultAmountText: {fileID: 740449937}
+  homeScreen: {fileID: 1719700928}
 --- !u!95 &2042575501
 Animator:
   serializedVersion: 5
@@ -31828,7 +31841,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sunlight: {fileID: 410087041}
   startingDay: 1
-  startHour: 17
+  endingDay: 2
+  startHour: 19
   endHour: 23
   cycleRate: 10
   timeText: {fileID: 1398729723}
