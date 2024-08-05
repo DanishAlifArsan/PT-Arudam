@@ -31761,6 +31761,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cf3d8a36c0620a743b26b39e8f780110, type: 2}
   - {fileID: 11400000, guid: 19627cb03be60a048b5ba7cf6563c5ff, type: 2}
   listGoodsOnSale: []
+  goodsWithPrice:
+    keys: []
+    values: 
 --- !u!114 &2117257321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31841,8 +31844,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sunlight: {fileID: 410087041}
   startingDay: 1
-  endingDay: 2
-  startHour: 19
+  endingDay: 5
+  startHour: 15
   endHour: 23
   cycleRate: 10
   timeText: {fileID: 1398729723}
@@ -31942,6 +31945,9 @@ MonoBehaviour:
   totalCurrency: 0
   day: 0
   numberOfEvils: 0
+  goodsWithPrice:
+    keys: []
+    values: 
   deliveredItem:
     keys: []
     values: []

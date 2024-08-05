@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ResultScreen : MonoBehaviour
@@ -48,6 +49,7 @@ public class ResultScreen : MonoBehaviour
     private void SaveGame() {
         SaveManager.instance.deliveredItem = DeliveryManager.instance.deliveredItem;
         SaveManager.instance.day = TimeManager.instance.currentDay+1;
+        SaveManager.instance.goodsWithPrice = ItemManager.instance.goodsWithPrice;
         SaveManager.instance.SaveGame();
     }
 

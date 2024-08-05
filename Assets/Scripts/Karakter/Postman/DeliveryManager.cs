@@ -54,6 +54,7 @@ public class DeliveryManager : MonoBehaviour
         this.deliveredItem = deliveredItem;
         foreach (var item in deliveredItem)
         {
+            Debug.Log(item.Value +","+item.Key);
             Instantiate(item.Value, item.Key);
         }
     }

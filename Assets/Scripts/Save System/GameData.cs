@@ -8,6 +8,7 @@ public class GameData
     public int totalCurrency;
     public int day;
     public int numberOfEvils;
+     public SerializableDictionary<Goods, int> goodsWithPrice = new SerializableDictionary<Goods, int>();
     public SerializableDictionary<Transform, Box> deliveredItem = new SerializableDictionary<Transform, Box>();
     public SerializableDictionary<Transform, Item> storageItem = new SerializableDictionary<Transform, Item>();
 
@@ -15,6 +16,7 @@ public class GameData
         totalCurrency = manager.totalCurrency;
         day = manager.day;
         numberOfEvils = manager.numberOfEvils;
+        goodsWithPrice = manager.goodsWithPrice;
         deliveredItem = manager.deliveredItem;
         storageItem = manager.storageItem;
     }
