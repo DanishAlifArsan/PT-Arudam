@@ -32,6 +32,7 @@ public class ResultScreen : MonoBehaviour
     } 
 
     public void SaveGame() {
+        SaveManager.instance.deliveredItem = DeliveryManager.instance.deliveredItem;
         SaveManager.instance.day = TimeManager.instance.currentDay+1;
         SaveManager.instance.SaveGame();
     }

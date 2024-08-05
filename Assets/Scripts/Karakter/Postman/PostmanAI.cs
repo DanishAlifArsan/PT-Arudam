@@ -29,9 +29,9 @@ public class PostmanAI : MonoBehaviour
         {
             if (isDelivering)
             {
-                Instantiate(box,packagePoint);
                 agent.SetDestination(homePoint.position);
                 isDelivering = false;
+                DeliveryManager.instance.PlaceDelivery(packagePoint, box);
             } else {
                 DeliveryManager.instance.FinishDelivery(this);
             }

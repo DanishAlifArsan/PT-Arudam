@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class DeliveryManager : MonoBehaviour
 {
@@ -15,8 +16,8 @@ public class DeliveryManager : MonoBehaviour
     public bool isCanSpawn = false;
     private List<PostmanAI> postmanList = new List<PostmanAI>();
     private Queue<Box> boxQueue = new Queue<Box>();
-
     public static DeliveryManager instance;
+    public SerializableDictionary<Transform, Box> deliveredItem = new SerializableDictionary<Transform, Box>();
 
     private void Awake()
     {
@@ -32,9 +33,7 @@ public class DeliveryManager : MonoBehaviour
         GameData data = SaveManager.instance.LoadGame();
         if (data != null)
         {
-            
-        } else {
-            InstantiateNew();
+            SpawnItemFromSave(data.deliveredItem);
         }
 
         spawnTimer = spawnInterval;
@@ -51,12 +50,12 @@ public class DeliveryManager : MonoBehaviour
         }
     }
 
-    public void InstantiateNew() {
-
-    }
-
-    public void InstantiateFromSave() {
-
+    public void SpawnItemFromSave(SerializableDictionary<Transform, Box> deliveredItem) {
+        this.deliveredItem = deliveredItem;
+        foreach (var item in deliveredItem)
+        {
+            Instantiate(item.Value, item.Key);
+        }
     }
 
     // Update is called once per frame
@@ -86,7 +85,15 @@ public class DeliveryManager : MonoBehaviour
 
     public void StartDelivery(Box box) {
         boxQueue.Enqueue(box);
-        
+    }
+
+    public void PlaceDelivery(Transform packagePoint, Box box) {
+        deliveredItem.Add(packagePoint, box);
+        Instantiate(box,packagePoint);
+    }
+
+    public void TakeDelivery(Transform packagePoint) {
+        deliveredItem.Remove(packagePoint);
     }
 
     public bool CanCheckout() {

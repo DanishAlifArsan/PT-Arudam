@@ -31811,6 +31811,9 @@ MonoBehaviour:
   - {fileID: 1942722476}
   spawnInterval: 5
   isCanSpawn: 0
+  deliveredItem:
+    keys: []
+    values: []
 --- !u!114 &2117257324
 MonoBehaviour:
   m_ObjectHideFlags: 0
