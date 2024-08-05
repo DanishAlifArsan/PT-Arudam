@@ -29,6 +29,14 @@ public class DeliveryManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        GameData data = SaveManager.instance.LoadGame();
+        if (data != null)
+        {
+            
+        } else {
+            InstantiateNew();
+        }
+
         spawnTimer = spawnInterval;
 
         for (int i = 0; i < deliveryPoint.Count; i++)
@@ -41,6 +49,14 @@ public class DeliveryManager : MonoBehaviour
             instantiatedPostman.gameObject.SetActive(false);
             postmanList.Add(instantiatedPostman);   
         }
+    }
+
+    public void InstantiateNew() {
+
+    }
+
+    public void InstantiateFromSave() {
+
     }
 
     // Update is called once per frame

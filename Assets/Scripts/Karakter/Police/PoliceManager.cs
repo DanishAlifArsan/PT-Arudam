@@ -50,5 +50,6 @@ public class PoliceManager : MonoBehaviour
         catchDirector.Play();
         ScrollingText.instance.Show("Laporan diterima segera menuju lokasi");
         police.StartChasing();
+        SaveManager.instance.numberOfEvils += 1;
     }
 }

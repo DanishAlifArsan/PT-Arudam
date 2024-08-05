@@ -7,10 +7,13 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] private Transform sunlight;
+    [SerializeField] private int startingDay;
     [SerializeField] private int startHour;
     [SerializeField] private int endHour;
     [SerializeField] private float cycleRate;
     [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] private TextMeshProUGUI dayText;
+    public int currentDay;
     private int hours;
     private float minutes;
     private float cycle;
@@ -28,6 +31,13 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        GameData data = SaveManager.instance.LoadGame();
+        if (data != null)
+        {
+            currentDay = SaveManager.instance.day;
+        } else {
+            currentDay = startingDay;
+        }
         Setup();
     }
 
@@ -53,6 +63,7 @@ public class TimeManager : MonoBehaviour
     }
 
     private void Setup() {
+        dayText.text = "Hari "+ currentDay.ToString();
         hours = startHour;
         minutes = 0;
         cycle = startHour * 60;
