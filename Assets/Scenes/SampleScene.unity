@@ -1628,6 +1628,7 @@ MonoBehaviour:
   highlight: {fileID: 52760180}
   itemType: 0
   storageSize: 3
+  id: 0
   itemDictionary:
     keys: []
     values: []
@@ -2367,6 +2368,7 @@ MonoBehaviour:
   highlight: {fileID: 73585658}
   itemType: 0
   storageSize: 3
+  id: 0
   itemDictionary:
     keys: []
     values: []
@@ -3435,6 +3437,7 @@ MonoBehaviour:
   highlight: {fileID: 112922826}
   itemType: 0
   storageSize: 3
+  id: 0
   itemDictionary:
     keys: []
     values: []
@@ -9106,6 +9109,7 @@ MonoBehaviour:
   highlight: {fileID: 451842787}
   itemType: 0
   storageSize: 3
+  id: 0
   itemDictionary:
     keys: []
     values: []
@@ -11200,6 +11204,7 @@ MonoBehaviour:
   highlight: {fileID: 585206156}
   itemType: 0
   storageSize: 3
+  id: 0
   itemDictionary:
     keys: []
     values: []
@@ -19466,6 +19471,7 @@ MonoBehaviour:
   highlight: {fileID: 1221871810}
   itemType: 0
   storageSize: 3
+  id: 0
   itemDictionary:
     keys: []
     values: []
@@ -28227,6 +28233,7 @@ MonoBehaviour:
   highlight: {fileID: 1818647624}
   itemType: 0
   storageSize: 3
+  id: 0
   itemDictionary:
     keys: []
     values: []
@@ -30736,6 +30743,7 @@ MonoBehaviour:
   highlight: {fileID: 2011420558}
   itemType: 0
   storageSize: 3
+  id: 0
   itemDictionary:
     keys: []
     values: []
@@ -31797,6 +31805,7 @@ MonoBehaviour:
   goodsWithPrice:
     keys: []
     values: 
+  storageItem: []
 --- !u!114 &2117257321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31876,7 +31885,7 @@ MonoBehaviour:
   sunlight: {fileID: 410087041}
   startingDay: 1
   endingDay: 5
-  startHour: 16
+  startHour: 7
   endHour: 23
   cycleRate: 10
   timeText: {fileID: 1398729723}
@@ -31980,7 +31989,7 @@ MonoBehaviour:
     keys: []
     values: 
   deliveredItem: []
-  storageList: []
+  storageItem: []
 --- !u!1 &2130647220
 GameObject:
   m_ObjectHideFlags: 0
