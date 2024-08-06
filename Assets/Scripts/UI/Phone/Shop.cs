@@ -22,7 +22,7 @@ public class Shop : MonoBehaviour
         }
     }
 
-    private void OnButtonClick(int index) {
+    private void OnButtonClick(int index, int totalPrice) {
         //kasih tanda kalau player gak bisa beli, misalnya muncul warning
         if (DeliveryManager.instance.CanCheckout() && CurrencyManager.instance.CanBuy(totalPrice) && !TimeManager.instance.NightHour())
         {

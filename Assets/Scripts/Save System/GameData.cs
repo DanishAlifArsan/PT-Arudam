@@ -9,8 +9,8 @@ public class GameData
     public int day;
     public int numberOfEvils;
      public SerializableDictionary<Goods, int> goodsWithPrice = new SerializableDictionary<Goods, int>();
-    public SerializableDictionary<Transform, Box> deliveredItem = new SerializableDictionary<Transform, Box>();
-    public SerializableDictionary<Transform, Item> storageItem = new SerializableDictionary<Transform, Item>();
+    public List<Box>  deliveredItem = new List<Box>();
+    public List<SerializableDictionary<float, Item>> storageItem = new List<SerializableDictionary<float, Item>>();
 
     public GameData(SaveManager manager) {
         totalCurrency = manager.totalCurrency;

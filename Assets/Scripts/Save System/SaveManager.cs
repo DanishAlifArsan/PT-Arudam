@@ -9,8 +9,8 @@ public class SaveManager : MonoBehaviour
     public int day;
     public int numberOfEvils = 0;
     public SerializableDictionary<Goods, int> goodsWithPrice = new SerializableDictionary<Goods, int>();
-    public SerializableDictionary<Transform, Box> deliveredItem = new SerializableDictionary<Transform, Box>();
-    public SerializableDictionary<Transform, Item> storageItem = new SerializableDictionary<Transform, Item>();
+    public List<Box> deliveredItem = new List<Box>();
+    public List<SerializableDictionary<float, Item>> storageItem = new List<SerializableDictionary<float, Item>>();
     public static SaveManager instance;
 
     private void Awake()

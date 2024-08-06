@@ -17,7 +17,7 @@ public class DeliveryManager : MonoBehaviour
     private List<PostmanAI> postmanList = new List<PostmanAI>();
     private Queue<Box> boxQueue = new Queue<Box>();
     public static DeliveryManager instance;
-    public SerializableDictionary<Transform, Box> deliveredItem = new SerializableDictionary<Transform, Box>();
+    public List<Box>  deliveredItem = new List<Box>();
 
     private void Awake()
     {
@@ -34,6 +34,8 @@ public class DeliveryManager : MonoBehaviour
         if (data != null)
         {
             SpawnItemFromSave(data.deliveredItem);
+        } else {
+            SpawnNewItem();
         }
 
         spawnTimer = spawnInterval;
@@ -41,6 +43,7 @@ public class DeliveryManager : MonoBehaviour
         for (int i = 0; i < deliveryPoint.Count; i++)
         {
             PostmanAI instantiatedPostman = Instantiate(postman,homePoint.position, Quaternion.identity, transform.parent);
+            instantiatedPostman.id = i;
             instantiatedPostman.homePoint = homePoint;
             instantiatedPostman.deliverPoint = deliveryPoint[i];
             instantiatedPostman.packagePoint = packagePoint[i];
@@ -50,12 +53,22 @@ public class DeliveryManager : MonoBehaviour
         }
     }
 
-    public void SpawnItemFromSave(SerializableDictionary<Transform, Box> deliveredItem) {
+    public void SpawnItemFromSave(List<Box> deliveredItem) {
         this.deliveredItem = deliveredItem;
-        foreach (var item in deliveredItem)
+        for (int i = 0; i < this.deliveredItem.Count; i++)
         {
-            Debug.Log(item.Value +","+item.Key);
-            Instantiate(item.Value, item.Key);
+            Box item = this.deliveredItem[i];
+            if (item != null)
+            {
+                Instantiate(item,packagePoint[i]);
+            }
+        }
+    }
+
+    public void SpawnNewItem() {
+        for (int i = 0; i < packagePoint.Count; i++)
+        {
+            deliveredItem.Add(null);
         }
     }
 
@@ -87,14 +100,16 @@ public class DeliveryManager : MonoBehaviour
     public void StartDelivery(Box box) {
         boxQueue.Enqueue(box);
     }
-
-    public void PlaceDelivery(Transform packagePoint, Box box) {
-        deliveredItem.Add(packagePoint, box);
-        Instantiate(box,packagePoint);
+    public void PlaceDelivery(int id, Box box) {
+        deliveredItem[id] = box;
+        Instantiate(box,packagePoint[id]);
     }
 
-    public void TakeDelivery(Transform packagePoint) {
-        deliveredItem.Remove(packagePoint);
+    public void TakeDelivery(Transform transform) {
+        if (packagePoint.Contains(transform))
+        {
+            deliveredItem[packagePoint.IndexOf(transform)] = null;
+        }
     }
 
     public bool CanCheckout() {
@@ -116,9 +131,5 @@ public class DeliveryManager : MonoBehaviour
     public void FinishDelivery(PostmanAI postman) {
         postmanList.Add(postman);
         postman.gameObject.SetActive(false);
-        foreach (var item in boxQueue)
-        {
-            Debug.Log(item);
-        }
     }
 }

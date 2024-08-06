@@ -1628,6 +1628,9 @@ MonoBehaviour:
   highlight: {fileID: 52760180}
   itemType: 0
   storageSize: 3
+  itemDictionary:
+    keys: []
+    values: []
 --- !u!114 &52760180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2364,6 +2367,9 @@ MonoBehaviour:
   highlight: {fileID: 73585658}
   itemType: 0
   storageSize: 3
+  itemDictionary:
+    keys: []
+    values: []
 --- !u!114 &73585658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3429,6 +3435,9 @@ MonoBehaviour:
   highlight: {fileID: 112922826}
   itemType: 0
   storageSize: 3
+  itemDictionary:
+    keys: []
+    values: []
 --- !u!114 &112922826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9097,6 +9106,9 @@ MonoBehaviour:
   highlight: {fileID: 451842787}
   itemType: 0
   storageSize: 3
+  itemDictionary:
+    keys: []
+    values: []
 --- !u!114 &451842787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11188,6 +11200,9 @@ MonoBehaviour:
   highlight: {fileID: 585206156}
   itemType: 0
   storageSize: 3
+  itemDictionary:
+    keys: []
+    values: []
 --- !u!114 &585206156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19451,6 +19466,9 @@ MonoBehaviour:
   highlight: {fileID: 1221871810}
   itemType: 0
   storageSize: 3
+  itemDictionary:
+    keys: []
+    values: []
 --- !u!114 &1221871810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28209,6 +28227,9 @@ MonoBehaviour:
   highlight: {fileID: 1818647624}
   itemType: 0
   storageSize: 3
+  itemDictionary:
+    keys: []
+    values: []
 --- !u!114 &1818647624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30715,6 +30736,9 @@ MonoBehaviour:
   highlight: {fileID: 2011420558}
   itemType: 0
   storageSize: 3
+  itemDictionary:
+    keys: []
+    values: []
 --- !u!114 &2011420558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31756,6 +31780,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 1717187954}
+  storageList:
+  - {fileID: 451842786}
+  - {fileID: 112922825}
+  - {fileID: 1818647623}
+  - {fileID: 1221871809}
+  - {fileID: 73585657}
+  - {fileID: 2011420557}
+  - {fileID: 585206155}
+  - {fileID: 52760179}
   listGoods:
   - {fileID: 11400000, guid: babe3161c8ba0e741988545e43f96b39, type: 2}
   - {fileID: 11400000, guid: cf3d8a36c0620a743b26b39e8f780110, type: 2}
@@ -31827,9 +31860,7 @@ MonoBehaviour:
   - {fileID: 1942722476}
   spawnInterval: 5
   isCanSpawn: 0
-  deliveredItem:
-    keys: []
-    values: []
+  deliveredItem: []
 --- !u!114 &2117257324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31845,7 +31876,7 @@ MonoBehaviour:
   sunlight: {fileID: 410087041}
   startingDay: 1
   endingDay: 5
-  startHour: 15
+  startHour: 16
   endHour: 23
   cycleRate: 10
   timeText: {fileID: 1398729723}
@@ -31948,12 +31979,8 @@ MonoBehaviour:
   goodsWithPrice:
     keys: []
     values: 
-  deliveredItem:
-    keys: []
-    values: []
-  storageItem:
-    keys: []
-    values: []
+  deliveredItem: []
+  storageList: []
 --- !u!1 &2130647220
 GameObject:
   m_ObjectHideFlags: 0

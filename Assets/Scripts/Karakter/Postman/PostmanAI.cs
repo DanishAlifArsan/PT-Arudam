@@ -13,6 +13,7 @@ public class PostmanAI : MonoBehaviour
     public Transform packagePoint;
     public Transform playerTransform;
     private bool isDelivering;
+    public int id;
 
     public void OnEnable() {
         agent.SetDestination(deliverPoint.position);
@@ -31,7 +32,7 @@ public class PostmanAI : MonoBehaviour
             {
                 agent.SetDestination(homePoint.position);
                 isDelivering = false;
-                DeliveryManager.instance.PlaceDelivery(packagePoint, box);
+                DeliveryManager.instance.PlaceDelivery(id, box);
             } else {
                 DeliveryManager.instance.FinishDelivery(this);
             }

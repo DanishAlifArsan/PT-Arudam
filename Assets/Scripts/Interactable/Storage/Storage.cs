@@ -7,19 +7,32 @@ using UnityEngine;
 public class Storage : Interactable
 {
     [SerializeField] private int storageSize;
-    public Dictionary<float, Item> itemDictionary;
+    public int id;
+    public SerializableDictionary<float, Item> itemDictionary = new SerializableDictionary<float, Item>();
 
-    private void Awake() {
+    public SerializableDictionary<float, Item> GenerateStorageFromSave(SerializableDictionary<float, Item> dictionary) {
+        itemDictionary = dictionary;
+        foreach (var item in itemDictionary)
+        {
+            Debug.Log(item.Value +","+item.Key);
+            if (item.Value != null)
+            {
+                AddItem(item.Value, item.Key);
+            }
+        }
+        return itemDictionary;
+    }
+
+    public SerializableDictionary<float, Item> GenerateNewStorage() {
         float storageLength = 0.206f + 0.167f;
         float columnLength = storageLength / storageSize;
-
-        itemDictionary = new Dictionary<float, Item>();
         for (int i = 0; i < storageSize; i++)
         {
             float itemPosX = columnLength * i - 0.167f;
 
             itemDictionary.Add(itemPosX, null);
         } 
+        return itemDictionary;
     }
 
     public override void OnInteract(ItemInteract broadcaster)
@@ -76,8 +89,19 @@ public class Storage : Interactable
         }
     }
 
+    private void AddItem(Item item, float pos) {
+        Vector3 itemPos = new Vector3(pos,-0.159f,0);
+        Item instantiatedItem = Instantiate(item, itemPos, Quaternion.identity, transform);
+        Debug.Log(instantiatedItem);
+        instantiatedItem.storage = this;            
+        instantiatedItem.isOnBox = false;
+        itemDictionary[pos] = instantiatedItem;
+        AddToList(instantiatedItem);
+    }
+
     private void AddToList(Item item) {
         ItemManager.instance.GenerateList(item);
+        ItemManager.instance.GenerateList(id, itemDictionary);
     }
 
     public void RemoveItem(Item item) {
