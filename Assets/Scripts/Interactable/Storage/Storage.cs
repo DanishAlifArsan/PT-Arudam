@@ -14,11 +14,7 @@ public class Storage : Interactable
         itemDictionary = dictionary;
         foreach (var item in itemDictionary)
         {
-            Debug.Log(item.Value +","+item.Key);
-            if (item.Value != null)
-            {
-                AddItem(item.Value, item.Key);
-            }
+            AddItem(item.Value, item.Key);
         }
         return itemDictionary;
     }
@@ -82,7 +78,7 @@ public class Storage : Interactable
                 item.transform.localRotation = Quaternion.identity;
                 item.storage = this;
                 item.isOnBox = false;
-                itemDictionary[itemDictionary.ElementAt(i).Key] = item;
+                itemDictionary[itemDictionary.ElementAt(i).Key] = item.goods.itemPrefab;
                 AddToList(item);
                 break;      
             }
@@ -90,23 +86,27 @@ public class Storage : Interactable
     }
 
     private void AddItem(Item item, float pos) {
-        Vector3 itemPos = new Vector3(pos,-0.159f,0);
-        Item instantiatedItem = Instantiate(item, itemPos, Quaternion.identity, transform);
-        Debug.Log(instantiatedItem);
-        instantiatedItem.storage = this;            
-        instantiatedItem.isOnBox = false;
-        itemDictionary[pos] = instantiatedItem;
-        AddToList(instantiatedItem);
+        if (item != null)
+        {
+            Vector3 itemPos = new Vector3(pos,-0.159f,0);
+            Item instantiatedItem = Instantiate(item, itemPos + transform.position, Quaternion.identity, transform);
+            instantiatedItem.goods = ItemManager.instance.SetGoods(item.id);
+            instantiatedItem.storage = this;            
+            instantiatedItem.isOnBox = false;
+        }
     }
 
     private void AddToList(Item item) {
         ItemManager.instance.GenerateList(item);
-        ItemManager.instance.GenerateList(id, itemDictionary);
+        ItemManager.instance.UpdateList(id, itemDictionary);
     }
 
     public void RemoveItem(Item item) {
         itemDictionary[item.transform.localPosition.x] = null;
+        // itemDictionary.Remove(item.transform.localPosition.x);
         item.storage = null;
+        Debug.Log(itemDictionary[item.transform.localPosition.x]);
+        ItemManager.instance.UpdateList(id, itemDictionary);
     }
 
     public override void OnHighlight(ItemInteract broadcaster, bool status)

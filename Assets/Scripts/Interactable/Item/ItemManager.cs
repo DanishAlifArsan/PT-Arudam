@@ -41,13 +41,9 @@ public class ItemManager : MonoBehaviour
         storageItem = list;
         for (int i = 0; i < storageList.Count; i++)
         {
-            foreach (var item in list[i])
-            {
-                Debug.Log(item.Value);
-            }
             storageList[i].id = i;
-            var items = storageList[i].GenerateStorageFromSave(storageItem[i]);
-            storageItem.Add(items);
+            storageList[i].GenerateStorageFromSave(list[i]);
+            // storageItem.Add(items);
         }
     }
 
@@ -68,7 +64,8 @@ public class ItemManager : MonoBehaviour
         display.GenerateList(item);
         listGoodsOnSale = display.GetGoodsOnSale();
     }   
-    public void GenerateList(int storageId, SerializableDictionary<float, Item> itemDictionary) {
+    public void UpdateList(int storageId, SerializableDictionary<float, Item> itemDictionary) {
+        
         storageItem[storageId] = itemDictionary;
     }   
 

@@ -31885,7 +31885,7 @@ MonoBehaviour:
   sunlight: {fileID: 410087041}
   startingDay: 1
   endingDay: 5
-  startHour: 7
+  startHour: 18
   endHour: 23
   cycleRate: 10
   timeText: {fileID: 1398729723}

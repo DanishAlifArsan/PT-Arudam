@@ -20,3 +20,5 @@ MonoBehaviour:
   deliveryPrice: 5000
   amountOnBox: 5
   prefab: {fileID: 4417039392173204849, guid: 99c72cb7be8d0a24eb6432a801edce34, type: 3}
+  itemPrefab: {fileID: 6797074594044805666, guid: 5ac6051e570bbad40bc17d60a250e1d1,
+    type: 3}
