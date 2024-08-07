@@ -10,10 +10,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float minXRotation;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private Transform transformZAxis;
-
-    private void Awake() {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
     
     private void Update()
     {

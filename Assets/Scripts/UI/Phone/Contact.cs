@@ -11,7 +11,7 @@ public class Contact : MonoBehaviour
             CustomerAI currentCustomer = CustomerManager.instance.currentCustomer;
             if (currentCustomer.isEvil)
             {
-                PoliceManager.instance.StartChasing();
+                PoliceManager.instance.StartChasing(currentCustomer);
             } else {
                 ScrollingText.instance.Show("Perhatikan lagi sketsa yang ku kasih");
             }

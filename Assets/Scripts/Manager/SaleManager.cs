@@ -69,6 +69,10 @@ public class SaleManager : MonoBehaviour
         goodsPlaced.Clear();
     }
 
+    public int GetReturnedItemPrice() {
+        return table.returnedItemPrice;
+    }
+
     public void DisableInteract() {
         table.DisableInteract();
     }

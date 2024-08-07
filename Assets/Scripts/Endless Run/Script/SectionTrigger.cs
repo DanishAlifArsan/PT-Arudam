@@ -8,6 +8,7 @@ public class SectionTrigger : MonoBehaviour
     public List<GameObject> groundSection;
     [SerializeField] private GameObject enemySection;
     [SerializeField] private ProgressBar progressBar;
+    [SerializeField] private bool isShopScene = false;
     private GameObject sectionToGenerate;
     private bool endOfRun = false;
     private void Update() {
@@ -25,14 +26,26 @@ public class SectionTrigger : MonoBehaviour
                 sectionToGenerate = groundSection[Random.Range(0, groundSection.Count)];
             }
 
-            Instantiate(sectionToGenerate, new Vector3(20f, -1.331278f, -2.9f), Quaternion.identity);
+            if (isShopScene)
+            {
+                GameObject instantiatedPlatform = Instantiate (sectionToGenerate, transform.parent.position + new Vector3(20f, -1.331278f, -2.9f), Quaternion.identity);
+                instantiatedPlatform.transform.parent = transform.parent;
+            } else {
+                Instantiate(sectionToGenerate, new Vector3(20f, -1.331278f, -2.9f), Quaternion.identity, transform.parent);
+            }
         }
     }
 
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("People"))
         {
-            SceneManager.LoadScene(0);
+            if (isShopScene)
+            {
+                EndlessRunManager.instance.EndlessRunEnd(true);
+                endOfRun = false;
+            } else {
+                SceneManager.LoadScene(0); // to do ke home screen
+            }
         }
     }
 }

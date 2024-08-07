@@ -130,7 +130,8 @@ public class CustomerAI : Interactable
         Broom broom = broadcaster.itemInHand?.GetComponent<Broom>();
         if (broom != null)
         {
-            MinigameManager.instance.Battle();
+            BattleManager.instance.battledCustomer = this;
+            BattleManager.instance.StartBattle(false);
         }
 
         ToggleHighlight(broadcaster.centerIndicator, false);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,14 +11,26 @@ public class Health : MonoBehaviour
     [SerializeField] private float enemyHealth;
     [SerializeField] private Image playerHealthBar;
     [SerializeField] private Image enemyHealthBar;
-
+    [SerializeField] private PlayableDirector battleEndDirector;
+    [SerializeField] private bool isShop = false;
     private float currentPlayerHealth, currentEnemyHealth;
+    private bool isWin;
+
+    public void Setup() {
+        currentPlayerHealth = playerHealth;
+        currentEnemyHealth = enemyHealth;
+        playerHealthBar.fillAmount = 1;
+        enemyHealthBar.fillAmount = 1;
+    }
 
     // Start is called before the first frame update
     private void Start()
     {
-        currentPlayerHealth = playerHealth;
-        currentEnemyHealth = enemyHealth;
+        if (!isShop)
+        {
+            currentPlayerHealth = playerHealth;
+            currentEnemyHealth = enemyHealth;
+        } 
     }
 
     public void Damage(Slider.Status status) {
@@ -41,7 +54,8 @@ public class Health : MonoBehaviour
 
         if (currentPlayerHealth <= 0)
         {
-            SceneManager.LoadScene(0);
+            isWin = false;
+            battleEndDirector.Play();
         }
     }
 
@@ -51,6 +65,16 @@ public class Health : MonoBehaviour
 
         if (currentEnemyHealth <= 0)
         {
+            isWin = true;
+            battleEndDirector.Play();
+        }
+    }
+
+    public void BattleEnd() {
+        if (isShop)
+        {
+            BattleManager.instance.BattleEnd(isWin);
+        } else {
             SceneManager.LoadScene(0);
         }
     }

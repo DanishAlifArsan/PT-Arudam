@@ -33,7 +33,7 @@ public class DeliveryManager : MonoBehaviour
 
         for (int i = 0; i < deliveryPoint.Count; i++)
         {
-            PostmanAI instantiatedPostman = Instantiate(postman,homePoint.position, Quaternion.identity);
+            PostmanAI instantiatedPostman = Instantiate(postman,homePoint.position, Quaternion.identity, transform.parent);
             instantiatedPostman.homePoint = homePoint;
             instantiatedPostman.deliverPoint = deliveryPoint[i];
             instantiatedPostman.packagePoint = packagePoint[i];
