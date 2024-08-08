@@ -11,11 +11,28 @@ public class Storage : Interactable
     public SerializableDictionary<float, Item> itemDictionary = new SerializableDictionary<float, Item>();
 
     public SerializableDictionary<float, Item> GenerateStorageFromSave(SerializableDictionary<float, Item> dictionary) {
-        itemDictionary = dictionary;
-        foreach (var item in itemDictionary)
+        // itemDictionary = dictionary;
+        for (int i = 0; i < storageSize; i++)
         {
-            AddItem(item.Value, item.Key);
+            // AddItem(dictionary.ElementAt(i).Value, dictionary.ElementAt(i).Key);
+            float pos = dictionary.ElementAt(i).Key;
+            Item item = dictionary.ElementAt(i).Value;
+            
+            itemDictionary.Add(pos, item);
+            if (item != null)
+            {
+                Vector3 itemPos = new Vector3(pos,-0.159f,0);
+                Item instantiatedItem = Instantiate(item, itemPos + transform.position, Quaternion.identity, transform);
+                Debug.Log(instantiatedItem);
+                instantiatedItem.goods = ItemManager.instance.SetGoods(item.id);
+                instantiatedItem.storage = this;            
+                instantiatedItem.isOnBox = false;
+            }
         }
+        // foreach (var item in itemDictionary)
+        // {
+        //     AddItem(item.Value, item.Key);
+        // }
         return itemDictionary;
     }
 
@@ -24,7 +41,8 @@ public class Storage : Interactable
         float columnLength = storageLength / storageSize;
         for (int i = 0; i < storageSize; i++)
         {
-            float itemPosX = columnLength * i - 0.167f;
+            float value = columnLength * i - 0.167f;
+            float itemPosX =  (float) System.Math.Round(value,2);
 
             itemDictionary.Add(itemPosX, null);
         } 
@@ -85,16 +103,17 @@ public class Storage : Interactable
         }
     }
 
-    private void AddItem(Item item, float pos) {
-        if (item != null)
-        {
-            Vector3 itemPos = new Vector3(pos,-0.159f,0);
-            Item instantiatedItem = Instantiate(item, itemPos + transform.position, Quaternion.identity, transform);
-            instantiatedItem.goods = ItemManager.instance.SetGoods(item.id);
-            instantiatedItem.storage = this;            
-            instantiatedItem.isOnBox = false;
-        }
-    }
+    // private void AddItem(Item item, float pos) {
+    //         itemDictionary.Add(pos, item);
+    //     if (item != null)
+    //     {
+    //         Vector3 itemPos = new Vector3(pos,-0.159f,0);
+    //         Item instantiatedItem = Instantiate(item, itemPos + transform.position, Quaternion.identity, transform);
+    //         instantiatedItem.goods = ItemManager.instance.SetGoods(item.id);
+    //         instantiatedItem.storage = this;            
+    //         instantiatedItem.isOnBox = false;
+    //     }
+    // }
 
     private void AddToList(Item item) {
         ItemManager.instance.GenerateList(item);
@@ -102,10 +121,14 @@ public class Storage : Interactable
     }
 
     public void RemoveItem(Item item) {
-        itemDictionary[item.transform.localPosition.x] = null;
+        float value = item.transform.localPosition.x;
+        itemDictionary[(float) System.Math.Round(value,2)] = null;
         // itemDictionary.Remove(item.transform.localPosition.x);
         item.storage = null;
-        Debug.Log(itemDictionary[item.transform.localPosition.x]);
+        foreach (var i in itemDictionary)
+        {
+            Debug.Log(i.Value +","+i.Key);   
+        }
         ItemManager.instance.UpdateList(id, itemDictionary);
     }
 
