@@ -38,12 +38,9 @@ public class ItemManager : MonoBehaviour
     }
 
     private void GenerateStorageFromSave(List<SerializableDictionary<float, Item>> list) {
-        // storageItem = list;
         for (int i = 0; i < storageList.Count; i++)
         {
             storageList[i].id = i;
-            // storageList[i].GenerateStorageFromSave(list[i]);
-            // storageItem.Add(items);
             storageItem.Add(storageList[i].GenerateStorageFromSave(list[i]));
         }
     }
