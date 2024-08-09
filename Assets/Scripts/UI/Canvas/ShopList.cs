@@ -12,7 +12,7 @@ public class ShopList : MonoBehaviour
     [SerializeField] private Image goodsImage;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI priceText;
-    public Action<int> OnButtonClick;
+    public Action<int, int> OnButtonClick;
 
     private int index;
     private int totalPrice;
@@ -26,6 +26,6 @@ public class ShopList : MonoBehaviour
     }
 
     public void Buy() {
-        OnButtonClick.Invoke(index);
+        OnButtonClick.Invoke(index, totalPrice);
     }
 }

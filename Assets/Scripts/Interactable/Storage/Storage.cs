@@ -7,19 +7,39 @@ using UnityEngine;
 public class Storage : Interactable
 {
     [SerializeField] private int storageSize;
-    public Dictionary<float, Item> itemDictionary;
+    public int id;
+    public SerializableDictionary<float, Item> itemDictionary = new SerializableDictionary<float, Item>();
 
-    private void Awake() {
-        float storageLength = 0.206f + 0.167f;
-        float columnLength = storageLength / storageSize;
-
-        itemDictionary = new Dictionary<float, Item>();
+    public SerializableDictionary<float, Item> GenerateStorageFromSave(SerializableDictionary<float, Item> dictionary) {
         for (int i = 0; i < storageSize; i++)
         {
-            float itemPosX = columnLength * i - 0.167f;
+            float pos = dictionary.ElementAt(i).Key;
+            Item item = dictionary.ElementAt(i).Value;
+            
+            itemDictionary.Add(pos, item);
+            if (item != null)
+            {
+                Vector3 itemPos = new Vector3(pos,-0.159f,0);
+                Item instantiatedItem = Instantiate(item, itemPos + transform.position, Quaternion.identity, transform);
+                instantiatedItem.goods = ItemManager.instance.SetGoods(item.id);
+                instantiatedItem.storage = this;            
+                instantiatedItem.isOnBox = false;
+            }
+        }
+        return itemDictionary;
+    }
+
+    public SerializableDictionary<float, Item> GenerateNewStorage() {
+        float storageLength = 0.206f + 0.167f;
+        float columnLength = storageLength / storageSize;
+        for (int i = 0; i < storageSize; i++)
+        {
+            float value = columnLength * i - 0.167f;
+            float itemPosX =  (float) System.Math.Round(value,2);
 
             itemDictionary.Add(itemPosX, null);
         } 
+        return itemDictionary;
     }
 
     public override void OnInteract(ItemInteract broadcaster)
@@ -69,7 +89,7 @@ public class Storage : Interactable
                 item.transform.localRotation = Quaternion.identity;
                 item.storage = this;
                 item.isOnBox = false;
-                itemDictionary[itemDictionary.ElementAt(i).Key] = item;
+                itemDictionary[itemDictionary.ElementAt(i).Key] = item.goods.itemPrefab;
                 AddToList(item);
                 break;      
             }
@@ -78,11 +98,14 @@ public class Storage : Interactable
 
     private void AddToList(Item item) {
         ItemManager.instance.GenerateList(item);
+        ItemManager.instance.UpdateList(id, itemDictionary);
     }
 
     public void RemoveItem(Item item) {
-        itemDictionary[item.transform.localPosition.x] = null;
+        float value = item.transform.localPosition.x;
+        itemDictionary[(float) System.Math.Round(value,2)] = null;
         item.storage = null;
+        ItemManager.instance.UpdateList(id, itemDictionary);
     }
 
     public override void OnHighlight(ItemInteract broadcaster, bool status)

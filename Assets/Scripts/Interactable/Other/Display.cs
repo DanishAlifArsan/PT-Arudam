@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -30,9 +31,13 @@ public class Display : Interactable
         int maxPrice = (int) (buyPrice + (buyPrice * priceRate));
 
         if(isPlus){
-            return Mathf.Clamp(listGoods[index].sellPrice += 500, minPrice, maxPrice);
+            int tempPrice = Mathf.Clamp(listGoods[index].sellPrice += 500, minPrice, maxPrice);
+            ItemManager.instance.goodsWithPrice[ItemManager.instance.goodsWithPrice.ElementAt(index).Key] = tempPrice;
+            return tempPrice;
         } else {
-            return Mathf.Clamp(listGoods[index].sellPrice -= 500, minPrice, maxPrice);
+            int tempPrice = Mathf.Clamp(listGoods[index].sellPrice -= 500, minPrice, maxPrice);
+           ItemManager.instance.goodsWithPrice[ItemManager.instance.goodsWithPrice.ElementAt(index).Key] = tempPrice;
+            return tempPrice;
         }
     }
 
@@ -43,7 +48,16 @@ public class Display : Interactable
             instantiatedDisplayList.Setup(item.goods, listGoods.Count);
             instantiatedDisplayList.OnButtonClick += OnButtonClick;
             listGoods.Add(item.goods);
+            ItemManager.instance.goodsWithPrice.Add(item.goods, item.goods.sellPrice);
         }
+    }
+
+    public void GenerateList(Goods goods, int price) {
+        DisplayList instantiatedDisplayList =  Instantiate(displayList, canvas);
+        goods.sellPrice = price;
+        instantiatedDisplayList.Setup(goods, listGoods.Count);
+        instantiatedDisplayList.OnButtonClick += OnButtonClick;
+        listGoods.Add(goods);
     }
 
     public override void OnInteract(ItemInteract broadcaster)

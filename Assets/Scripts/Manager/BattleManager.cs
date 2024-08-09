@@ -56,7 +56,7 @@ public class BattleManager : MonoBehaviour
         {
             if (battledCustomer.isEvil) {
                 // kalau kita menang
-                Debug.Log("Ketangkap polisi"); 
+                SaveManager.instance.numberOfEvils += 1;
             }
             int getMoney = SaleManager.instance.GetReturnedItemPrice();
             CurrencyManager.instance.AddCurrency(getMoney);
@@ -71,7 +71,6 @@ public class BattleManager : MonoBehaviour
                 int getMoney = SaleManager.instance.GetReturnedItemPrice();
                 CurrencyManager.instance.RemoveCurrency(getMoney);
             }
-            Debug.Log("Kabur");
         }
     }
 }

@@ -70,7 +70,7 @@ public class EndlessRunManager : MonoBehaviour
             // kalau ketangkap
             if (isPolice)
             {
-                Debug.Log("Ketangkap polisi");
+                 SaveManager.instance.numberOfEvils += 1;
             }
             int getMoney = SaleManager.instance.GetReturnedItemPrice();
             CurrencyManager.instance.AddCurrency(getMoney);

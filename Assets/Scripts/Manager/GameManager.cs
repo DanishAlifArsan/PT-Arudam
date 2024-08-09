@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ResultScreen resultScreen;
     [SerializeField] private GameObject blinking;
     [SerializeField] private Volume volume;
+    [SerializeField] private TextMeshProUGUI dayText;
     public static GameManager instance;
     private Vignette vignette;
 
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
         vignette = GetVignette();
         blinking.SetActive(false);
         vignette.intensity.value = 0.25f;
+        dayText.text = "Hari "+TimeManager.instance.currentDay.ToString();
     }
 
     private void Update() {

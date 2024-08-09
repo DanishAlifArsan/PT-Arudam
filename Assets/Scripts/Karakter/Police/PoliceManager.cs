@@ -20,20 +20,20 @@ public class PoliceManager : MonoBehaviour
     }
     
     public void StartChasing(CustomerAI currentCustomer) {
-        // int random = Random.Range(0,3);
-        // switch (random)
-        // {
-        //     case 0:
-        //         StartPolice();
-        //         break;
-        //     case 1:
-        //         StartBattle();
-        //         break;
-        //     case 2:   
-        //         StartEndlessRun(currentCustomer);
-        //         break;       
-        // }
-        StartBattle(currentCustomer);
+        int random = Random.Range(0,3);
+        switch (random)
+        {
+            case 0:
+                StartPolice();
+                break;
+            case 1:
+                StartBattle(currentCustomer);
+                break;
+            case 2:   
+                StartEndlessRun(currentCustomer);
+                break;       
+        }
+        // StartBattle(currentCustomer);
     }
 
     private void StartEndlessRun(CustomerAI currentCustomer) {
@@ -50,5 +50,6 @@ public class PoliceManager : MonoBehaviour
         catchDirector.Play();
         ScrollingText.instance.Show("Laporan diterima segera menuju lokasi");
         police.StartChasing();
+        SaveManager.instance.numberOfEvils += 1;
     }
 }

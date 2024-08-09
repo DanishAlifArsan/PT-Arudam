@@ -20,6 +20,7 @@ public class Box : Interactable
     public override void OnInteract(ItemInteract broadcaster)
     {
         if (broadcaster.itemInHand == null) {
+            DeliveryManager.instance.TakeDelivery(transform.parent);
             ToggleHighlight(broadcaster.centerIndicator, false);
             transform.SetParent(broadcaster.playerHand);
             transform.localPosition = Vector3.zero;

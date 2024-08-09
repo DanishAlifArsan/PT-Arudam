@@ -13,4 +13,5 @@ public class Goods : ScriptableObject
     public int deliveryPrice;
     public int amountOnBox;
     public Box prefab;
+    public Item itemPrefab;
 }
