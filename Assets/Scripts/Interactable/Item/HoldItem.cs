@@ -5,4 +5,6 @@ public enum ItemType
     Goods,
     Box,
     Broom,
+    HangingBox,
+    HangingGoods
 }

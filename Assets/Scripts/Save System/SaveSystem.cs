@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
-using Newtonsoft.Json;
 
 public static class SaveSystem
 {
@@ -24,9 +23,7 @@ public static class SaveSystem
                     }
                 }
 
-                saveData = JsonUtility.FromJson<GameData>(dataToLoad);
-                // saveData = JsonConvert.DeserializeObject<GameData>(dataToLoad);
-                
+                saveData = JsonUtility.FromJson<GameData>(dataToLoad);           
             }
             catch (System.Exception)
             {
@@ -41,7 +38,6 @@ public static class SaveSystem
         try
         {
             string dataToStore = JsonUtility.ToJson(data, true);
-            // string dataToStore = JsonConvert.SerializeObject(data);
             using (FileStream stream = new FileStream(path, FileMode.Create))
             {
                 using (StreamWriter writer = new StreamWriter(stream))

@@ -8,6 +8,7 @@ public class Item : Interactable
     public int id;
     public Storage storage;
     public Table table;
+    public Hanging hanging;
     public bool isOnBox = true;
     public bool canInteract = true;
 
@@ -21,6 +22,10 @@ public class Item : Interactable
             if (table != null)
             {
                 table.RemoveItem(this);    
+            }
+            if (hanging != null)
+            {
+                hanging.RemoveItem(this);
             }
 
             transform.SetParent(broadcaster.itemHand);

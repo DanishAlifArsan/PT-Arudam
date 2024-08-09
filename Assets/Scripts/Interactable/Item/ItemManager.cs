@@ -75,4 +75,12 @@ public class ItemManager : MonoBehaviour
     public bool IsHoldItem(ItemType type) {
         return type.Equals(ItemType.Goods) || type.Equals(ItemType.Box);
     }
+
+    public bool isHangAble(ItemType type) {
+        return type.Equals(ItemType.HangingGoods) || type.Equals(ItemType.HangingBox);
+    }
+
+    public bool isDiscardable(ItemType type) {
+        return IsHoldItem(type) || isHangAble(type);
+    }
 }

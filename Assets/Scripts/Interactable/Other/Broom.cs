@@ -6,6 +6,7 @@ public class Broom : Interactable
 {
     [SerializeField] private Transform hand;
     [SerializeField] private Vector3 startingPos;
+    [SerializeField] private Vector3 startingRotation;
     [SerializeField] private Transform room;
     private bool isInteract = false;
     private ItemInteract broadcaster;
@@ -39,9 +40,8 @@ public class Broom : Interactable
         transform.SetParent(room);
         broadcaster.itemInHand = null;
         transform.localPosition = startingPos;
-        transform.localRotation = Quaternion.identity;
+        transform.localRotation = Quaternion.Euler(startingRotation);
         isInteract = false;
-        // ToggleHighlight(broadcaster.centerIndicator, true);
     }
 
     public override void OnHighlight(ItemInteract broadcaster, bool status)
