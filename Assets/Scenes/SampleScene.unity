@@ -19554,6 +19554,7 @@ MonoBehaviour:
   highlight: {fileID: 1230872204}
   itemType: 0
   itemPos: {x: 0, y: 0, z: -0.143}
+  id: 0
 --- !u!64 &1230872206
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23118,6 +23119,7 @@ MonoBehaviour:
   highlight: {fileID: 1356495507}
   itemType: 0
   itemPos: {x: 0, y: 0, z: -0.143}
+  id: 0
 --- !u!1 &1357527483
 GameObject:
   m_ObjectHideFlags: 0
@@ -32830,6 +32832,9 @@ MonoBehaviour:
   - {fileID: 2011420557}
   - {fileID: 585206155}
   - {fileID: 52760179}
+  hanggingList:
+  - {fileID: 1356495508}
+  - {fileID: 1230872205}
   listGoods:
   - {fileID: 11400000, guid: babe3161c8ba0e741988545e43f96b39, type: 2}
   - {fileID: 11400000, guid: cf3d8a36c0620a743b26b39e8f780110, type: 2}
@@ -32840,6 +32845,7 @@ MonoBehaviour:
     keys: []
     values: 
   storageItem: []
+  hangedItem: []
 --- !u!114 &2117257321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32919,9 +32925,9 @@ MonoBehaviour:
   sunlight: {fileID: 410087041}
   startingDay: 1
   endingDay: 5
-  startHour: 7
+  startHour: 18
   endHour: 23
-  cycleRate: 1
+  cycleRate: 10
   timeText: {fileID: 1398729723}
   dayText: {fileID: 66817184}
   currentDay: 1
@@ -33024,6 +33030,7 @@ MonoBehaviour:
     values: 
   deliveredItem: []
   storageItem: []
+  hangedItem: []
 --- !u!1 &2130647220
 GameObject:
   m_ObjectHideFlags: 0

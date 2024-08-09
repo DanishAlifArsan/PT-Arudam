@@ -51,6 +51,7 @@ public class ResultScreen : MonoBehaviour
         SaveManager.instance.day = TimeManager.instance.currentDay+1;
         SaveManager.instance.goodsWithPrice = ItemManager.instance.goodsWithPrice;
         SaveManager.instance.storageItem = ItemManager.instance.storageItem;
+        SaveManager.instance.hangedItem = ItemManager.instance.hangedItem;
         SaveManager.instance.SaveGame();
     }
 

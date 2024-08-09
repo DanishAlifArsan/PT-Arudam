@@ -5,6 +5,18 @@ using UnityEngine;
 public class Hanging : Interactable
 {
     [SerializeField] private Vector3 itemPos;
+    public int id;
+
+    public void GenerateFromSave(Item item) {
+        if (item != null)
+        {
+            Item instantiatedItem = Instantiate(item, itemPos + transform.position, Quaternion.identity, transform);    
+            instantiatedItem.hanging = this;
+            instantiatedItem.isOnBox = false;
+            instantiatedItem.goods = ItemManager.instance.SetGoods(item.id);
+        }
+    }
+
     public override void OnInteract(ItemInteract broadcaster)
     {
         Interactable itemInHand = broadcaster.itemInHand;
@@ -41,6 +53,7 @@ public class Hanging : Interactable
                 item.hanging = this;
                 item.isOnBox = false;
                 ItemManager.instance.GenerateList(item);
+                ItemManager.instance.UpdateHangable(id, item.goods.itemPrefab);
             }
         }
     }
@@ -55,5 +68,6 @@ public class Hanging : Interactable
 
     public void RemoveItem(Item item) {
         item.hanging = null;
+        ItemManager.instance.UpdateHangable(id, null);
     }
 }

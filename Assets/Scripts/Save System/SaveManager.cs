@@ -11,6 +11,7 @@ public class SaveManager : MonoBehaviour
     public SerializableDictionary<Goods, int> goodsWithPrice = new SerializableDictionary<Goods, int>();
     public List<Box> deliveredItem = new List<Box>();
     public List<SerializableDictionary<float, Item>> storageItem = new List<SerializableDictionary<float, Item>>();
+    public List<Item> hangedItem = new List<Item>();
     public static SaveManager instance;
 
     private void Awake()
@@ -40,6 +41,7 @@ public class SaveManager : MonoBehaviour
             goodsWithPrice = data.goodsWithPrice;
             deliveredItem = data.deliveredItem;
             storageItem = data.storageItem;
+            hangedItem = data.hangedItem;
         }   
 
         return data;
