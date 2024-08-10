@@ -5,6 +5,7 @@ using UnityEngine;
 public class Hanging : Interactable
 {
     [SerializeField] private Vector3 itemPos;
+    private Item hangedItem;
     public int id;
 
     public void GenerateFromSave(Item item) {
@@ -14,13 +15,14 @@ public class Hanging : Interactable
             instantiatedItem.hanging = this;
             instantiatedItem.isOnBox = false;
             instantiatedItem.goods = ItemManager.instance.SetGoods(item.id);
+            hangedItem = instantiatedItem;
         }
     }
 
     public override void OnInteract(ItemInteract broadcaster)
     {
         Interactable itemInHand = broadcaster.itemInHand;
-        if (itemInHand != null && transform.childCount == 0 && ItemManager.instance.isHangAble(itemInHand.itemType))
+        if (itemInHand != null && hangedItem == null && ItemManager.instance.isHangAble(itemInHand.itemType))
         {
             //masukkan item ke storage         
             Item item;
@@ -48,6 +50,7 @@ public class Hanging : Interactable
 
             if (item != null) {
                 item.transform.parent = transform;  
+                hangedItem = item;
                 item.transform.localPosition = itemPos;
                 item.transform.localRotation = Quaternion.identity;
                 item.hanging = this;
@@ -61,13 +64,14 @@ public class Hanging : Interactable
     public override void OnHighlight(ItemInteract broadcaster, bool status)
     {
         Interactable item = broadcaster.itemInHand;
-        if (item != null && transform.childCount == 0 && ItemManager.instance.isHangAble(item.itemType)){
+        if (item != null && hangedItem == null && ItemManager.instance.isHangAble(item.itemType)){
             ToggleHighlight(broadcaster.centerIndicator, status);
         }
     }
 
     public void RemoveItem(Item item) {
         item.hanging = null;
+        hangedItem = null;
         ItemManager.instance.UpdateHangable(id, null);
     }
 }

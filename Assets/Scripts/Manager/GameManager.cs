@@ -8,7 +8,8 @@ using UnityEngine.Rendering.Universal;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private ItemInteract player;
-    [SerializeField] private int tax;
+    [SerializeField] private int minTax;
+    [SerializeField] private int maxTax;
     [SerializeField] private ResultScreen resultScreen;
     [SerializeField] private GameObject blinking;
     [SerializeField] private Volume volume;
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
         int money = CurrencyManager.instance.totalCurrency; 
+        int tax = Random.Range(minTax, maxTax) * 1000;
         resultScreen.CountMoneyResult(money, tax, 50000);   // todo buat kodingan untuk mengatur listrik
     }
 

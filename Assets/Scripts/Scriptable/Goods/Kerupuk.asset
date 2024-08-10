@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   goodsName: Kerupuk
-  displayImage: {fileID: 21300000, guid: c231cbae41f67d446b707e2db3999673, type: 3}
+  displayImage: {fileID: 21300000, guid: ab3c8b50a43a7ca408407fbebd88749a, type: 3}
   sellPrice: 1000
   buyPrice: 1000
   deliveryPrice: 5000

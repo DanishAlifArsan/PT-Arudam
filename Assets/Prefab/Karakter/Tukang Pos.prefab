@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.27, y: 1.848, z: 15.893999}
-  m_LocalScale: {x: 0.55861014, y: 1.2390314, z: 0.78131163}
+  m_LocalScale: {x: 0.8, y: 1, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 716429523666198498}
@@ -151,6 +151,7 @@ MonoBehaviour:
   homePoint: {fileID: 0}
   packagePoint: {fileID: 0}
   playerTransform: {fileID: 0}
+  id: 0
 --- !u!1 &7930062396264062334
 GameObject:
   m_ObjectHideFlags: 0
