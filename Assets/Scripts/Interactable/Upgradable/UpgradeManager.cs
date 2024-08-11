@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
 {
-    [SerializeField] private List<Upgradable> upgradableObject;
+    public List<Upgradable> upgradableObject;
+    [SerializeField] private Upgrade upgradeShop;
     public static UpgradeManager instance;
     public List<int> upgradedList = new List<int>();
     private void Awake()
@@ -25,10 +26,21 @@ public class UpgradeManager : MonoBehaviour
         } else {
             GenerateNewUpgradable();
         }   
+        upgradeShop.Setup();
     }
 
     private void GenerateUpgradableFromSave(List<int> list) {
         upgradedList = list;
+        for (int i = 0; i < upgradableObject.Count; i++)
+        {
+            int level = upgradedList[i]-1;
+            upgradableObject[i].id = i;
+            if (level >= 0)
+            {
+                upgradableObject[i].currentlevel = upgradedList[i];
+                upgradableObject[i].upgradeObjects[level].SetActive(true);
+            }
+        }
     }
 
     private void GenerateNewUpgradable() {
@@ -39,11 +51,22 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-    public void Upgrade(int id, int level) {
+    public void Upgrade(int id) {
+        int level = upgradableObject[id].currentlevel;
         if (level < upgradableObject[id].level)
         {
+            upgradableObject[id].currentlevel++;
+            ClearObject(upgradableObject[id]);
             upgradableObject[id].upgradeObjects[level].SetActive(true);
-            upgradedList[id] = level;
+            upgradedList[id] = level+1;
+            CurrencyManager.instance.RemoveCurrency(upgradableObject[id].upgradePrices[level]);
+        }
+    }
+
+    private void ClearObject(Upgradable upgradable) {
+        foreach (var item in upgradable.upgradeObjects)
+        {
+            item.SetActive(false);
         }
     }
 }

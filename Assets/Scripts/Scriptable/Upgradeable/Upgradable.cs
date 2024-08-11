@@ -10,4 +10,5 @@ public class Upgradable : MonoBehaviour
     public int level;
     public List<int> upgradePrices;
     public List<GameObject> upgradeObjects;
+    public int currentlevel = 0;
 }
