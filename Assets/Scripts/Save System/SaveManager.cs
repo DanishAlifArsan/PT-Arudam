@@ -8,6 +8,7 @@ public class SaveManager : MonoBehaviour
     public int totalCurrency;
     public int day;
     public int numberOfEvils = 0;
+    public int donation = 0;
     public SerializableDictionary<Goods, int> goodsWithPrice = new SerializableDictionary<Goods, int>();
     public List<Box> deliveredItem = new List<Box>();
     public List<SerializableDictionary<float, Item>> storageItem = new List<SerializableDictionary<float, Item>>();
@@ -39,6 +40,7 @@ public class SaveManager : MonoBehaviour
             totalCurrency = data.totalCurrency;
             day = data.day;
             numberOfEvils = data.numberOfEvils;
+            donation = data.donation;
             goodsWithPrice = data.goodsWithPrice;
             deliveredItem = data.deliveredItem;
             storageItem = data.storageItem;

@@ -22217,9 +22217,9 @@ MonoBehaviour:
   sunlight: {fileID: 410087041}
   startingDay: 1
   endingDay: 5
-  startHour: 7
+  startHour: 18
   endHour: 23
-  cycleRate: 1
+  cycleRate: 10
   timeText: {fileID: 1398729723}
   dayText: {fileID: 66817184}
   currentDay: 1
@@ -22318,12 +22318,14 @@ MonoBehaviour:
   totalCurrency: 0
   day: 0
   numberOfEvils: 0
+  donation: 0
   goodsWithPrice:
     keys: []
     values: 
   deliveredItem: []
   storageItem: []
   hangedItem: []
+  upgradedList: 
 --- !u!1 &2130647220
 GameObject:
   m_ObjectHideFlags: 0
@@ -26559,13 +26561,16 @@ GameObject:
   - component: {fileID: 2699544211786566516}
   - component: {fileID: 8969924969718176514}
   - component: {fileID: 7298323638767174319}
+  - component: {fileID: 8969924969718176517}
+  - component: {fileID: 8969924969718176516}
+  - component: {fileID: 8969924969718176515}
   m_Layer: 0
   m_Name: Kotak Amal
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &5393650890154249979
 GameObject:
   m_ObjectHideFlags: 0
@@ -29244,6 +29249,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5380367994227740726}
   m_Mesh: {fileID: -1469975467804802244, guid: 2a21b37f53f6fd048843ea6c798bbeb0, type: 3}
+--- !u!114 &8969924969718176515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5380367994227740726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751336dd8bbf3384f93cc4604cdb3dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightName: Ambil
+--- !u!114 &8969924969718176516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5380367994227740726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4632404f5ef91554a90cedfcc13432ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlight: {fileID: 8969924969718176515}
+  itemType: 0
+  minDonation: 5
+  maxDonation: 10
+  donationAmount: 0
+--- !u!65 &8969924969718176517
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5380367994227740726}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3, y: 0.19999999, z: 0.3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &9005408846574871468
 Transform:
   m_ObjectHideFlags: 0

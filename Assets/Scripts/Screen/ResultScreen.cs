@@ -52,7 +52,7 @@ public class ResultScreen : MonoBehaviour
         SaveManager.instance.goodsWithPrice = ItemManager.instance.goodsWithPrice;
         SaveManager.instance.storageItem = ItemManager.instance.storageItem;
         SaveManager.instance.hangedItem = ItemManager.instance.hangedItem;
-        SaveManager.instance.upgradedList = UpgradeManager.instance.upgradedList;
+        // SaveManager.instance.upgradedList = UpgradeManager.instance.upgradedList;
         SaveManager.instance.SaveGame();
     }
 
