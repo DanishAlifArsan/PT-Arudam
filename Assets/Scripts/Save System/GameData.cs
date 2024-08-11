@@ -12,6 +12,7 @@ public class GameData
     public List<Box>  deliveredItem = new List<Box>();
     public List<SerializableDictionary<float, Item>> storageItem = new List<SerializableDictionary<float, Item>>();
     public List<Item> hangedItem = new List<Item>();
+    public List<int> upgradedList = new List<int>();
 
     public GameData(SaveManager manager) {
         totalCurrency = manager.totalCurrency;
@@ -21,5 +22,6 @@ public class GameData
         deliveredItem = manager.deliveredItem;
         storageItem = manager.storageItem;
         hangedItem = manager.hangedItem;
+        upgradedList = manager.upgradedList;
     }
 }

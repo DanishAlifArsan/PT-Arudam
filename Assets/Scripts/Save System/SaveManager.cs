@@ -12,6 +12,7 @@ public class SaveManager : MonoBehaviour
     public List<Box> deliveredItem = new List<Box>();
     public List<SerializableDictionary<float, Item>> storageItem = new List<SerializableDictionary<float, Item>>();
     public List<Item> hangedItem = new List<Item>();
+    public List<int> upgradedList = new List<int>();
     public static SaveManager instance;
 
     private void Awake()
@@ -42,6 +43,7 @@ public class SaveManager : MonoBehaviour
             deliveredItem = data.deliveredItem;
             storageItem = data.storageItem;
             hangedItem = data.hangedItem;
+            upgradedList = data.upgradedList;
         }   
 
         return data;
