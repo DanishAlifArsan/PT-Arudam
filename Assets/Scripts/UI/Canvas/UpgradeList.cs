@@ -20,7 +20,7 @@ public class UpgradeList : MonoBehaviour
     public void Setup(Upgradable item) {   
         upgradable = item; 
         goodsImage.sprite = item.displayImage;
-        nameText.text = item.name;    
+        nameText.text = item.itemName;    
         this.index = item.id;
         Refresh(item);
     }
