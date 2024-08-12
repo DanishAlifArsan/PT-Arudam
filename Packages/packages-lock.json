@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "com.ibicha.youtube-player": {
+      "version": "file:com.ibicha.youtube-player",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+      }
+    },
     "com.unity.2d.common": {
       "version": "8.0.2",
       "depth": 1,
@@ -102,6 +110,12 @@
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "file:com.unity.nuget.newtonsoft-json@3.2.1",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
     },
     "com.unity.probuilder": {
       "version": "5.1.1",
