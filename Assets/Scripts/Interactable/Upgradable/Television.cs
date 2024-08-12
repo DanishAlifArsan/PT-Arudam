@@ -7,7 +7,7 @@ using UnityEngine.Playables;
 using UnityEngine.Video;
 using YoutubePlayer;
 
-public class Television : Interactable
+public class Television : Electric
 {
     [SerializeField] private PlayableDirector director;
     [SerializeField] private GameObject tvUI;
@@ -15,11 +15,14 @@ public class Television : Interactable
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private PrepareYoutubeVideo prepare;
     [SerializeField] private YoutubePlayer.YoutubePlayer youtubePlayer;
+    [SerializeField] private PlayVideo playVideo;
     private ItemInteract broadcaster;
     private bool isInteract = false;
+    private bool isOn = false;
 
     private void Start() {
         videoInput.onEndEdit.AddListener(delegate {PrepareVideo();});
+        ElectricManager.instance.AddElectric(this);
     }
 
     private void Update() {
@@ -30,6 +33,8 @@ public class Television : Interactable
                 CloseTV();
             }
         }
+
+        OnCountCost(isOn);
     }
 
     public override void OnInteract(ItemInteract broadcaster)
@@ -73,7 +78,13 @@ public class Television : Interactable
         }   
     }
 
+    public void PlayVideo() {
+        playVideo.Play();
+        isOn = true;
+    }
+
     public void StopVideo() {
         videoPlayer.Stop();
+        isOn = false;
     }
 }

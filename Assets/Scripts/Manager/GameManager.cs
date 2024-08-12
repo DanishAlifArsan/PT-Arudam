@@ -53,7 +53,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         int money = CurrencyManager.instance.totalCurrency; 
         int tax = Random.Range(minTax, maxTax) * 1000;
-        resultScreen.CountMoneyResult(money, tax, 50000);   // todo buat kodingan untuk mengatur listrik
+        int electricBill = ElectricManager.instance.SaveCost();
+        resultScreen.CountMoneyResult(money, tax, electricBill);   // todo buat kodingan untuk mengatur listrik
     }
 
     private Vignette GetVignette() {

@@ -4430,6 +4430,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 295663458}
   itemType: 0
+  electricCost: 500
+  costRate: 120
   lamp: {fileID: 89524271}
   saklar: {fileID: 3708363447455768475}
 --- !u!65 &295663460
@@ -4662,9 +4664,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 319466810}
-        m_TargetAssemblyTypeName: YoutubePlayer.PlayVideo, Assembly-CSharp
-        m_MethodName: Play
+      - m_Target: {fileID: 1053579906}
+        m_TargetAssemblyTypeName: Television, Assembly-CSharp
+        m_MethodName: PlayVideo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12900,12 +12902,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 1053579907}
   itemType: 0
+  electricCost: 1000
+  costRate: 300
   director: {fileID: 1486464104}
   tvUI: {fileID: 219320795}
   videoInput: {fileID: 1617262827}
   videoPlayer: {fileID: 1474955789}
   prepare: {fileID: 1617262830}
   youtubePlayer: {fileID: 1474955794}
+  playVideo: {fileID: 319466810}
 --- !u!114 &1053579907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26843,6 +26848,7 @@ GameObject:
   - component: {fileID: 2117257328}
   - component: {fileID: 2117257329}
   - component: {fileID: 2117257330}
+  - component: {fileID: 2117257331}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -26998,7 +27004,7 @@ MonoBehaviour:
   sunlight: {fileID: 410087041}
   startingDay: 1
   endingDay: 5
-  startHour: 7
+  startHour: 18
   endHour: 23
   cycleRate: 1
   timeText: {fileID: 1398729723}
@@ -27126,6 +27132,18 @@ MonoBehaviour:
   - {fileID: 977676957}
   upgradeShop: {fileID: 1579134356}
   upgradedList: 
+--- !u!114 &2117257331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117257316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd335cefe17a4546aefffd255aa2d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2130647220
 GameObject:
   m_ObjectHideFlags: 0

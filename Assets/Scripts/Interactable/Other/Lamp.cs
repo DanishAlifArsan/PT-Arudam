@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class Lamp : Interactable
+public class Lamp : Electric
 {
     [SerializeField] private Light lamp;
     [SerializeField] private Transform saklar;
+    
     private bool isOn = false;
     private void Awake() {
         lamp.gameObject.SetActive(false);
     }
+
+    private void Start() {
+        ElectricManager.instance.AddElectric(this);
+    }
+
+    private void Update() {
+        OnCountCost(isOn);
+    }
+
     public override void OnInteract(ItemInteract broadcaster)
     {
         isOn = !isOn;
