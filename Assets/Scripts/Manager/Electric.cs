@@ -14,6 +14,7 @@ public abstract class Electric : Interactable
             {
                 totalCost += electricCost;
                 cooldown = 0;
+                Debug.Log(totalCost);
             }
         }
     }

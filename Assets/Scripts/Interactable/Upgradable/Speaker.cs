@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.UI;
+using YoutubePlayer;
 
-public class Speaker : Interactable
+public class Speaker : Electric
 {
     [SerializeField] private PlayableDirector director;
     [SerializeField] private GameObject musicUI;
@@ -11,12 +13,20 @@ public class Speaker : Interactable
     [SerializeField] private SongList songList;
     [SerializeField] private RectTransform canvas;
     [SerializeField] private List<Song> musics;
-
+    [SerializeField] private Button playButton;
+    [SerializeField] private Button StopButton;
     private ItemInteract broadcaster;
     private bool isInteract = false;
+    private bool isOn = false;
 
-    private void Start() {
+    private void OnEnable() {
+        playButton.onClick.AddListener( delegate {PlayMusic();});
+        StopButton.onClick.AddListener( delegate {StopMusic();});
         GenerateList();
+    }
+
+    private void OnDisable() {
+        isOn = false; 
     }
 
     private void Update() {
@@ -27,6 +37,9 @@ public class Speaker : Interactable
                 CloseSpeaker();
             }
         }
+        OnCountCost(isOn);
+        playButton.interactable = !isOn;
+        StopButton.interactable = isOn;
     }
 
     public override void OnInteract(ItemInteract broadcaster)
@@ -73,5 +86,19 @@ public class Speaker : Interactable
     private void OnButtonClick(AudioClip music) {
         audioSource.clip = music;
         audioSource.Play();
+        isOn = true;
+    }
+
+    private void PlayMusic() {
+        if (audioSource.clip != null)
+        { 
+            audioSource.Play();
+            isOn = true;
+        }
+    }
+
+    private void StopMusic() {
+        audioSource.Stop();
+        isOn = false;
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.UI;
 using UnityEngine.Video;
 using YoutubePlayer;
 
@@ -12,6 +13,8 @@ public class Television : Electric
     [SerializeField] private PlayableDirector director;
     [SerializeField] private GameObject tvUI;
     [SerializeField] private TMP_InputField videoInput;
+    [SerializeField] private Button PlayButton;
+    [SerializeField] private Button StopButton;
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private PrepareYoutubeVideo prepare;
     [SerializeField] private YoutubePlayer.YoutubePlayer youtubePlayer;
@@ -20,9 +23,19 @@ public class Television : Electric
     private bool isInteract = false;
     private bool isOn = false;
 
-    private void Start() {
+    private void OnEnable() {
+        prepare.youtubePlayer = youtubePlayer;
+        playVideo.videoPlayer = videoPlayer;
+        
         videoInput.onEndEdit.AddListener(delegate {PrepareVideo();});
+        PlayButton.onClick.AddListener(delegate {PlayVideo();});
+        StopButton.onClick.AddListener(delegate {StopVideo();});
+
         ElectricManager.instance.AddElectric(this);
+    }
+
+    private void OnDisable() {
+        StopVideo();
     }
 
     private void Update() {
