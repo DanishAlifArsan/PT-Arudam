@@ -8,6 +8,7 @@ public class CustomerBuy : IState
     public bool isRunning;
     public void EnterState(CustomerAI customer, StateManager stateManager)
     {
+        customer.anim.SetTrigger("buy");
         isRunning = false;
         customer.SetGoodsToBuy();
         customer.dialogueBubbleUI.SetActive(true);

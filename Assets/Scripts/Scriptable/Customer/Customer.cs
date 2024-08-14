@@ -6,6 +6,7 @@ using UnityEngine;
 public class Customer : ScriptableObject
 {
     public float walkSpeed;
+    public float acceleration;
     public float patience;
     public int maxNumberOfGoods = 1;
     public int buyAmountPerGoods = 1;

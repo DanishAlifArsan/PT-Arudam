@@ -8,8 +8,12 @@ public class Broom : Interactable
     [SerializeField] private Vector3 startingPos;
     [SerializeField] private Vector3 startingRotation;
     [SerializeField] private Transform room;
+    public Animator animator;
     private bool isInteract = false;
     private ItemInteract broadcaster;
+    private void Awake() {
+        animator = GetComponent<Animator>();   
+    }
     private void Update() {
         if (isInteract)
         {

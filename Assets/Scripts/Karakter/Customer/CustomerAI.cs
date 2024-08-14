@@ -20,6 +20,7 @@ public class CustomerAI : Interactable
     public int buyAmountPerGoods;
     public bool isEvil;
     private StateManager stateManager;
+    public Animator anim;
     [SerializeField] private DialogueBubble dialogueBubble;
     [SerializeField] private RectTransform boxHolder;
     [SerializeField] private Image patienceBar;
@@ -62,6 +63,7 @@ public class CustomerAI : Interactable
 
         waitTimer -= Time.deltaTime;
         patienceBar.fillAmount = waitTimer/waitDuration;
+        anim.SetFloat("patience", patienceBar.fillAmount);
         if (waitTimer <= 0)
         {
             patienceBar.fillAmount = 1;
@@ -130,6 +132,8 @@ public class CustomerAI : Interactable
         Broom broom = broadcaster.itemInHand?.GetComponent<Broom>();
         if (broom != null)
         {
+            Battle();
+            broom.animator.SetTrigger("swing");
             BattleManager.instance.battledCustomer = this;
             BattleManager.instance.StartBattle(false);
         }
@@ -152,5 +156,9 @@ public class CustomerAI : Interactable
                 ToggleHighlight(broadcaster.centerIndicator, status);
             }
         }
+    }
+
+    public void Battle() {
+        stateManager.SwitchAnyState(this, stateManager.attack, () => true);
     }
 }

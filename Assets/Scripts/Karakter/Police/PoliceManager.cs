@@ -42,6 +42,7 @@ public class PoliceManager : MonoBehaviour
         ScrollingText.instance.Show("Tangkap dia jangan sampai kabur");
     }
     private void StartBattle(CustomerAI currentCustomer) {
+        currentCustomer.Battle();
         BattleManager.instance.battledCustomer = currentCustomer;
         battleDirector.Play();
         ScrollingText.instance.Show("Hati-hati dia bersenjata");

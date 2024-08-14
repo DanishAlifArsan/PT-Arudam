@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Pak kumis Biasa
+      m_Hash: 822940544
+      m_Sprite: {fileID: 21300000, guid: 55c9b46c0c2dbc14f9fdb2ada23db157, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: 15d01ef0949d10540b7a1d8f8343f2f1,
+        type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 1
+  - m_Name: walk_front
+    m_Hash: 938729810
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Pak Kumis Jalan Maju_0
+      m_Hash: 825764009
+      m_Sprite: {fileID: -167864265, guid: d1c4307d2d7b3234482fadadb7e0c346, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1877544711, guid: a847183a50d700d4f991e42b4c20558a,
+        type: 3}
+    - m_Name: Pak Kumis Jalan Maju_1
+      m_Hash: 104798271
+      m_Sprite: {fileID: 1990209750, guid: d1c4307d2d7b3234482fadadb7e0c346, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 669179758, guid: a847183a50d700d4f991e42b4c20558a,
+        type: 3}
+    - m_Name: Pak Kumis Jalan Maju_2
+      m_Hash: 523651461
+      m_Sprite: {fileID: -536423090, guid: d1c4307d2d7b3234482fadadb7e0c346, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -853535453, guid: a847183a50d700d4f991e42b4c20558a,
+        type: 3}
+    - m_Name: Pak Kumis Jalan Maju_3
+      m_Hash: 674330899
+      m_Sprite: {fileID: 2141221313, guid: d1c4307d2d7b3234482fadadb7e0c346, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 237715334, guid: a847183a50d700d4f991e42b4c20558a,
+        type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 4
+  - m_Name: walk_back
+    m_Hash: 912688558
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Pak Kumis Jalan_0
+      m_Hash: 20535
+      m_Sprite: {fileID: -818781986, guid: 98f77b52ea4984c41b7098d2e135816a, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 509093684, guid: 59b0d23fa9ba0b540a6512341af1ab5d,
+        type: 3}
+    - m_Name: Pak Kumis Jalan_1
+      m_Hash: 923230369
+      m_Sprite: {fileID: 247495811, guid: 98f77b52ea4984c41b7098d2e135816a, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -874016039, guid: 59b0d23fa9ba0b540a6512341af1ab5d,
+        type: 3}
+    - m_Name: Pak Kumis Jalan_2
+      m_Hash: 772682011
+      m_Sprite: {fileID: -459676293, guid: 98f77b52ea4984c41b7098d2e135816a, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -576341610, guid: 59b0d23fa9ba0b540a6512341af1ab5d,
+        type: 3}
+    - m_Name: Pak Kumis Jalan_3
+      m_Hash: 420020621
+      m_Sprite: {fileID: -1935800487, guid: 98f77b52ea4984c41b7098d2e135816a, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 968174195, guid: 59b0d23fa9ba0b540a6512341af1ab5d,
+        type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 4
+  - m_Name: pay
+    m_Hash: 1049567804
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Pak Kumis Kasih Uang
+      m_Hash: 502723066
+      m_Sprite: {fileID: 21300000, guid: 1764b61fff23ebf4c9bfceb23ebfb6a3, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: eb309f886e979b5469b85f2b676541bd,
+        type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 1
+  - m_Name: angry
+    m_Hash: 12658329
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Pak Kumis Marah
+      m_Hash: 792589879
+      m_Sprite: {fileID: 21300000, guid: b07bc4d7ecdd95248a5d41353a8bb0d3, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: c168d3de7e3c4f9439de20119f58661c,
+        type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 1
+  - m_Name: happy
+    m_Hash: 1055753161
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Pak Kumis Senyum
+      m_Hash: 584702281
+      m_Sprite: {fileID: 21300000, guid: 30106d6319b150d41804a2f1dbd9413a, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: dad4087e85ced7a41bff06052a5dd572,
+        type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 1
+  m_PrimaryLibraryGUID: a64035abac9f6c44799065c66139d849
+  m_ModificationHash: 638592435225095174
+  m_Version: 1

@@ -6,6 +6,7 @@ public class CustomerPay : IState
 {
     public void EnterState(CustomerAI customer, StateManager stateManager)
     {
+        customer.anim.SetTrigger("pay");
         SaleManager.instance.DisableInteract();
         customer.dialogueBubbleUI.SetActive(false);
         customer.isWalking = false;

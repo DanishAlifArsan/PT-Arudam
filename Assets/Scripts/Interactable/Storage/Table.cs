@@ -75,17 +75,17 @@ class Grid{
         this.width = width;
         this.height = height;
 
-        float xLength = 0.3f + 0.2f;
+        float xLength = 0.286f + 0.3f; // -0.3, 0.286
         float xColumnLength = xLength / width;
 
-        float yLength =  1.2f - 0.1f;
+        float yLength =   0.2f + 0.232f;  // -0.232, 0.2
         float yColumnLength = yLength /height;
 
         for (int i = 0; i < width; i++)
         {
             for (int j = 0; j < height; j++)
             {
-                Vector3 pos = new Vector3(yColumnLength * j + 0.1f, 0f, xColumnLength * i - 0.2f);
+                Vector3 pos = new Vector3(yColumnLength * j - 0.232f, 0f, xColumnLength * i - 0.3f);
                 dictionary.Add(pos, null);
             }
         }
