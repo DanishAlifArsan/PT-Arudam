@@ -18,4 +18,4 @@ MonoBehaviour:
   maxNumberOfGoods: 2
   buyAmountPerGoods: 2
   prefab: {fileID: 7864365682551148990, guid: 702d86a68c62e334c91ff4ffcc452535, type: 3}
-  isEvil: 0
+  isEvil: 1
