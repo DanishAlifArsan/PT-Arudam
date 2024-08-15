@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class HomeScreen : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScene;
+    [SerializeField] private GameObject settingScreen;
     [SerializeField] private bool inGame = false;
 
     private void Awake() {
@@ -33,6 +34,11 @@ public class HomeScreen : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    
+    public void ShowSetting(bool status) {
+        settingScreen.SetActive(status);    
     }
 
     public void CloseGame() {
