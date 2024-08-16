@@ -7,11 +7,11 @@ using UnityEngine.Audio;
 
 public class Setting : MonoBehaviour
 {
-    [SerializeField] private UnityEngine.UI.Slider volumeSlider;
-    [SerializeField] private TMP_Dropdown langDropdown;
+    public UnityEngine.UI.Slider volumeSlider;
+    public TMP_Dropdown langDropdown;
     [SerializeField] private AudioMixer audioMixer;
     private void Awake() {
-        LocalizationManager.Read();
+        // LocalizationManager.Read();
         // LocalizationManager.Language = "English";
 
         langDropdown.onValueChanged.AddListener(delegate {selectvalue(langDropdown);});
@@ -46,5 +46,6 @@ public class Setting : MonoBehaviour
 
     private void OnDisable() {
         PlayerPrefs.SetFloat("volume", volumeSlider.value);
+        PlayerPrefs.SetInt("lang", langDropdown.value);
     }
 }

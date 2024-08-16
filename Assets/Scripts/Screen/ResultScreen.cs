@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using Assets.SimpleLocalization.Scripts;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,7 +18,8 @@ public class ResultScreen : MonoBehaviour
     private Action<int> onContinueButton;
     private int sceneToLoad;
     private void OnEnable() {
-        dayText.text = "Hari "+TimeManager.instance.currentDay.ToString();
+        string day = LocalizationManager.Localize("Menu Day") + " ";
+        dayText.text = day+TimeManager.instance.currentDay.ToString();
         onContinueButton += homeScreen.LoadScene;
     }
 

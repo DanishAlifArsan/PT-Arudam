@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
@@ -46,9 +47,10 @@ public class Speaker : Electric
     {
         musicUI.SetActive(true);
         this.broadcaster = broadcaster;
-        broadcaster.SetIndicator(true,"Kembali");
+        string indicator = LocalizationManager.Localize("Menu Back");
+        broadcaster.SetIndicator(true,indicator);
         director.Play();
-        ToggleHighlight(broadcaster.centerIndicator, false);
+        ToggleHighlight(broadcaster.centerIndicator, false, "Interact Speaker");
         broadcaster.canvas.SetActive(false);
         broadcaster.controller.enabled = false;
         broadcaster.canInteract = false;
@@ -58,14 +60,14 @@ public class Speaker : Electric
     }
     public override void OnHighlight(ItemInteract broadcaster, bool status)
     {
-        ToggleHighlight(broadcaster.centerIndicator, status);
+        ToggleHighlight(broadcaster.centerIndicator, status, "Interact Speaker");
     }
 
      private void CloseSpeaker() {
         broadcaster.SetIndicator(false);
         musicUI.SetActive(false);
         director.Stop();
-        ToggleHighlight(broadcaster.centerIndicator, true);
+        ToggleHighlight(broadcaster.centerIndicator, true, "Interact Speaker");
         broadcaster.canvas.SetActive(true);
         broadcaster.controller.enabled = true;
         broadcaster.canInteract = true;

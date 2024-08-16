@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -29,7 +30,8 @@ public class GameManager : MonoBehaviour
         vignette = GetVignette();
         blinking.SetActive(false);
         vignette.intensity.value = 0.25f;
-        dayText.text = "Hari "+TimeManager.instance.currentDay.ToString();
+        string day = LocalizationManager.Localize("Menu Day") + " ";
+        dayText.text = day+TimeManager.instance.currentDay.ToString();
     }
 
     private void Update() {

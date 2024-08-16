@@ -47,7 +47,7 @@ public class Donation : Interactable
             CurrencyManager.instance.AddCurrency(donationAmount);
             donationAmount = 0;
             SetText();
-            ToggleHighlight(broadcaster.centerIndicator, false);
+            ToggleHighlight(broadcaster.centerIndicator, false, "Interact Take");
         }
     }
 
@@ -55,7 +55,7 @@ public class Donation : Interactable
     {
         if (donationAmount > 0)
         {
-            ToggleHighlight(broadcaster.centerIndicator, status);
+            ToggleHighlight(broadcaster.centerIndicator, status, "Interact Take");
         }
     }
 

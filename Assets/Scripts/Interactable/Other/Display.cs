@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -64,9 +65,10 @@ public class Display : Interactable
     {
         displayUI.SetActive(true);
         this.broadcaster = broadcaster;
-        broadcaster.SetIndicator(true,"Kembali");
+        string indicator = LocalizationManager.Localize("Menu Back");
+        broadcaster.SetIndicator(true,indicator);
         director.Play();
-        ToggleHighlight(broadcaster.centerIndicator, false);
+        ToggleHighlight(broadcaster.centerIndicator, false, "Interact Display");
         broadcaster.canvas.SetActive(false);
         broadcaster.controller.enabled = false;
         broadcaster.canInteract = false;
@@ -79,7 +81,7 @@ public class Display : Interactable
         broadcaster.SetIndicator(false);
         displayUI.SetActive(false);
         director.Stop();
-        ToggleHighlight(broadcaster.centerIndicator, true);
+        ToggleHighlight(broadcaster.centerIndicator, true, "Interact Display");
         broadcaster.canvas.SetActive(true);
         broadcaster.controller.enabled = true;
         broadcaster.canInteract = true;
@@ -94,6 +96,6 @@ public class Display : Interactable
 
     public override void OnHighlight(ItemInteract broadcaster, bool status)
     {
-        ToggleHighlight(broadcaster.centerIndicator, status);
+        ToggleHighlight(broadcaster.centerIndicator, status, "Interact Display");
     }
 }

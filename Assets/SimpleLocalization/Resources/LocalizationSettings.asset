@@ -17,4 +17,10 @@ MonoBehaviour:
   - Name: Menu
     Id: 0
     TextAsset: {fileID: 4900000, guid: cf55c05861a4d264a855e6349bef560e, type: 3}
+  - Name: Indicator
+    Id: 1278983858
+    TextAsset: {fileID: 4900000, guid: 3edc9ddf7ad07e64591f5e6ac72cc758, type: 3}
+  - Name: Dialogue
+    Id: 1711055325
+    TextAsset: {fileID: 4900000, guid: 227aa434faf4e764ba54a8256c41f56d, type: 3}
   SaveFolder: {fileID: 102900000, guid: c392831e85f928548b8494fefd912562, type: 3}

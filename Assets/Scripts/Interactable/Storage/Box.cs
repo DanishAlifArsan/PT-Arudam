@@ -21,7 +21,7 @@ public class Box : Interactable
     {
         if (broadcaster.itemInHand == null) {
             DeliveryManager.instance.TakeDelivery(transform.parent);
-            ToggleHighlight(broadcaster.centerIndicator, false);
+            ToggleHighlight(broadcaster.centerIndicator, false, "Interact Take");
             transform.SetParent(broadcaster.playerHand);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;  
@@ -33,7 +33,7 @@ public class Box : Interactable
     {
         if (broadcaster.itemInHand == null)
         {   
-            ToggleHighlight(broadcaster.centerIndicator, status);
+            ToggleHighlight(broadcaster.centerIndicator, status, "Interact Take");
         }
     }
 

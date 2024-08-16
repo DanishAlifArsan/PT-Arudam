@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class Lamp : Electric
@@ -25,8 +24,7 @@ public class Lamp : Electric
     {
         isOn = !isOn;
         lamp.gameObject.SetActive(isOn);
-        highlight.highlightName = isOn? "Matikan": "Nyalakan";
-        ToggleHighlight(broadcaster.centerIndicator, true);
+        ToggleHighlight(broadcaster.centerIndicator, true, Indicator());
         if (isOn)
         {
             saklar.transform.localRotation = Quaternion.Euler(-100f, 0, 90);
@@ -37,6 +35,12 @@ public class Lamp : Electric
 
     public override void OnHighlight(ItemInteract broadcaster, bool status)
     {
-        ToggleHighlight(broadcaster.centerIndicator, status);
+        ToggleHighlight(broadcaster.centerIndicator, status, Indicator());
+    }
+
+    private string Indicator() {
+        string turnOn = "Interact Lamp On";
+        string turnOff = "Interact Lamp Off";
+        return isOn? turnOff: turnOn;
     }
 }

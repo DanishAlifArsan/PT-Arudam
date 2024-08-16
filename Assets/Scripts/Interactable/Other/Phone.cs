@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
+using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Phone : Interactable
 {
@@ -27,8 +26,9 @@ public class Phone : Interactable
         if (SaleManager.instance.isTransaction) return;
         
         this.broadcaster = broadcaster;
-        broadcaster.SetIndicator(true,"Tutup");
-        ToggleHighlight(broadcaster.centerIndicator, false);
+        string indicator = LocalizationManager.Localize("Cancel Phone");
+        broadcaster.SetIndicator(true,indicator);
+        ToggleHighlight(broadcaster.centerIndicator, false, "Interact Phone");
         broadcaster.controller.enabled = false;
         broadcaster.canInteract = false;
         Cursor.lockState = CursorLockMode.None;
@@ -53,7 +53,7 @@ public class Phone : Interactable
     }
 
     public void ClosePhone() {
-        ToggleHighlight(broadcaster.centerIndicator, true);
+        ToggleHighlight(broadcaster.centerIndicator, true, "Interact Phone");
         while (backStack.Count > 0) {
             CloseApp();
         }
@@ -70,6 +70,6 @@ public class Phone : Interactable
     public override void OnHighlight(ItemInteract broadcaster, bool status)
     {
         if (SaleManager.instance.isTransaction) return;
-        ToggleHighlight(broadcaster.centerIndicator, status);
+        ToggleHighlight(broadcaster.centerIndicator, status, "Interact Phone");
     }
 }

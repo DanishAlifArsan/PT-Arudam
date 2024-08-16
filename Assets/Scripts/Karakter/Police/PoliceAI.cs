@@ -29,7 +29,7 @@ public class PoliceAI : MonoBehaviour
             if (dist!=Mathf.Infinity && agent.pathStatus == NavMeshPathStatus.PathComplete && agent.remainingDistance == 0)
             {
                 anim.SetBool("walking", false);
-                ScrollingText.instance.Show("Terima kasih atas kerjasamanya");
+                ScrollingText.instance.Show("Police Thanks");
                 isChasing = false;
             }
         }

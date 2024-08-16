@@ -112,7 +112,7 @@ public class Storage : Interactable
     {
         Interactable item = broadcaster.itemInHand;
         if (item != null && itemDictionary.ContainsValue(null) && ItemManager.instance.IsHoldItem(item.itemType)){
-            ToggleHighlight(broadcaster.centerIndicator, status);
+            ToggleHighlight(broadcaster.centerIndicator, status, "Interact Place");
         }
     }
 }

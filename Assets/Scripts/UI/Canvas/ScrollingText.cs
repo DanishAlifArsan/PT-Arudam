@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,7 +30,7 @@ public class ScrollingText : MonoBehaviour
         }
 
         isCalling = true;
-        currentText = text;
+        currentText = LocalizationManager.Localize(text);
         StartCoroutine(DisplayText());
     }
 

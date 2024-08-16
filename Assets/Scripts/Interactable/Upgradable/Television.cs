@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -54,9 +55,10 @@ public class Television : Electric
     {
         tvUI.SetActive(true);
         this.broadcaster = broadcaster;
-        broadcaster.SetIndicator(true,"Kembali");
+        string indicator = LocalizationManager.Localize("Menu Back");
+        broadcaster.SetIndicator(true,indicator);
         director.Play();
-        ToggleHighlight(broadcaster.centerIndicator, false);
+        ToggleHighlight(broadcaster.centerIndicator, false, "Interact Tv");
         broadcaster.canvas.SetActive(false);
         broadcaster.controller.enabled = false;
         broadcaster.canInteract = false;
@@ -66,14 +68,14 @@ public class Television : Electric
     }
     public override void OnHighlight(ItemInteract broadcaster, bool status)
     {
-        ToggleHighlight(broadcaster.centerIndicator, status);
+        ToggleHighlight(broadcaster.centerIndicator, status, "Interact Tv");
     }
 
      private void CloseTV() {
         broadcaster.SetIndicator(false);
         tvUI.SetActive(false);
         director.Stop();
-        ToggleHighlight(broadcaster.centerIndicator, true);
+        ToggleHighlight(broadcaster.centerIndicator, true, "Interact Tv");
         broadcaster.canvas.SetActive(true);
         broadcaster.controller.enabled = true;
         broadcaster.canInteract = true;

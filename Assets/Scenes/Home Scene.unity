@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingScene: {fileID: 855464658}
-  settingScreen: {fileID: 1179939381}
+  settingScreen: {fileID: 1179939382}
   inGame: 0
 --- !u!1 &569368449
 GameObject:
@@ -1219,12 +1219,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1179939379}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1179939381 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 732314383831326281, guid: 825c916555830d24bbd9e859f583a844,
+--- !u!114 &1179939382 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7825786886587010781, guid: 825c916555830d24bbd9e859f583a844,
     type: 3}
   m_PrefabInstance: {fileID: 1179939379}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e944188e3a3e8e4595bd454f1cd086c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1313461970
 GameObject:
   m_ObjectHideFlags: 0

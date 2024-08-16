@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
 
 public class WantedPoster : Interactable
@@ -24,7 +25,7 @@ public class WantedPoster : Interactable
     }
     public override void OnHighlight(ItemInteract broadcaster, bool status)
     {
-       ToggleHighlight(broadcaster.centerIndicator, status);
+        ToggleHighlight(broadcaster.centerIndicator, status, "Interact Poster");
     }
 
     public override void OnInteract(ItemInteract broadcaster)
@@ -33,8 +34,9 @@ public class WantedPoster : Interactable
         rend.enabled = false;
         broadcaster.controller.enabled = false;
         broadcaster.canInteract = false;
-        broadcaster.SetIndicator(true,"Kembali");
-        ToggleHighlight(broadcaster.centerIndicator, false);
+        string indicator = LocalizationManager.Localize("Cancel Phone");
+        broadcaster.SetIndicator(true,indicator);
+        ToggleHighlight(broadcaster.centerIndicator, false, "Interact Poster");
         posterCanvas.SetActive(true);
         isInteract = true;
     }

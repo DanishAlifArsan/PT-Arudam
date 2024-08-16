@@ -8,7 +8,7 @@ public class Bed : Interactable
     {
         if (TimeManager.instance.NightHour() && broadcaster.itemInHand == null)
         {
-            ToggleHighlight(broadcaster.centerIndicator, status);
+            ToggleHighlight(broadcaster.centerIndicator, status, "Interact Bed");
         }
     }
 

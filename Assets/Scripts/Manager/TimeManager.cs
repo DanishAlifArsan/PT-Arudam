@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization.Scripts;
 using TMPro;
 using UnityEngine;
 
@@ -64,7 +65,8 @@ public class TimeManager : MonoBehaviour
     }
 
     private void Setup() {
-        dayText.text = "Hari "+ currentDay.ToString();
+        string day = LocalizationManager.Localize("Menu Day") + " ";
+        dayText.text = day + currentDay.ToString();
         hours = startHour;
         minutes = 0;
         cycle = startHour * 60;

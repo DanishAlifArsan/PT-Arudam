@@ -138,7 +138,7 @@ public class CustomerAI : Interactable
             BattleManager.instance.StartBattle(false);
         }
 
-        ToggleHighlight(broadcaster.centerIndicator, false);
+        ToggleHighlight(broadcaster.centerIndicator, false, "");
     }
 
     public override void OnHighlight(ItemInteract broadcaster, bool status)
@@ -149,11 +149,9 @@ public class CustomerAI : Interactable
         {
             if (stateManager.currentState == stateManager.buy && item.itemType.Equals(ItemType.Goods))
             {
-                highlight.highlightName = "Taruh";   
-                ToggleHighlight(broadcaster.centerIndicator, status);
+                ToggleHighlight(broadcaster.centerIndicator, status, "Interact Place");
             } else if(item.itemType.Equals(ItemType.Broom)) {
-                highlight.highlightName = "Usir";   
-                ToggleHighlight(broadcaster.centerIndicator, status);
+                ToggleHighlight(broadcaster.centerIndicator, status, "Interact Fight");
             }
         }
     }

@@ -32,7 +32,7 @@ public class Item : Interactable
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
             broadcaster.itemInHand = this;
-            ToggleHighlight(broadcaster.centerIndicator, false);
+            ToggleHighlight(broadcaster.centerIndicator, false, "");
         }
     }
 
@@ -40,7 +40,7 @@ public class Item : Interactable
     {
         if (!isOnBox && broadcaster.itemInHand == null && canInteract)
         {
-            ToggleHighlight(broadcaster.centerIndicator, status);
+            ToggleHighlight(broadcaster.centerIndicator, status, "Interact Take");
         }
     }
 }

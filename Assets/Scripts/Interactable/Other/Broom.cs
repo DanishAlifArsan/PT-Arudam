@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
 
 public class Broom : Interactable
@@ -29,13 +30,14 @@ public class Broom : Interactable
        if (broadcaster.itemInHand == null)
        {
             this.broadcaster = broadcaster;
-            broadcaster.SetIndicator(true,"Taruh");
+            string indicator = LocalizationManager.Localize("Cancel Broom");
+            broadcaster.SetIndicator(true,indicator);
             transform.SetParent(hand);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
             broadcaster.itemInHand = this;
             isInteract = true;
-            ToggleHighlight(broadcaster.centerIndicator, false);
+            ToggleHighlight(broadcaster.centerIndicator, false, "Interact Broom");
        }
     }
 
@@ -52,7 +54,7 @@ public class Broom : Interactable
     {
         if (broadcaster.itemInHand == null)
         {
-            ToggleHighlight(broadcaster.centerIndicator, status);
+            ToggleHighlight(broadcaster.centerIndicator, status, "Interact Broom");
         }
     }
 }

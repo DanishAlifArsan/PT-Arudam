@@ -39,17 +39,17 @@ public class PoliceManager : MonoBehaviour
     private void StartEndlessRun(CustomerAI currentCustomer) {
         EndlessRunManager.instance.chasedCustomer = currentCustomer;
         endlessrunDirector.Play();
-        ScrollingText.instance.Show("Tangkap dia jangan sampai kabur");
+        ScrollingText.instance.Show("Call Police 3");
     }
     private void StartBattle(CustomerAI currentCustomer) {
         currentCustomer.Battle();
         BattleManager.instance.battledCustomer = currentCustomer;
         battleDirector.Play();
-        ScrollingText.instance.Show("Hati-hati dia bersenjata");
+        ScrollingText.instance.Show("Call Police 4");
     }
     private void StartPolice() {
         catchDirector.Play();
-        ScrollingText.instance.Show("Laporan diterima segera menuju lokasi");
+        ScrollingText.instance.Show("Call Police 5");
         police.StartChasing();
         SaveManager.instance.numberOfEvils += 1;
     }

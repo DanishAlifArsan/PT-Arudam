@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class HomeScreen : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScene;
-    [SerializeField] private GameObject settingScreen;
+    [SerializeField] private Setting settingScreen;
     [SerializeField] private bool inGame = false;
 
     private void Awake() {
@@ -19,6 +20,19 @@ public class HomeScreen : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+        Setup();
+    }
+
+    private void Setup() {
+        LocalizationManager.Read();
+        float volume =  PlayerPrefs.GetFloat("volume", 0f);
+        settingScreen.volumeSlider.value = volume;
+        settingScreen.SetVolume(volume);
+
+        int lang =  PlayerPrefs.GetInt("lang", 0);
+        settingScreen.langDropdown.value = lang;
+        settingScreen.SetLanguage(lang);
+        Debug.Log(lang + "," + volume);
     }
 
     public void LoadScene(int sceneId) {
@@ -38,7 +52,7 @@ public class HomeScreen : MonoBehaviour
 
     
     public void ShowSetting(bool status) {
-        settingScreen.SetActive(status);    
+        settingScreen.gameObject.SetActive(status);    
     }
 
     public void CloseGame() {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
 
 public class Drawer : Interactable
@@ -12,14 +13,19 @@ public class Drawer : Interactable
     public override void OnHighlight(ItemInteract broadcaster, bool status)
     {
         
-        ToggleHighlight(broadcaster.centerIndicator, status);
+        ToggleHighlight(broadcaster.centerIndicator, status, Indicator());
     }
 
     public override void OnInteract(ItemInteract broadcaster)
     {
         isPulled = !isPulled;
-        highlight.highlightName = isPulled? "Tutup": "buka";
         anim.SetBool("isPulled", isPulled);
-        ToggleHighlight(broadcaster.centerIndicator, true);
+        ToggleHighlight(broadcaster.centerIndicator, true, Indicator());
+    }
+
+    private string Indicator() {
+        string open = LocalizationManager.Localize("Interact Open");
+        string close = LocalizationManager.Localize("Interact Close");
+        return isPulled? close: open;
     }
 }

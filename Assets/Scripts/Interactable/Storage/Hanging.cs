@@ -65,7 +65,7 @@ public class Hanging : Interactable
     {
         Interactable item = broadcaster.itemInHand;
         if (item != null && hangedItem == null && ItemManager.instance.isHangAble(item.itemType)){
-            ToggleHighlight(broadcaster.centerIndicator, status);
+            ToggleHighlight(broadcaster.centerIndicator, status, "Interact Hang");
         }
     }
 

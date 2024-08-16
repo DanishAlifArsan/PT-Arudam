@@ -21,17 +21,17 @@ public class GameIntro : MonoBehaviour
 
     //dialog pertama
     public void Greeting() {
-        ScrollingText.instance.Show("Selamat pagi pak");
+        ScrollingText.instance.Show("Greeting");
     }
 
     //dialog kedua
     public void Intro() {
-        ScrollingText.instance.Show("Akhir akhir ini maling sandal sedang berkeliaran di sekitar kampung sini");
+        ScrollingText.instance.Show("Intro");
     }
 
     //dialog ketiga
     public void Closing() {
-        ScrollingText.instance.Show("Tolong lapor jika melihat seseorang yang ciri cirinya kayak gini");
+        ScrollingText.instance.Show("Closing");
     }
 
     //membuka poster

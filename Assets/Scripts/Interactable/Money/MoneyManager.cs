@@ -19,7 +19,7 @@ public class MoneyManager : MonoBehaviour
     public void CountPayment(Money money) {
         var temp = Instantiate(money, paymentPoint.position, Quaternion.identity,paymentPoint);
         temp.isAbleToInteract = false;
-        temp.SetName("Kembalian");
+        temp.SetName("Interact Return");
         moneys.Add(temp);
         totalValue += money.value;
         moneyText.text = totalValue.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));

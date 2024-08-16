@@ -13,10 +13,10 @@ public class Contact : MonoBehaviour
             {
                 PoliceManager.instance.StartChasing(currentCustomer);
             } else {
-                ScrollingText.instance.Show("Perhatikan lagi sketsa yang ku kasih");
+                ScrollingText.instance.Show("Call Police 1");
             }
         } else {
-             ScrollingText.instance.Show("Waspada sosok penjahat");
+             ScrollingText.instance.Show("Call Police 2");
         } 
         phone.ClosePhone();      
     }

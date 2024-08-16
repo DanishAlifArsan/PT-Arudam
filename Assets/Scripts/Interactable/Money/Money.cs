@@ -1,4 +1,5 @@
 using System;
+using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
 
 public class Money : Interactable
@@ -16,7 +17,7 @@ public class Money : Interactable
                 manager.CountPayment(this);
             } else {
                 manager.ConfirmPayment();
-                ToggleHighlight(broadcaster.centerIndicator, false);
+                ToggleHighlight(broadcaster.centerIndicator, false, "");
             }
         }
     }
@@ -25,11 +26,11 @@ public class Money : Interactable
     {
         if (SaleManager.instance.isTransaction)
         {
-            ToggleHighlight(broadcaster.centerIndicator, status);
+            ToggleHighlight(broadcaster.centerIndicator, status, "", false);
         }
     }
 
     public void SetName(String name) {
-        highlight.highlightName = name;
+        highlight.highlightName = LocalizationManager.Localize(name);
     }
 }

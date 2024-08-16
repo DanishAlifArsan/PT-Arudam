@@ -9,7 +9,7 @@ public class TrashCan : Interactable
         Interactable item = broadcaster.itemInHand;
         if (item != null && ItemManager.instance.isDiscardable(item.itemType))
         {
-            ToggleHighlight(broadcaster.centerIndicator, status);
+            ToggleHighlight(broadcaster.centerIndicator, status, "Interact Trash");
         }
     }
 
@@ -20,7 +20,7 @@ public class TrashCan : Interactable
         { 
             Destroy(broadcaster.itemInHand.gameObject);
             broadcaster.itemInHand = null;
-            ToggleHighlight(broadcaster.centerIndicator, false);
+            ToggleHighlight(broadcaster.centerIndicator, false, "Interact Trash");
         }
     }
 }
