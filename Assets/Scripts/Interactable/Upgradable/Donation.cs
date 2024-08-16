@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using TMPro;
 using UnityEngine;
 
 public class Donation : Interactable
 {
     [SerializeField] private int minDonation;
     [SerializeField] private int maxDonation;
+    [SerializeField] private TextMeshProUGUI donationText;
     public int donationAmount = 0;
     private bool isDonate = false;
 
@@ -15,6 +18,7 @@ public class Donation : Interactable
         {
             donationAmount = data.donation;
         }
+        SetText();
     }
 
     private void Update() {
@@ -30,6 +34,7 @@ public class Donation : Interactable
         {
             int donate = Random.Range(minDonation, maxDonation) * 1000;
             donationAmount += donate;
+            SetText();
             isDonate = true;
             SaveManager.instance.donation = donationAmount;
         }    
@@ -41,6 +46,7 @@ public class Donation : Interactable
         {
             CurrencyManager.instance.AddCurrency(donationAmount);
             donationAmount = 0;
+            SetText();
             ToggleHighlight(broadcaster.centerIndicator, false);
         }
     }
@@ -53,4 +59,7 @@ public class Donation : Interactable
         }
     }
 
+    private void SetText() {
+        donationText.text = donationAmount.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));
+    }
 }

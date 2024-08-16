@@ -1,16 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.SimpleLocalization.Scripts;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 
 public class Setting : MonoBehaviour
 {
     [SerializeField] private UnityEngine.UI.Slider volumeSlider;
+    [SerializeField] private TMP_Dropdown langDropdown;
     [SerializeField] private AudioMixer audioMixer;
+    private void Awake() {
+        LocalizationManager.Read();
+        // LocalizationManager.Language = "English";
+
+        langDropdown.onValueChanged.AddListener(delegate {selectvalue(langDropdown);});
+    }
     private void OnEnable() {
         float volume =  PlayerPrefs.GetFloat("volume", 0f);
         volumeSlider.value = volume;
     }
+
+    private void selectvalue(TMP_Dropdown dropdown)
+    {
+        SetLanguage(dropdown.value);
+    }
+
     public void SetVolume(float volume) {
         audioMixer.SetFloat("volume",volume);
     }
@@ -19,10 +34,10 @@ public class Setting : MonoBehaviour
         switch (index)
         {
             case 0: 
-            Debug.Log("Indonesia");
+            LocalizationManager.Language = "English";
             break;
             case 1:
-            Debug.Log("English");
+            LocalizationManager.Language = "Indonesia";
             break;
             default:
             break;
