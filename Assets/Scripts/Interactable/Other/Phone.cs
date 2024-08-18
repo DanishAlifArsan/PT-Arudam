@@ -6,6 +6,7 @@ using UnityEngine;
 public class Phone : Interactable
 {
     [SerializeField] private GameObject phoneScreen;
+    [SerializeField] private MeshRenderer phoneObject;
     [SerializeField] private List<GameObject> apps;
 
     private Stack<GameObject> backStack = new Stack<GameObject>();
@@ -34,6 +35,7 @@ public class Phone : Interactable
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         phoneScreen.SetActive(true);
+        phoneObject.gameObject.SetActive(false);
         OpenApp(0);
         isInteract = true;
     }
@@ -63,6 +65,7 @@ public class Phone : Interactable
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         phoneScreen.SetActive(false);
+        phoneObject.gameObject.SetActive(true);
         broadcaster = null;
         isInteract = false;
     }

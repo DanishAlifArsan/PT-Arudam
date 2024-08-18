@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6677767386433249484}
   - component: {fileID: 7717624564135131658}
   - component: {fileID: 151736612181610410}
+  - component: {fileID: 5201404064620499603}
   m_Layer: 0
   m_Name: Pillar
   m_TagString: Obstacle
@@ -352,6 +353,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9473189, y: 4.7180476, z: 1.197551}
   m_Center: {x: -0.00000011920929, y: 0, z: 0.00000011920929}
+--- !u!114 &5201404064620499603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316737698967468491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec5f85582fad294ea59bb0da3699422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyedObject: {fileID: 0}
 --- !u!1 &7972131355818238952
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +380,7 @@ GameObject:
   - component: {fileID: 8074002977526405198}
   - component: {fileID: 1127402635915976550}
   - component: {fileID: 8427156798892759693}
+  - component: {fileID: 1038754519271975134}
   m_Layer: 0
   m_Name: Pillar (1)
   m_TagString: Obstacle
@@ -704,6 +719,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9473189, y: 4.7180476, z: 1.197551}
   m_Center: {x: -0.00000011920929, y: 0, z: 0.00000011920929}
+--- !u!114 &1038754519271975134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7972131355818238952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec5f85582fad294ea59bb0da3699422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyedObject: {fileID: 0}
 --- !u!1001 &1762470491276392404
 PrefabInstance:
   m_ObjectHideFlags: 0

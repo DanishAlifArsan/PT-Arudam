@@ -7,6 +7,8 @@ using UnityEngine;
 public class Box : Interactable
 {
     [SerializeField] private TextMeshProUGUI amountText;
+    [SerializeField] private GameObject idleObject;
+    [SerializeField] private GameObject takenObject;
     [SerializeField] private Item[] itemList;
     public Stack<Item> itemStack = new Stack<Item>();
     private void Start() {
@@ -26,6 +28,12 @@ public class Box : Interactable
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;  
             broadcaster.itemInHand = this;
+
+            if (idleObject != null)
+            {
+                idleObject.SetActive(false);
+                takenObject.SetActive(true);
+            }
         }   
     }
 
