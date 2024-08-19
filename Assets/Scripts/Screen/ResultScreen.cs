@@ -18,7 +18,7 @@ public class ResultScreen : MonoBehaviour
     private Action<int> onContinueButton;
     private int sceneToLoad;
     private void OnEnable() {
-        string day = LocalizationManager.Localize("Menu Day") + " ";
+        string day = LocalizationManager.Localize("Menu Result") + " ";
         dayText.text = day+TimeManager.instance.currentDay.ToString();
         onContinueButton += homeScreen.LoadScene;
     }
