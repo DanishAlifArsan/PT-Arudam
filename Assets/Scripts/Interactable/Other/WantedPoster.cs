@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WantedPoster : Interactable
 {
     [SerializeField] private GameObject posterCanvas;
     private bool isInteract = false;
     private ItemInteract broadcaster;
-    private Renderer rend;
+    [SerializeField] private Image rend;
     private Animator anim;
     private void Start() {
-        rend = GetComponent<Renderer>();
         anim = posterCanvas.GetComponent<Animator>();
     }
     private void Update() {
