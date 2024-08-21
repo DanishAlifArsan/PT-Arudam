@@ -18,6 +18,7 @@ public class CustomerAI : Interactable
     public bool isPaying;
     public int maxNumberOfGoods;
     public int buyAmountPerGoods;
+    public Sprite battleSprite;
     public bool isEvil;
     private StateManager stateManager;
     public Animator anim;
@@ -116,6 +117,7 @@ public class CustomerAI : Interactable
         {            
             //logic pembelian
             Item item = broadcaster.itemInHand?.GetComponent<Item>();
+            Broom broom = broadcaster.itemInHand?.GetComponent<Broom>();
             if (item!= null && SaleManager.instance.IsGridNull())
             {
                 broadcaster.itemInHand = null;
@@ -126,17 +128,26 @@ public class CustomerAI : Interactable
                 {
                     isPaying = true;
                 }
+            } else if (broom != null)
+            {
+                Battle();
+                broom.animator.SetTrigger("swing");
+                BattleManager.instance.battledCustomer = this;
+                BattleManager.instance.StartBattle(false);
             }
         }
 
-        Broom broom = broadcaster.itemInHand?.GetComponent<Broom>();
-        if (broom != null)
-        {
-            Battle();
-            broom.animator.SetTrigger("swing");
-            BattleManager.instance.battledCustomer = this;
-            BattleManager.instance.StartBattle(false);
-        }
+        //pindah logic fight supaya hanya aktif ketika current state beli
+
+        //logic fight
+        // Broom broom = broadcaster.itemInHand?.GetComponent<Broom>();
+        // if (broom != null)
+        // {
+        //     Battle();
+        //     broom.animator.SetTrigger("swing");
+        //     BattleManager.instance.battledCustomer = this;
+        //     BattleManager.instance.StartBattle(false);
+        // }
 
         ToggleHighlight(broadcaster.centerIndicator, false, "");
     }
@@ -150,7 +161,7 @@ public class CustomerAI : Interactable
             if (stateManager.currentState == stateManager.buy && item.itemType.Equals(ItemType.Goods))
             {
                 ToggleHighlight(broadcaster.centerIndicator, status, "Interact Place");
-            } else if(item.itemType.Equals(ItemType.Broom)) {
+            } else if(stateManager.currentState == stateManager.buy && item.itemType.Equals(ItemType.Broom)) {
                 ToggleHighlight(broadcaster.centerIndicator, status, "Interact Fight");
             }
         }
@@ -158,5 +169,9 @@ public class CustomerAI : Interactable
 
     public void Battle() {
         stateManager.SwitchAnyState(this, stateManager.attack, () => true);
+    }
+
+    public IState CurrentState() {
+        return stateManager.currentState;
     }
 }

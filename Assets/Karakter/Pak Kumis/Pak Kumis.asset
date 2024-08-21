@@ -18,4 +18,5 @@ MonoBehaviour:
   maxNumberOfGoods: 2
   buyAmountPerGoods: 2
   prefab: {fileID: 7864365682551148990, guid: c88d9872146493743ac5fd4e528f0434, type: 3}
+  battleSprite: {fileID: 21300000, guid: c7be5ee6a6d7a654597f9ed945dcd4e6, type: 3}
   isEvil: 0

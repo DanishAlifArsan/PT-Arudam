@@ -2035,7 +2035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026a24e50d3187d40887ee5fb62e2df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LocalizationKey: Menu Setting
+  LocalizationKey: Menu Credit
 --- !u!114 &2105079253
 MonoBehaviour:
   m_ObjectHideFlags: 0

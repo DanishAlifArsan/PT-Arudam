@@ -59,6 +59,7 @@ public class CustomerManager : MonoBehaviour
         instantiatedCustomer.waitDuration = origin.patience;
         instantiatedCustomer.maxNumberOfGoods = origin.maxNumberOfGoods;
         instantiatedCustomer.buyAmountPerGoods = origin.buyAmountPerGoods;
+        instantiatedCustomer.battleSprite = origin.battleSprite;
         instantiatedCustomer.isEvil = origin.isEvil;
         instantiatedCustomer.gameObject.SetActive(false);
         customerQueue.Add(instantiatedCustomer);

@@ -16,6 +16,8 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private Image leftImage;
     [SerializeField] private Image rightImage;
     [SerializeField] private Health health;
+    // [SerializeField] private Transform enemySpawnPoint;
+    [SerializeField] private SpriteRenderer enemySR;
     public static BattleManager instance;
     private bool isPolice;
     public CustomerAI battledCustomer;
@@ -35,6 +37,13 @@ public class BattleManager : MonoBehaviour
     }
 
     public void SetupBattle() {
+        // battledCustomer.Battle();
+        // battledCustomer.anim.SetTrigger("battle");
+        // battledCustomer.enabled = false;
+        // Debug.Log(battledCustomer.CurrentState());
+        // battledCustomer.transform.parent = enemySpawnPoint;
+        // battledCustomer.transform.position = enemySpawnPoint.position;
+        enemySR.sprite = battledCustomer.battleSprite;
         health.Setup();
         battleObject.SetActive(true);
         battleTransition.SetActive(false);

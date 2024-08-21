@@ -32,7 +32,6 @@ public class HomeScreen : MonoBehaviour
         int lang =  PlayerPrefs.GetInt("lang", 0);
         settingScreen.langDropdown.value = lang;
         settingScreen.SetLanguage(lang);
-        Debug.Log(lang + "," + volume);
     }
 
     public void LoadScene(int sceneId) {
