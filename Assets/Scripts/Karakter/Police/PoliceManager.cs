@@ -10,6 +10,8 @@ public class PoliceManager : MonoBehaviour
     [SerializeField] private PlayableDirector endlessrunDirector;
     [SerializeField] private PlayableDirector battleDirector;
     [SerializeField] private PlayableDirector catchDirector;
+    [SerializeField] private NewsPaper newsPaper;
+    private CustomerAI evilCustomer;
 
     private void Awake()
     {
@@ -21,19 +23,19 @@ public class PoliceManager : MonoBehaviour
     
     public void StartChasing(CustomerAI currentCustomer) {
         int random = Random.Range(0,3);
-        switch (random)
-        {
-            case 0:
-                StartPolice();
-                break;
-            case 1:
-                StartBattle(currentCustomer);
-                break;
-            case 2:   
-                StartEndlessRun(currentCustomer);
-                break;       
-        }
-        // StartBattle(currentCustomer);
+        // switch (random)
+        // {
+        //     case 0:
+        //         StartPolice(currentCustomer);
+        //         break;
+        //     case 1:
+        //         StartBattle(currentCustomer);
+        //         break;
+        //     case 2:   
+        //         StartEndlessRun(currentCustomer);
+        //         break;       
+        // }
+        StartPolice(currentCustomer);
     }
 
     private void StartEndlessRun(CustomerAI currentCustomer) {
@@ -47,10 +49,20 @@ public class PoliceManager : MonoBehaviour
         battleDirector.Play();
         ScrollingText.instance.Show("Call Police 4");
     }
-    private void StartPolice() {
+    private void StartPolice(CustomerAI currentCustomer) {
         catchDirector.Play();
+        // police.StartChasing();
         ScrollingText.instance.Show("Call Police 5");
-        police.StartChasing();
+        evilCustomer = currentCustomer;
+    }
+
+    public void AfterCatching() {
+        catchDirector.Stop();
+        CustomerManager.instance.DespawnCustomer(evilCustomer);
+        SaleManager.instance.EmptyTable();
+        int getMoney = SaleManager.instance.GetReturnedItemPrice();
+        CurrencyManager.instance.AddCurrency(getMoney);
         SaveManager.instance.numberOfEvils += 1;
+        newsPaper.ShowScene(0);
     }
 }

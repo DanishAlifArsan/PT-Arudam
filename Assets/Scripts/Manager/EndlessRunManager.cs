@@ -13,6 +13,7 @@ public class EndlessRunManager : MonoBehaviour
     [SerializeField] private SpriteRenderer chaseEffect;
     [SerializeField] private FieldMove startingPlatform;
     [SerializeField] private ProgressBar progressBar;
+    [SerializeField] private NewsPaper newsPaper;
     public static EndlessRunManager instance;
     private FieldMove initialPlatform;
     private bool isPolice;
@@ -68,15 +69,19 @@ public class EndlessRunManager : MonoBehaviour
         if (isSuccess)
         {
             // kalau ketangkap
-            if (isPolice)
+            if (chasedCustomer.isEvil)
             {
                  SaveManager.instance.numberOfEvils += 1;
+                 newsPaper.ShowScene(0);
             }
             int getMoney = SaleManager.instance.GetReturnedItemPrice();
             CurrencyManager.instance.AddCurrency(getMoney);
         } else {
             // kalau kabur
-            Debug.Log("Kabur");
+            if (isPolice)
+            {
+                newsPaper.ShowScene(1);
+            }
         }
     }
 }

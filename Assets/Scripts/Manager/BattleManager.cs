@@ -16,8 +16,8 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private Image leftImage;
     [SerializeField] private Image rightImage;
     [SerializeField] private Health health;
-    // [SerializeField] private Transform enemySpawnPoint;
     [SerializeField] private SpriteRenderer enemySR;
+    [SerializeField] private NewsPaper newsPaper;
     public static BattleManager instance;
     private bool isPolice;
     public CustomerAI battledCustomer;
@@ -37,12 +37,6 @@ public class BattleManager : MonoBehaviour
     }
 
     public void SetupBattle() {
-        // battledCustomer.Battle();
-        // battledCustomer.anim.SetTrigger("battle");
-        // battledCustomer.enabled = false;
-        // Debug.Log(battledCustomer.CurrentState());
-        // battledCustomer.transform.parent = enemySpawnPoint;
-        // battledCustomer.transform.position = enemySpawnPoint.position;
         enemySR.sprite = battledCustomer.battleSprite;
         health.Setup();
         battleObject.SetActive(true);
@@ -66,6 +60,7 @@ public class BattleManager : MonoBehaviour
             if (battledCustomer.isEvil) {
                 // kalau kita menang
                 SaveManager.instance.numberOfEvils += 1;
+                newsPaper.ShowScene(0);
             }
             int getMoney = SaleManager.instance.GetReturnedItemPrice();
             CurrencyManager.instance.AddCurrency(getMoney);
@@ -75,6 +70,7 @@ public class BattleManager : MonoBehaviour
                 // kalau polisi kalah
                 int getMoney = SaleManager.instance.GetReturnedItemPrice();
                 CurrencyManager.instance.AddCurrency(getMoney);
+                newsPaper.ShowScene(1);
             } else {
                 // kalau ternyata bukan penjahat
                 int getMoney = SaleManager.instance.GetReturnedItemPrice();
