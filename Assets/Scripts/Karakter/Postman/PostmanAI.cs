@@ -7,6 +7,7 @@ public class PostmanAI : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform sprite;
+    [SerializeField] private Animator anim;
     public Box box;
     public Transform deliverPoint;
     public Transform homePoint;
@@ -18,6 +19,7 @@ public class PostmanAI : MonoBehaviour
     public void OnEnable() {
         agent.SetDestination(deliverPoint.position);
         isDelivering = true;
+        anim.SetBool("deliver",true);
     }
 
     // Update is called once per frame
@@ -30,7 +32,8 @@ public class PostmanAI : MonoBehaviour
         {
             if (isDelivering)
             {
-                agent.SetDestination(homePoint.position);
+                agent.SetDestination(homePoint.position);    
+                anim.SetBool("deliver",false);
                 isDelivering = false;
                 DeliveryManager.instance.PlaceDelivery(id, box);
             } else {

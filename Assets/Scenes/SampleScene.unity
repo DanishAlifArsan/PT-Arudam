@@ -4839,7 +4839,7 @@ GameObject:
   - component: {fileID: 331272057}
   - component: {fileID: 331272058}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: SFX Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
