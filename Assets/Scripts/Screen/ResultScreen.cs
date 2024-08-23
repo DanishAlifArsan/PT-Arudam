@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using Assets.SimpleLocalization.Scripts;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ResultScreen : MonoBehaviour
@@ -15,12 +14,11 @@ public class ResultScreen : MonoBehaviour
     [SerializeField] private TextMeshProUGUI electricBillAmountText;
     [SerializeField] private TextMeshProUGUI resultAmountText;
     [SerializeField] private HomeScreen homeScreen;
-    private Action<int> onContinueButton;
-    private int sceneToLoad;
+    [SerializeField] private NewsPaper newsPaper;
+    private Action onContinueButton;
     private void OnEnable() {
         string day = LocalizationManager.Localize("Menu Result") + " ";
         dayText.text = day+TimeManager.instance.currentDay.ToString();
-        onContinueButton += homeScreen.LoadScene;
     }
 
     public void CountMoneyResult(int money, int tax, int electricBill) {
@@ -34,16 +32,16 @@ public class ResultScreen : MonoBehaviour
         {
             //gameover karena bangkrut
             SaveManager.instance.NewGame();
-            sceneToLoad = 0;
+            onContinueButton += BadEnding;
         } else if (TimeManager.instance.Ending())
         {
             //gameover karena hari selesai
             SaveManager.instance.NewGame();
-            sceneToLoad = 0;
+            onContinueButton += GoodEnding;
         } else {
             //lanjut hari
             SaveManager.instance.totalCurrency = result;
-            sceneToLoad = 1;
+            onContinueButton += ContinueGame;
             SaveGame();
         }
     } 
@@ -58,7 +56,17 @@ public class ResultScreen : MonoBehaviour
         SaveManager.instance.SaveGame();
     }
 
+    private void ContinueGame() {
+        homeScreen.LoadScene(1);
+    }
+    private void GoodEnding() {
+        newsPaper.ShowScene(2);
+    }
+    private void BadEnding() {
+        newsPaper.ShowScene(3);
+    }
+
     public void Continue() {
-        onContinueButton.Invoke(sceneToLoad);
+        onContinueButton.Invoke();
     }
 }
