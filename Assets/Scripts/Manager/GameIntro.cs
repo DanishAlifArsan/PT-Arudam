@@ -9,14 +9,10 @@ public class GameIntro : MonoBehaviour
     [SerializeField] private ItemInteract player;
     [SerializeField] private WantedPoster poster;
     [SerializeField] private PoliceAI police;
-    [SerializeField] private Transform policeHome;
-    [SerializeField] private Transform policePoint;
 
     //spawn polisi di toko
     public void SpawnPolice() {
-        police.isWalking = true;
-        police.Walk(false);
-        police.agent.SetDestination(policePoint.position);
+        police.MoveToShop();
     }
 
     //dialog pertama
@@ -42,8 +38,6 @@ public class GameIntro : MonoBehaviour
 
     //menjalankan police ai
     public void MovePolice() {
-        police.agent.SetDestination(policeHome.position);
-        police.isWalking = true;
-        police.Walk(true);
+        police.BackToHome();
     }
 }

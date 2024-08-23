@@ -8,32 +8,27 @@ public class PoliceAI : MonoBehaviour
     public NavMeshAgent agent;
     public Animator anim;
     [SerializeField] private Transform policePoint;
-    private bool isChasing = false;
+    [SerializeField] private Transform policeHome;
     public bool isWalking = false;
 
-    public void StartChasing() {
-        agent.SetDestination(policePoint.position);
-        isChasing = true;
+    public void MoveToShop() {
+        isWalking = true;
         Walk(false);
+        agent.SetDestination(policePoint.position);
     }
 
-    public void Walk(bool toHome) {
+    public void BackToHome() {
+        agent.SetDestination(policeHome.position);
+        Walk(true);
+        isWalking = true;
+    }
+
+    private void Walk(bool toHome) {
         anim.SetBool("walking", true);
         anim.SetBool("toHome", toHome);
     }
 
     private void Update() {
-
-        if (isChasing) {
-            float dist = agent.remainingDistance;
-            if (dist!=Mathf.Infinity && agent.pathStatus == NavMeshPathStatus.PathComplete && agent.remainingDistance == 0)
-            {
-                anim.SetBool("walking", false);
-                ScrollingText.instance.Show("Police Thanks");
-                isChasing = false;
-            }
-        }
-
         if (isWalking)
         {
             float dist = agent.remainingDistance;
