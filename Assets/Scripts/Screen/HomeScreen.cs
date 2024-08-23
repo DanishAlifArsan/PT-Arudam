@@ -8,6 +8,7 @@ public class HomeScreen : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScene;
     [SerializeField] private Setting settingScreen;
+    [SerializeField] private GameObject  creditScreen;
     [SerializeField] private bool inGame = false;
 
     private void Awake() {
@@ -52,6 +53,10 @@ public class HomeScreen : MonoBehaviour
     
     public void ShowSetting(bool status) {
         settingScreen.gameObject.SetActive(status);    
+    }
+
+    public void ShowCredit(bool status) {
+        creditScreen.gameObject.SetActive(status);
     }
 
     public void CloseGame() {
