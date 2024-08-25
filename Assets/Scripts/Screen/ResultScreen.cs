@@ -60,6 +60,7 @@ public class ResultScreen : MonoBehaviour
     }
 
     private void ContinueGame() {
+        AudioManager.instance.PlaySound(clickSound);
         homeScreen.LoadScene(1);
     }
     private void GoodEnding() {

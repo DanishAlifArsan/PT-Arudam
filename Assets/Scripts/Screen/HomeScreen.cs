@@ -37,7 +37,7 @@ public class HomeScreen : MonoBehaviour
     }
 
     public void LoadScene(int sceneId) {
-        PlaySound();
+        // PlaySound();
         StartCoroutine(LoadSceneAsync(sceneId));
     }
 
@@ -71,7 +71,7 @@ public class HomeScreen : MonoBehaviour
         #endif
     }
 
-    private void PlaySound() {
+    public void PlaySound() {
         if (clickSound != null)
         {
             AudioManager.instance.PlaySound(clickSound);
