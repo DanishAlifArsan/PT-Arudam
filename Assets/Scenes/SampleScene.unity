@@ -10051,6 +10051,99 @@ MonoBehaviour:
   upgradeObjects:
   - {fileID: 1565420576}
   currentlevel: 0
+--- !u!1001 &981696770
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.493
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.398
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.645
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5743481230890654523, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a285c25c0078cc8419ab473c6ea191b0, type: 2}
+    - target: {fileID: 365283265771010840, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 72da5179fc18930488710bea3a8fde92, type: 2}
+    - target: {fileID: 919132149155446097, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_Name
+      value: balok gantungan 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427599859441632991, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 72da5179fc18930488710bea3a8fde92, type: 2}
+    - target: {fileID: 7108532740804781218, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8216cc2d8ae295448a86f4a337eb0b3, type: 2}
+    - target: {fileID: 7177344844132518115, guid: 3cf8adb9ba327704db5a8a2eba011969,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8216cc2d8ae295448a86f4a337eb0b3, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3cf8adb9ba327704db5a8a2eba011969, type: 3}
 --- !u!1 &992668908
 GameObject:
   m_ObjectHideFlags: 3
@@ -32020,3 +32113,4 @@ SceneRoots:
   - {fileID: 25616145}
   - {fileID: 112429053}
   - {fileID: 272997891}
+  - {fileID: 981696770}
