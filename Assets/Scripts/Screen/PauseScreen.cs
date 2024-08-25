@@ -6,12 +6,15 @@ public class PauseScreen : MonoBehaviour
 {
     [SerializeField] private GameObject pauseScene;
     [SerializeField] private ItemInteract player;
+    [SerializeField] private AudioClip paperSound;
+    [SerializeField] private AudioClip clickSound;
 
     // Update is called once per frame
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            AudioManager.instance.PlaySound(paperSound);
             Time.timeScale = 0;
             pauseScene.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
@@ -22,6 +25,7 @@ public class PauseScreen : MonoBehaviour
     }
 
     public void Continue() {
+        AudioManager.instance.PlaySound(clickSound);
         Time.timeScale = 1;
         pauseScene.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;

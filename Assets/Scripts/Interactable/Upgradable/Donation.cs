@@ -44,6 +44,7 @@ public class Donation : Interactable
     {
         if (donationAmount > 0)
         {
+            base.OnInteract(broadcaster);
             CurrencyManager.instance.AddCurrency(donationAmount);
             donationAmount = 0;
             SetText();

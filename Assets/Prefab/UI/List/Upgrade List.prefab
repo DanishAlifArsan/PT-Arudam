@@ -54,6 +54,7 @@ MonoBehaviour:
   levelText: {fileID: 6121663077971620757}
   priceText: {fileID: 7014464500127057542}
   buttonUpgrade: {fileID: 1158823527206617061}
+  clickSound: {fileID: 8300000, guid: 7a511e8cf7d2d4448ba89138b6f7fc18, type: 3}
 --- !u!1 &1103283790708255335
 GameObject:
   m_ObjectHideFlags: 0

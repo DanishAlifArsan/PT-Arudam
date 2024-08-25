@@ -15,8 +15,11 @@ public class ResultScreen : MonoBehaviour
     [SerializeField] private TextMeshProUGUI resultAmountText;
     [SerializeField] private HomeScreen homeScreen;
     [SerializeField] private NewsPaper newsPaper;
+    [SerializeField] private AudioClip paperSound;
+    [SerializeField] private AudioClip clickSound;
     private Action onContinueButton;
     private void OnEnable() {
+        AudioManager.instance.PlaySound(paperSound);
         string day = LocalizationManager.Localize("Menu Result") + " ";
         dayText.text = day+TimeManager.instance.currentDay.ToString();
     }

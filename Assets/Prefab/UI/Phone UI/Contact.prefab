@@ -1032,6 +1032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phone: {fileID: 0}
+  callSound: {fileID: 8300000, guid: 6a865b275f29cfa41bf40f27c19e73e3, type: 3}
 --- !u!1 &8069694980550279168
 GameObject:
   m_ObjectHideFlags: 0

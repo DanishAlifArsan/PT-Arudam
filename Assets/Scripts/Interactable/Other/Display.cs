@@ -63,6 +63,7 @@ public class Display : Interactable
 
     public override void OnInteract(ItemInteract broadcaster)
     {
+        base.OnInteract(broadcaster);
         displayUI.SetActive(true);
         this.broadcaster = broadcaster;
         string indicator = LocalizationManager.Localize("Menu Back");

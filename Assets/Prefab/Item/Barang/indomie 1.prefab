@@ -119,9 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751336dd8bbf3384f93cc4604cdb3dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderers:
-  - {fileID: 8194141490456942090}
-  color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Mie Instan
 --- !u!114 &6963222634680846193
 MonoBehaviour:
@@ -136,10 +133,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 8519917616480412740}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 1
   goods: {fileID: 0}
   id: 1
   storage: {fileID: 0}
   table: {fileID: 0}
+  hanging: {fileID: 0}
   isOnBox: 1
   canInteract: 1

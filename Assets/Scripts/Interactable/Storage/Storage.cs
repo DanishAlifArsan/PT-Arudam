@@ -47,6 +47,7 @@ public class Storage : Interactable
         Interactable itemInHand = broadcaster.itemInHand;
         if (itemInHand != null && itemDictionary.ContainsValue(null) && ItemManager.instance.IsHoldItem(itemInHand.itemType))
         {
+            base.OnInteract(broadcaster);
             //masukkan item ke storage         
             Item item;
 

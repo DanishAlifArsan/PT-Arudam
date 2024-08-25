@@ -99,11 +99,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 9210685686561773487}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 1
   goods: {fileID: 0}
   id: 0
   storage: {fileID: 0}
   table: {fileID: 0}
+  hanging: {fileID: 0}
   isOnBox: 1
   canInteract: 1
 --- !u!114 &9210685686561773487
@@ -118,9 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751336dd8bbf3384f93cc4604cdb3dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderers:
-  - {fileID: 8942469434433124411}
-  color: {r: 1, g: 1, b: 1, a: 1}
   highlightName: Air Mineral
 --- !u!136 &7741294320544029891
 CapsuleCollider:

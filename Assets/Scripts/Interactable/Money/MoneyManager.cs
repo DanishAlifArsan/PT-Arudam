@@ -11,6 +11,7 @@ public class MoneyManager : MonoBehaviour
     private int totalValue = 0;
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private Transform paymentPoint;
+     [SerializeField] private AudioClip paySound;
 
     private void Start() {
         moneyText.text = "";
@@ -28,6 +29,7 @@ public class MoneyManager : MonoBehaviour
     public void ConfirmPayment() {
         if (SaleManager.instance.PaidAmount() == totalValue)
         {
+            AudioManager.instance.PlaySound(paySound);
             CurrencyManager.instance.AddCurrency(totalValue);
             SaleManager.instance.TransactionFinish();
         }

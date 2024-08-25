@@ -9,6 +9,7 @@ public class HomeScreen : MonoBehaviour
     [SerializeField] private GameObject loadingScene;
     [SerializeField] private Setting settingScreen;
     [SerializeField] private GameObject  creditScreen;
+    [SerializeField] private AudioClip clickSound;
     [SerializeField] private bool inGame = false;
 
     private void Awake() {
@@ -36,6 +37,7 @@ public class HomeScreen : MonoBehaviour
     }
 
     public void LoadScene(int sceneId) {
+        PlaySound();
         StartCoroutine(LoadSceneAsync(sceneId));
     }
 
@@ -52,10 +54,12 @@ public class HomeScreen : MonoBehaviour
 
     
     public void ShowSetting(bool status) {
+        if(!status) PlaySound();
         settingScreen.gameObject.SetActive(status);    
     }
 
     public void ShowCredit(bool status) {
+        if(!status) PlaySound();
         creditScreen.gameObject.SetActive(status);
     }
 
@@ -65,5 +69,12 @@ public class HomeScreen : MonoBehaviour
          #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #endif
+    }
+
+    private void PlaySound() {
+        if (clickSound != null)
+        {
+            AudioManager.instance.PlaySound(clickSound);
+        }
     }
 }

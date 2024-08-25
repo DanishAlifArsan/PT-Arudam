@@ -646,6 +646,7 @@ MonoBehaviour:
   goodsImage: {fileID: 5565523644073977978}
   nameText: {fileID: 7007897814474895713}
   priceInput: {fileID: 7952381351846630009}
+  clickSound: {fileID: 8300000, guid: 7a511e8cf7d2d4448ba89138b6f7fc18, type: 3}
 --- !u!222 &2612316011327705623
 CanvasRenderer:
   m_ObjectHideFlags: 0

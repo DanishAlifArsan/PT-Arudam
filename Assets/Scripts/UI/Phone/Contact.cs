@@ -5,7 +5,9 @@ using UnityEngine;
 public class Contact : MonoBehaviour
 {
     [SerializeField] private Phone phone;
+    [SerializeField] private AudioClip callSound;
     public void Call() {
+        AudioManager.instance.PlaySound(callSound);
         if (CustomerManager.instance.currentCustomer != null)
         {
             CustomerAI currentCustomer = CustomerManager.instance.currentCustomer;

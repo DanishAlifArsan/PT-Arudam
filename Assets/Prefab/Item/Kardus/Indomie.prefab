@@ -353,8 +353,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 7806997109439263385}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 2
   amountText: {fileID: 4848940472083556618}
+  idleObject: {fileID: 0}
+  takenObject: {fileID: 0}
   itemList:
   - {fileID: 8967504833332141127}
   - {fileID: 422987599322188789}
@@ -529,6 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 5351866289336982897}
+  interactSound: {fileID: 0}
   itemType: 1
   goods: {fileID: 0}
   id: 1
@@ -670,6 +674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 4429499395558842479}
+  interactSound: {fileID: 0}
   itemType: 1
   goods: {fileID: 0}
   id: 1
@@ -1049,6 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 7844021891945790219}
+  interactSound: {fileID: 0}
   itemType: 1
   goods: {fileID: 0}
   id: 1
@@ -1325,6 +1331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 7517894486007320631}
+  interactSound: {fileID: 0}
   itemType: 1
   goods: {fileID: 0}
   id: 1
@@ -1466,6 +1473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 5773427149193216519}
+  interactSound: {fileID: 0}
   itemType: 1
   goods: {fileID: 0}
   id: 1

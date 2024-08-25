@@ -12,6 +12,7 @@ public class ShopList : MonoBehaviour
     [SerializeField] private Image goodsImage;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI priceText;
+    [SerializeField] private AudioClip clickSound;
     public Action<int, int> OnButtonClick;
 
     private int index;
@@ -26,6 +27,7 @@ public class ShopList : MonoBehaviour
     }
 
     public void Buy() {
+        AudioManager.instance.PlaySound(clickSound);
         OnButtonClick.Invoke(index, totalPrice);
     }
 }

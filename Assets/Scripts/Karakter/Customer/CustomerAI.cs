@@ -120,6 +120,7 @@ public class CustomerAI : Interactable
             Broom broom = broadcaster.itemInHand?.GetComponent<Broom>();
             if (item!= null && SaleManager.instance.IsGridNull())
             {
+                base.OnInteract(broadcaster);
                 broadcaster.itemInHand = null;
                 SaleManager.instance.PlaceItem(goodsToBuy, item);
                 patienceBar.fillAmount = 1;
@@ -136,18 +137,6 @@ public class CustomerAI : Interactable
                 BattleManager.instance.StartBattle(false);
             }
         }
-
-        //pindah logic fight supaya hanya aktif ketika current state beli
-
-        //logic fight
-        // Broom broom = broadcaster.itemInHand?.GetComponent<Broom>();
-        // if (broom != null)
-        // {
-        //     Battle();
-        //     broom.animator.SetTrigger("swing");
-        //     BattleManager.instance.battledCustomer = this;
-        //     BattleManager.instance.StartBattle(false);
-        // }
 
         ToggleHighlight(broadcaster.centerIndicator, false, "");
     }

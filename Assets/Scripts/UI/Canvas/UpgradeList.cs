@@ -14,6 +14,7 @@ public class UpgradeList : MonoBehaviour
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TextMeshProUGUI priceText;
     [SerializeField] private Button buttonUpgrade;
+    [SerializeField] private AudioClip clickSound;
     private int index;
     private Upgradable upgradable;
     
@@ -37,6 +38,7 @@ public class UpgradeList : MonoBehaviour
     }
 
     public void Upgrade() {
+        AudioManager.instance.PlaySound(clickSound);
         UpgradeManager.instance.Upgrade(index);
         Refresh(upgradable);
     }

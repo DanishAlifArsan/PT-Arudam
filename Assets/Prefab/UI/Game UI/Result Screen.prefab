@@ -988,6 +988,9 @@ MonoBehaviour:
   electricBillAmountText: {fileID: 1089257023045505544}
   resultAmountText: {fileID: 2435159081489117046}
   homeScreen: {fileID: 0}
+  newsPaper: {fileID: 0}
+  paperSound: {fileID: 8300000, guid: bc7d49d71874dfa4987a1cea83b150ec, type: 3}
+  clickSound: {fileID: 8300000, guid: 7a511e8cf7d2d4448ba89138b6f7fc18, type: 3}
 --- !u!95 &3429751009942306917
 Animator:
   serializedVersion: 5

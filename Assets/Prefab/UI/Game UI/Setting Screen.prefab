@@ -492,6 +492,7 @@ MonoBehaviour:
   volumeSlider: {fileID: 2883256317660500830}
   langDropdown: {fileID: 4760562228200046976}
   audioMixer: {fileID: 24100000, guid: 021ddd204a167f2469adbb1b6e121087, type: 2}
+  paperSound: {fileID: 8300000, guid: bc7d49d71874dfa4987a1cea83b150ec, type: 3}
 --- !u!1 &1172513392732802065
 GameObject:
   m_ObjectHideFlags: 0

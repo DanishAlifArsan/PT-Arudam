@@ -16,6 +16,7 @@ public class Bed : Interactable
     {
         if (TimeManager.instance.NightHour() && broadcaster.itemInHand == null)
         {
+            base.OnInteract(broadcaster);
             GameManager.instance.EndDay();
         }
     }

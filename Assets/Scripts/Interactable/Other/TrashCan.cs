@@ -18,6 +18,7 @@ public class TrashCan : Interactable
         Interactable item = broadcaster.itemInHand;
         if (item != null && ItemManager.instance.isDiscardable(item.itemType))
         { 
+            base.OnInteract(broadcaster);
             Destroy(broadcaster.itemInHand.gameObject);
             broadcaster.itemInHand = null;
             ToggleHighlight(broadcaster.centerIndicator, false, "Interact Trash");

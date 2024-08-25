@@ -29,6 +29,7 @@ public class Broom : Interactable
     {
        if (broadcaster.itemInHand == null)
        {
+            base.OnInteract(broadcaster);
             this.broadcaster = broadcaster;
             string indicator = LocalizationManager.Localize("Cancel Broom");
             broadcaster.SetIndicator(true,indicator);

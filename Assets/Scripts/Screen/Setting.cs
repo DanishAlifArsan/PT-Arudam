@@ -10,6 +10,8 @@ public class Setting : MonoBehaviour
     public UnityEngine.UI.Slider volumeSlider;
     public TMP_Dropdown langDropdown;
     [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioClip paperSound;
+
     private void Awake() {
         // LocalizationManager.Read();
         // LocalizationManager.Language = "English";
@@ -19,6 +21,7 @@ public class Setting : MonoBehaviour
     private void OnEnable() {
         float volume =  PlayerPrefs.GetFloat("volume", 0f);
         volumeSlider.value = volume;
+        AudioManager.instance.PlaySound(paperSound);
     }
 
     private void selectvalue(TMP_Dropdown dropdown)

@@ -22,6 +22,7 @@ public class Lamp : Electric
 
     public override void OnInteract(ItemInteract broadcaster)
     {
+        base.OnInteract(broadcaster);
         isOn = !isOn;
         lamp.gameObject.SetActive(isOn);
         ToggleHighlight(broadcaster.centerIndicator, true, Indicator());

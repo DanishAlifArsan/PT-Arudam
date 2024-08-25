@@ -10,6 +10,7 @@ public class DisplayList : MonoBehaviour
     [SerializeField] private Image goodsImage;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI priceInput;
+    [SerializeField] private AudioClip clickSound;
     public Func<int, int, bool, int> OnButtonClick;
 
     private int index;
@@ -22,6 +23,7 @@ public class DisplayList : MonoBehaviour
     }
 
     public void SetPrice(bool isPlus) {
+        AudioManager.instance.PlaySound(clickSound);
         priceInput.text = OnButtonClick.Invoke(index, int.Parse(priceInput.text), isPlus).ToString();
     }
 }

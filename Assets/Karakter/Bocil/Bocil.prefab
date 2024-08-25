@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 67276776927979585}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   agent: {fileID: 8495596137044310563}
   cashierPoint: {fileID: 0}
@@ -345,6 +346,7 @@ MonoBehaviour:
   isPaying: 0
   maxNumberOfGoods: 0
   buyAmountPerGoods: 0
+  battleSprite: {fileID: 0}
   isEvil: 0
   anim: {fileID: 5366969486699398447}
   dialogueBubble: {fileID: 7133795642640440935, guid: 1e6a1abf1f100034ba26d85b61637f59,

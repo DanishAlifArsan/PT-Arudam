@@ -30,6 +30,7 @@ public class WantedPoster : Interactable
 
     public override void OnInteract(ItemInteract broadcaster)
     {
+        base.OnInteract(broadcaster);
         this.broadcaster = broadcaster;
         rend.enabled = false;
         broadcaster.controller.enabled = false;

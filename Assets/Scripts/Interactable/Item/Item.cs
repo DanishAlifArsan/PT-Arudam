@@ -15,6 +15,7 @@ public class Item : Interactable
     public override void OnInteract(ItemInteract broadcaster)
     {
         if (!isOnBox && broadcaster.itemInHand == null && canInteract) {
+            base.OnInteract(broadcaster);
             if (storage != null )
             {
                 storage.RemoveItem(this);

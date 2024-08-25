@@ -10,6 +10,7 @@ public class Money : Interactable
 
     public override void OnInteract(ItemInteract broadcaster)
     {
+        base.OnInteract(broadcaster);
         if (SaleManager.instance.isTransaction)
         {
             if (isAbleToInteract)

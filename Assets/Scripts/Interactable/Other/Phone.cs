@@ -26,6 +26,7 @@ public class Phone : Interactable
     {
         if (SaleManager.instance.isTransaction) return;
         
+        base.OnInteract(broadcaster);
         this.broadcaster = broadcaster;
         string indicator = LocalizationManager.Localize("Cancel Phone");
         broadcaster.SetIndicator(true,indicator);

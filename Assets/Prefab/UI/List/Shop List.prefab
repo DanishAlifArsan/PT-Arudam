@@ -201,6 +201,7 @@ MonoBehaviour:
   goodsImage: {fileID: 7414781514794083157}
   nameText: {fileID: 5789113279807458504}
   priceText: {fileID: 2730736741212280912}
+  clickSound: {fileID: 8300000, guid: 7a511e8cf7d2d4448ba89138b6f7fc18, type: 3}
 --- !u!1 &2805740513528615924
 GameObject:
   m_ObjectHideFlags: 0

@@ -622,8 +622,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 7806997109439263385}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 2
   amountText: {fileID: 8242750903704915897}
+  idleObject: {fileID: 0}
+  takenObject: {fileID: 0}
   itemList:
   - {fileID: 7240597570309356687}
   - {fileID: 983574787955870426}

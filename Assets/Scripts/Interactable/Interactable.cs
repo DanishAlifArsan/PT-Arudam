@@ -3,7 +3,13 @@ using UnityEngine;
 public abstract class Interactable : MonoBehaviour
 {
     [SerializeField] protected Highlight highlight;
-    public abstract void OnInteract(ItemInteract broadcaster);
+    [SerializeField] private AudioClip interactSound;
+    public virtual void OnInteract(ItemInteract broadcaster) {
+        if (interactSound != null)
+        {
+            AudioManager.instance.PlaySound(interactSound);
+        }
+    }
     public abstract void OnHighlight(ItemInteract broadcaster, bool status);
     public ItemType itemType;
 

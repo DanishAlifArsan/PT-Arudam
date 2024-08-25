@@ -24,6 +24,7 @@ public class Hanging : Interactable
         Interactable itemInHand = broadcaster.itemInHand;
         if (itemInHand != null && hangedItem == null && ItemManager.instance.isHangAble(itemInHand.itemType))
         {
+            base.OnInteract(broadcaster);
             //masukkan item ke storage         
             Item item;
 

@@ -753,6 +753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 16003349}
+  interactSound: {fileID: 0}
   itemType: 0
   manager: {fileID: 313875237}
   value: 5000
@@ -969,6 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 52760180}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   storageSize: 5
   id: 0
@@ -1285,6 +1287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 73585658}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   storageSize: 5
   id: 0
@@ -1996,6 +1999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 112922826}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   storageSize: 5
   id: 0
@@ -2716,6 +2720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 167476972}
+  interactSound: {fileID: 8300000, guid: 7586e3ca4c359c64896ef0d080020605, type: 3}
   itemType: 0
 --- !u!114 &167476972
 MonoBehaviour:
@@ -3799,7 +3804,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 293110351}
+  interactSound: {fileID: 0}
   itemType: 0
+  openSound: {fileID: 8300000, guid: b7995a72324ad784bb119c9df6c371f4, type: 3}
+  closeSound: {fileID: 8300000, guid: 12ef52bd9f99dc04eb7d088aa99ba4d4, type: 3}
   isPulled: 0
 --- !u!65 &293110353
 BoxCollider:
@@ -4074,6 +4082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 295663458}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   electricCost: 500
   costRate: 120
@@ -4334,6 +4343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyText: {fileID: 713437752}
   paymentPoint: {fileID: 239849852}
+  paySound: {fileID: 8300000, guid: e34e4933c34fde5449ff2e23283be5fb, type: 3}
 --- !u!4 &313875238
 Transform:
   m_ObjectHideFlags: 0
@@ -6055,6 +6065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 448813400}
+  interactSound: {fileID: 0}
   itemType: 0
   manager: {fileID: 313875237}
   value: 1000
@@ -6191,6 +6202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 451842787}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   storageSize: 5
   id: 0
@@ -7147,6 +7159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 585206156}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   storageSize: 5
   id: 0
@@ -8388,6 +8401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 726203620}
+  interactSound: {fileID: 0}
   itemType: 0
   manager: {fileID: 313875237}
   value: 2000
@@ -9163,6 +9177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 866386704}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   electricCost: 1000
   costRate: 300
@@ -10787,6 +10802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1053579907}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   electricCost: 1000
   costRate: 300
@@ -10882,6 +10898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1084671325}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 3
   hand: {fileID: 1998105294}
   startingPos: {x: -1.886, y: -1.741, z: -0.914}
@@ -11762,6 +11779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1180890242}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   phoneScreen: {fileID: 7391658813810417783}
   phoneObject: {fileID: 3602903457158996208}
@@ -12044,6 +12062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1212945970}
+  interactSound: {fileID: 8300000, guid: bc7d49d71874dfa4987a1cea83b150ec, type: 3}
   itemType: 0
   posterCanvas: {fileID: 5308677475208221577}
   rend: {fileID: 517428009}
@@ -12115,6 +12134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1221871810}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   storageSize: 5
   id: 0
@@ -12783,6 +12803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1274032841}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   storageSize: 5
   id: 0
@@ -12987,6 +13008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1285403894}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   electricCost: 1000
   costRate: 300
@@ -13726,6 +13748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1305283587}
+  interactSound: {fileID: 0}
   itemType: 0
   manager: {fileID: 313875237}
   value: 10000
@@ -14099,6 +14122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1356495507}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   itemPos: {x: 0, y: -0.109, z: 0}
   id: 0
@@ -15710,6 +15734,8 @@ MonoBehaviour:
   - {fileID: 1273429920}
   - {fileID: 263981379}
   - {fileID: 1211817724}
+  paperSound: {fileID: 8300000, guid: bc7d49d71874dfa4987a1cea83b150ec, type: 3}
+  clickSound: {fileID: 8300000, guid: 7a511e8cf7d2d4448ba89138b6f7fc18, type: 3}
 --- !u!114 &1526251608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16533,6 +16559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1565420583}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   electricCost: 500
   costRate: 300
@@ -17560,6 +17587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1677742145}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   itemPos: {x: 0, y: -0.109, z: 0}
   id: 0
@@ -18061,6 +18089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1717187953}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   director: {fileID: 1760674868}
   displayList: {fileID: 1905295302962247738, guid: b0cb30698327d4946b5c192e5ff6463e,
@@ -18212,6 +18241,7 @@ MonoBehaviour:
   loadingScene: {fileID: 2055858996}
   settingScreen: {fileID: 117929235}
   creditScreen: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: 7a511e8cf7d2d4448ba89138b6f7fc18, type: 3}
   inGame: 1
 --- !u!114 &1719700929
 MonoBehaviour:
@@ -18227,6 +18257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseScene: {fileID: 4020878250265556298}
   player: {fileID: 330585550}
+  paperSound: {fileID: 8300000, guid: bc7d49d71874dfa4987a1cea83b150ec, type: 3}
+  clickSound: {fileID: 8300000, guid: 7a511e8cf7d2d4448ba89138b6f7fc18, type: 3}
 --- !u!1 &1724710196
 GameObject:
   m_ObjectHideFlags: 0
@@ -18773,6 +18805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1778301473}
+  interactSound: {fileID: 0}
   itemType: 0
 --- !u!65 &1778301475
 BoxCollider:
@@ -19458,6 +19491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1818647624}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   storageSize: 5
   id: 0
@@ -20766,6 +20800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 2011420558}
+  interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   storageSize: 5
   id: 0
@@ -31935,6 +31970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 8969924969718176515}
+  interactSound: {fileID: 8300000, guid: e34e4933c34fde5449ff2e23283be5fb, type: 3}
   itemType: 0
   minDonation: 0
   maxDonation: 10

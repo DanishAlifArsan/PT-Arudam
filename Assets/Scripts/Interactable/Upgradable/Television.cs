@@ -53,6 +53,7 @@ public class Television : Electric
 
     public override void OnInteract(ItemInteract broadcaster)
     {
+        base.OnInteract(broadcaster);
         tvUI.SetActive(true);
         this.broadcaster = broadcaster;
         string indicator = LocalizationManager.Localize("Menu Back");
