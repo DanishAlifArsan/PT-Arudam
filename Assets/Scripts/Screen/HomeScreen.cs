@@ -8,7 +8,8 @@ public class HomeScreen : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScene;
     [SerializeField] private Setting settingScreen;
-    [SerializeField] private GameObject  creditScreen;
+    [SerializeField] private GameObject creditScreen;
+    [SerializeField] private GameObject tutorialScreen;
     [SerializeField] private AudioClip clickSound;
     [SerializeField] private bool inGame = false;
 
@@ -61,6 +62,11 @@ public class HomeScreen : MonoBehaviour
     public void ShowCredit(bool status) {
         if(!status) PlaySound();
         creditScreen.gameObject.SetActive(status);
+    }
+
+    public void ShowTutorial(bool status) {
+        if(!status) PlaySound();
+        tutorialScreen.gameObject.SetActive(status);
     }
 
     public void CloseGame() {
