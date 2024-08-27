@@ -22,7 +22,23 @@ public class PoliceManager : MonoBehaviour
     }
     
     public void StartChasing(CustomerAI currentCustomer) {
-        int random = Random.Range(0,3);
+        // kalau endless run jadi
+        // int random = Random.Range(0,3);
+        // switch (random)
+        // {
+        //     case 0:
+        //         StartPolice(currentCustomer);
+        //         break;
+        //     case 1:
+        //         StartBattle(currentCustomer);
+        //         break;
+        //     case 2:   
+        //         StartEndlessRun(currentCustomer);
+        //         break;       
+        // }
+        //
+        // kalau endless run gak jadi
+        int random = Random.Range(0,2);
         switch (random)
         {
             case 0:
@@ -30,11 +46,9 @@ public class PoliceManager : MonoBehaviour
                 break;
             case 1:
                 StartBattle(currentCustomer);
-                break;
-            case 2:   
-                StartEndlessRun(currentCustomer);
-                break;       
+                break;     
         }
+        //
     }
 
     private void StartEndlessRun(CustomerAI currentCustomer) {

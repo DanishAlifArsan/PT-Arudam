@@ -25,14 +25,19 @@ public class CustomerBuy : IState
             stateManager.SwitchState(customer, stateManager.pay);
         } else if(customer.isWalking) {   
             customer.ClearGoodsToBuy(); 
-            if (!SaleManager.instance.CheckIsTableEmpty() && !isRunning)
-            {
-                EndlessRunManager.instance.StartRunning(false);
-                EndlessRunManager.instance.chasedCustomer = customer;
-                isRunning = true;
-            } else {
-                SaleManager.instance.EmptyTable();
-            }
+            // kalau endless run jadi
+            // if (!SaleManager.instance.CheckIsTableEmpty() && !isRunning)
+            // {
+            //     EndlessRunManager.instance.StartRunning(false);
+            //     EndlessRunManager.instance.chasedCustomer = customer;
+            //     isRunning = true;
+            // } else {
+            //     SaleManager.instance.EmptyTable();
+            // }
+            //
+            //kalau endess run gak jadi
+            SaleManager.instance.EmptyTable();
+            // 
             stateManager.SwitchState(customer, stateManager.walk);
             CustomerManager.instance.currentCustomer = null;
         }
