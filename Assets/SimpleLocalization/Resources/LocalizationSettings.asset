@@ -26,4 +26,7 @@ MonoBehaviour:
   - Name: Phone
     Id: 227924437
     TextAsset: {fileID: 4900000, guid: 6dd8153a77c5831418db117f1a50508c, type: 3}
+  - Name: Tutorial
+    Id: 982016996
+    TextAsset: {fileID: 4900000, guid: b214753a4524d39468a89952af04ec6a, type: 3}
   SaveFolder: {fileID: 102900000, guid: c392831e85f928548b8494fefd912562, type: 3}

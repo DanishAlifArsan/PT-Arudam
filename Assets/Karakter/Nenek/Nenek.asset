@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568d413027a58c4488f121c6663c7b9b, type: 3}
   m_Name: Nenek
   m_EditorClassIdentifier: 
-  walkSpeed: 1
-  acceleration: 3
+  walkSpeed: 0.5
+  acceleration: 2
   patience: 10
   maxNumberOfGoods: 2
-  buyAmountPerGoods: 2
+  buyAmountPerGoods: 3
   prefab: {fileID: 7864365682551148990, guid: 5c9ffb3d9e890594a9458038227d388c, type: 3}
   battleSprite: {fileID: 21300000, guid: 8797e6ffeca73e041934742a7d60b6ed, type: 3}
   isEvil: 0

@@ -38,7 +38,7 @@ public class BattleManager : MonoBehaviour
 
     public void SetupBattle() {
         enemySR.sprite = battledCustomer.battleSprite;
-        health.Setup();
+        health.Setup(battledCustomer.health);
         battleObject.SetActive(true);
         battleTransition.SetActive(false);
         shopObject.SetActive(false);

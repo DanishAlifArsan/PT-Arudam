@@ -16,9 +16,9 @@ public class Health : MonoBehaviour
     private float currentPlayerHealth, currentEnemyHealth;
     private bool isWin;
 
-    public void Setup() {
+    public void Setup(float health) {
         currentPlayerHealth = playerHealth;
-        currentEnemyHealth = enemyHealth;
+        currentEnemyHealth = health;
         playerHealthBar.fillAmount = 1;
         enemyHealthBar.fillAmount = 1;
     }

@@ -16,7 +16,7 @@ MonoBehaviour:
   acceleration: 3
   patience: 10
   maxNumberOfGoods: 2
-  buyAmountPerGoods: 2
+  buyAmountPerGoods: 3
   prefab: {fileID: 7864365682551148990, guid: a94433ab7c0f6794f8d20f7d4d871433, type: 3}
   battleSprite: {fileID: 21300000, guid: 892bafba61ffcd04b8695695b575403c, type: 3}
   isEvil: 0

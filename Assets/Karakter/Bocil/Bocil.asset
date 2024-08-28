@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568d413027a58c4488f121c6663c7b9b, type: 3}
   m_Name: Bocil
   m_EditorClassIdentifier: 
-  walkSpeed: 1
-  acceleration: 3
-  patience: 10
+  walkSpeed: 2
+  acceleration: 4
+  patience: 5
   maxNumberOfGoods: 2
-  buyAmountPerGoods: 2
+  buyAmountPerGoods: 1
   prefab: {fileID: 8338278915104589485, guid: bb3b0b4ef9de23b44942ed476725e991, type: 3}
   battleSprite: {fileID: 21300000, guid: 7c998f0454790d248bce518d74a66660, type: 3}
   isEvil: 0

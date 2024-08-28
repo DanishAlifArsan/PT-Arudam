@@ -16,6 +16,7 @@ public class CustomerAI : Interactable
     public bool isWalking;
     public bool isBuying;
     public bool isPaying;
+    public float health;
     public int maxNumberOfGoods;
     public int buyAmountPerGoods;
     public Sprite battleSprite;

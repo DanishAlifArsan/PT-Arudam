@@ -56,6 +56,7 @@ public class CustomerManager : MonoBehaviour
         instantiatedCustomer.homePoint = homePoint;
         instantiatedCustomer.agent.speed = origin.walkSpeed;
         instantiatedCustomer.agent.acceleration = origin.acceleration;
+        instantiatedCustomer.health = origin.health;
         instantiatedCustomer.waitDuration = origin.patience;
         instantiatedCustomer.maxNumberOfGoods = origin.maxNumberOfGoods;
         instantiatedCustomer.buyAmountPerGoods = origin.buyAmountPerGoods;

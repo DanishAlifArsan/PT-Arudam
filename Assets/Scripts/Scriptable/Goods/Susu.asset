@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe1130b492a38424abdd67097ea0daca, type: 3}
-  m_Name: Indomie
+  m_Name: Susu
   m_EditorClassIdentifier: 
-  id: 1
-  goodsName: Mie Instant
-  displayImage: {fileID: 21300000, guid: 19a4a06142a3a0442af57834886df505, type: 3}
-  sellPrice: 2000
-  buyPrice: 2000
+  id: 2
+  goodsName: Susu
+  displayImage: {fileID: 0}
+  sellPrice: 18000
+  buyPrice: 18000
   deliveryPrice: 1000
   amountOnBox: 5
-  prefab: {fileID: 4417039392173204849, guid: 37e3ed90e07ad4d4c8db539716a16176, type: 3}
-  itemPrefab: {fileID: 6963222634680846193, guid: e807a5d2c3221e249adaf43df044cc92,
-    type: 3}
+  prefab: {fileID: 0}
+  itemPrefab: {fileID: 0}
