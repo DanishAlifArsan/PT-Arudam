@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Susu
   m_EditorClassIdentifier: 
   id: 4
-  goodsName: Susu
+  goodsName: Super Milk
   displayImage: {fileID: 21300000, guid: 04ec2ba412ac1cf4aa9b7093ba3888c8, type: 3}
   sellPrice: 18000
   buyPrice: 18000

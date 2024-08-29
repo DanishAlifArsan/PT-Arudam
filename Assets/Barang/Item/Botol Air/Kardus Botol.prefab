@@ -377,7 +377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Botol Air
+  m_text: Aquih
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d5539ef2d3331554c8627e97a58ae699, type: 2}
   m_sharedMaterial: {fileID: -8436970754952931470, guid: d5539ef2d3331554c8627e97a58ae699,
@@ -692,7 +692,7 @@ PrefabInstance:
     - target: {fileID: 7805059550565057364, guid: 7ae0f9d1ba9937247be8f6cbff1e2beb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32394618
+      value: 0.2032
       objectReference: {fileID: 0}
     - target: {fileID: 7805059550565057364, guid: 7ae0f9d1ba9937247be8f6cbff1e2beb,
         type: 3}
@@ -778,7 +778,7 @@ PrefabInstance:
     - target: {fileID: 7805059550565057364, guid: 7ae0f9d1ba9937247be8f6cbff1e2beb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32394618
+      value: 0.2032
       objectReference: {fileID: 0}
     - target: {fileID: 7805059550565057364, guid: 7ae0f9d1ba9937247be8f6cbff1e2beb,
         type: 3}
@@ -864,7 +864,7 @@ PrefabInstance:
     - target: {fileID: 7805059550565057364, guid: 7ae0f9d1ba9937247be8f6cbff1e2beb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32394618
+      value: 0.2032
       objectReference: {fileID: 0}
     - target: {fileID: 7805059550565057364, guid: 7ae0f9d1ba9937247be8f6cbff1e2beb,
         type: 3}
@@ -950,7 +950,7 @@ PrefabInstance:
     - target: {fileID: 7805059550565057364, guid: 7ae0f9d1ba9937247be8f6cbff1e2beb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32394618
+      value: 0.2032
       objectReference: {fileID: 0}
     - target: {fileID: 7805059550565057364, guid: 7ae0f9d1ba9937247be8f6cbff1e2beb,
         type: 3}
@@ -1036,7 +1036,7 @@ PrefabInstance:
     - target: {fileID: 7805059550565057364, guid: 7ae0f9d1ba9937247be8f6cbff1e2beb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32394618
+      value: 0.2032
       objectReference: {fileID: 0}
     - target: {fileID: 7805059550565057364, guid: 7ae0f9d1ba9937247be8f6cbff1e2beb,
         type: 3}

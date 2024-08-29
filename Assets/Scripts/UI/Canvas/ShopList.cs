@@ -21,7 +21,7 @@ public class ShopList : MonoBehaviour
     public void Setup(Goods item, int index, int totalPrice) {    
         this.totalPrice = totalPrice;
         goodsImage.sprite = item.displayImage;
-        nameText.text = item.name;
+        nameText.text = item.goodsName;
         priceText.text = totalPrice.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));
         this.index = index;
     }
