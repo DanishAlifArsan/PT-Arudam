@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable/Customer")]
 public class Customer : ScriptableObject
 {
-    public float health = 5;
+    public float health = 10;
     public float walkSpeed;
     public float acceleration;
     public float patience;

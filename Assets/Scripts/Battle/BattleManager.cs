@@ -65,7 +65,7 @@ public class BattleManager : MonoBehaviour
             int getMoney = SaleManager.instance.GetReturnedItemPrice();
             CurrencyManager.instance.AddCurrency(getMoney);
         } else {
-            if (isPolice)
+            if (battledCustomer.isEvil)
             {
                 // kalau polisi kalah
                 int getMoney = SaleManager.instance.GetReturnedItemPrice();

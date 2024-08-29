@@ -13,6 +13,8 @@ public class Health : MonoBehaviour
     [SerializeField] private Image enemyHealthBar;
     [SerializeField] private PlayableDirector battleEndDirector;
     [SerializeField] private bool isShop = false;
+    [SerializeField] private AudioClip playerAttackSound;
+    [SerializeField] private AudioClip enemyAttackSound;
     private float currentPlayerHealth, currentEnemyHealth;
     private bool isWin;
 
@@ -49,6 +51,7 @@ public class Health : MonoBehaviour
     }
 
     private void DamagePlayer(int damage) {
+        AudioManager.instance.PlaySound(enemyAttackSound);
         currentPlayerHealth -= damage;
         playerHealthBar.fillAmount = currentPlayerHealth/playerHealth;
 
@@ -60,6 +63,7 @@ public class Health : MonoBehaviour
     }
 
     private void DamageEnemy(int damage) {
+        AudioManager.instance.PlaySound(playerAttackSound);
         currentEnemyHealth -= damage;
         enemyHealthBar.fillAmount = currentEnemyHealth/enemyHealth;
 

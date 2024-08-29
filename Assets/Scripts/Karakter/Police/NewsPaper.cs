@@ -5,19 +5,44 @@ using UnityEngine;
 public class NewsPaper : MonoBehaviour
 {
     [SerializeField] private List<GameObject> newsPaperScene; 
+    [SerializeField] private HomeScreen homeScreen;
     [SerializeField] private AudioClip paperSound;
     [SerializeField] private AudioClip clickSound;
+    private bool isInteract = false;
+    private int activeNewspaper;
+
+    private void Update() {
+        if (isInteract)
+        {
+            if (Input.GetMouseButtonDown(1) ) {
+                HandleClose(activeNewspaper);
+            }
+        }
+    }
 
     public void ShowScene(int index) {
         AudioManager.instance.PlaySound(paperSound);
         newsPaperScene[index].SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        isInteract = true;
+        activeNewspaper = index;
     }
-    public void RemoveScene(int index) {
+    private void HandleClose(int index) {
+        if (index < 2)
+        {
+            RemoveScene(index);
+        } else {
+            ReturnHome();
+        }
+    }
+    private void RemoveScene(int index) {
         AudioManager.instance.PlaySound(clickSound);
         newsPaperScene[index].SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        isInteract = false;
     }
+
+    private void ReturnHome() {
+        homeScreen.LoadScene(0);
+    }
+
+    
 }
