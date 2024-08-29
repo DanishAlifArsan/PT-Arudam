@@ -20,7 +20,6 @@ public class UpgradeList : MonoBehaviour
     
     public void Setup(Upgradable item) {   
         upgradable = item; 
-        goodsImage.sprite = item.displayImage;
         nameText.text = item.itemName;    
         this.index = item.id;
         Refresh(item);
@@ -28,6 +27,7 @@ public class UpgradeList : MonoBehaviour
 
     private void Refresh(Upgradable item) {
         int level = item.currentlevel;
+        goodsImage.sprite = level < item.level? item.displayImage[level] : item.displayImage[item.level-1];
         levelText.text = level < item.level? "Level "+ (level+1).ToString() : "Level Max";
         priceText.text = level < item.level? item.upgradePrices[level].ToString("C", CultureInfo.CreateSpecificCulture("id-ID")) : "N/A";
 

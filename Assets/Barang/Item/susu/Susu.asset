@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1130b492a38424abdd67097ea0daca, type: 3}
   m_Name: Susu
   m_EditorClassIdentifier: 
-  id: 2
+  id: 4
   goodsName: Susu
-  displayImage: {fileID: 0}
+  displayImage: {fileID: 21300000, guid: 04ec2ba412ac1cf4aa9b7093ba3888c8, type: 3}
   sellPrice: 18000
   buyPrice: 18000
   deliveryPrice: 1000
   amountOnBox: 5
-  prefab: {fileID: 0}
-  itemPrefab: {fileID: 0}
+  prefab: {fileID: 7287869301320825735, guid: 310787ac22dd4a247aa260a28203d087, type: 3}
+  itemPrefab: {fileID: 3019583343664588301, guid: f5ca240155826784b8d0752101b8818b,
+    type: 3}

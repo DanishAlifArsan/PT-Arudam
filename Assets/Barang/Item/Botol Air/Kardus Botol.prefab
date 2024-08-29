@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 683550793554116640}
   - component: {fileID: 4852002175715189291}
   m_Layer: 0
-  m_Name: Botol 2
+  m_Name: Kardus Botol
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

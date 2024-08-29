@@ -6,7 +6,7 @@ public class Upgradable : MonoBehaviour
 {
     public int id;
     public string itemName;
-    public Sprite displayImage;
+    public List<Sprite> displayImage;
     public int level;
     public List<int> upgradePrices;
     public List<GameObject> upgradeObjects;

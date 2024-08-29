@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private Vignette vignette;
 
+    private bool dayEnded = false;
     private void Awake()
     {
         if (instance == null)
@@ -35,9 +36,10 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update() {
-        if (TimeManager.instance.Midnight())
+        if (TimeManager.instance.Midnight() && !dayEnded)
         {
             EndDay();
+            dayEnded = true;
         }
         if (TimeManager.instance.NightHour())
         {
