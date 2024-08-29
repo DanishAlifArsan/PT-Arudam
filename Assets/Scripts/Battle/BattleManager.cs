@@ -12,6 +12,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private PlayableDirector battleEndDirector;
     [SerializeField] private GameObject battleObject;
     [SerializeField] private GameObject shopObject;
+    [SerializeField] private AudioSource battleMusic;
     [SerializeField] private GameObject battleTransition;
     [SerializeField] private Image leftImage;
     [SerializeField] private Image rightImage;
@@ -33,6 +34,7 @@ public class BattleManager : MonoBehaviour
     public void StartBattle(bool isPolice) {
         this.isPolice = isPolice;
         battleTransition.SetActive(true);
+        battleMusic.Play();
         battleDirector.Play();
     }
 
@@ -45,6 +47,7 @@ public class BattleManager : MonoBehaviour
     }
 
     public void BattleEnd(bool isWin) {
+        battleMusic.Stop();
         battleDirector.Stop();
         battleEndDirector.Stop();   
         leftImage.fillAmount = 1;

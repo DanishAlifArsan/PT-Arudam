@@ -15,6 +15,8 @@ public class Health : MonoBehaviour
     [SerializeField] private bool isShop = false;
     [SerializeField] private AudioClip playerAttackSound;
     [SerializeField] private AudioClip enemyAttackSound;
+    [SerializeField] private AudioClip victoryMusic;
+    [SerializeField] private AudioSource battleMusic;
     private float currentPlayerHealth, currentEnemyHealth;
     private bool isWin;
 
@@ -58,6 +60,7 @@ public class Health : MonoBehaviour
         if (currentPlayerHealth <= 0)
         {
             isWin = false;
+            battleMusic.Stop();
             battleEndDirector.Play();
         }
     }
@@ -70,6 +73,8 @@ public class Health : MonoBehaviour
         if (currentEnemyHealth <= 0)
         {
             isWin = true;
+            AudioManager.instance.PlaySound(victoryMusic);
+            battleMusic.Stop();
             battleEndDirector.Play();
         }
     }
