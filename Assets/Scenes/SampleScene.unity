@@ -685,7 +685,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.1251607, y: -0.2665472, z: -0.059036016}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 293110349}
@@ -6459,8 +6459,8 @@ Transform:
   m_GameObject: {fileID: 448813391}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16683912, y: -0.2665472, z: 0.1799643}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.131, y: -0.2665472, z: 0.088}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 293110349}
@@ -9302,7 +9302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  itemName: Televisi
+  itemName: TV
   displayImage:
   - {fileID: 21300000, guid: af89d831f5b3e7d45b1e17b339f4d6e0, type: 3}
   - {fileID: 21300000, guid: 635cff175f028db4586673f631bd507d, type: 3}
@@ -9464,8 +9464,8 @@ Transform:
   m_GameObject: {fileID: 726203611}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16683912, y: -0.2665472, z: -0.059036016}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.131, y: -0.2665472, z: -0.059036016}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 293110349}
@@ -15024,7 +15024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  itemName: Gantungan
+  itemName: Pillar
   displayImage:
   - {fileID: 21300000, guid: 9610c54154141354f8d35d4a23d71127, type: 3}
   level: 1
@@ -15717,8 +15717,8 @@ Transform:
   m_GameObject: {fileID: 1305283578}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1251607, y: -0.2665472, z: 0.16996408}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.1251607, y: -0.2665472, z: 0.09}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 293110349}
@@ -17703,7 +17703,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://rr1---sn-2uuxa3vh-habe.googlevideo.com/videoplayback?expire=1725006191&ei=Dy3RZvu4OtTArtoPs7LeuQo&ip=180.248.23.12&id=o-ANVhCkDQOVfcipw8inhTrKu2pPavFEe4KMitRRTG66Ix&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&mh=0x&mm=31%2C29&mn=sn-2uuxa3vh-habe%2Csn-npoldn7z&ms=au%2Crdu&mv=m&mvi=1&pl=20&gcr=id&initcwndbps=493750&bui=AQmm2exHRRdWk8MixnvrH1wkz1RDOSiflCacz3ZjuAaqhx6TjbSeCS6zTQ4SUjLc-_LHS4dhQ-6n-_pf&spc=Mv1m9g2udPNZgFFY_FRW05tRzluffgz0zImbU53nHUSQjzqdmbsx9vQ&vprv=1&svpuc=1&mime=video%2Fmp4&ns=7hi0VlreOPE3nsSdxuWQxlcQ&rqh=1&gir=yes&clen=51885818&ratebypass=yes&dur=1430.976&lmt=1724659139342498&mt=1724984251&fvip=4&c=WEB_CREATOR&sefc=1&txp=4438434&n=rue9XyE8a8PNsg&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cgcr%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIhAKr91QYvM13pNtCJS8-rDC8xr3K4lH48YDHCerqxewe4AiB-kqv-9vBtb2fnc3KhGCQGw1G4mWdzjdQHG0IK0dmT_w%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AGtxev0wRgIhAOzGH-6SrLYswu-6fxpUyDrnRy8Rme33aNv09pj2SVrwAiEArTUXGS2NJUobt3UUXB_FLeQUW4azTZJEzgmQarNQ7gI%3D
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -19426,7 +19426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1575454714
 Transform:
   m_ObjectHideFlags: 0
@@ -26127,7 +26127,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117257316}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c1299baf52cfbd479d99cc0688cc93b, type: 3}
   m_Name: 
