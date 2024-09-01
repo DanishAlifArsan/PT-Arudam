@@ -13,5 +13,7 @@ public class Customer : ScriptableObject
     public int buyAmountPerGoods = 1;
     public CustomerAI prefab;
     public Sprite battleSprite;
+    public AudioClip happySound;
+    public AudioClip angrySound;
     public bool isEvil = false;
 }

@@ -28,7 +28,7 @@ public class SaleManager : MonoBehaviour
     }
 
     private int GeneratePaid(int totalPrice) {
-        int[] numbers = {1000, 2000, 5000, 10000};
+        int[] numbers = {1000, 5000, 10000, 20000, 50000};
         return totalPrice + numbers[Random.Range(0, 4)] * Random.Range(1,3);
     }
 
