@@ -61,6 +61,8 @@ public class CustomerManager : MonoBehaviour
         instantiatedCustomer.maxNumberOfGoods = origin.maxNumberOfGoods;
         instantiatedCustomer.buyAmountPerGoods = origin.buyAmountPerGoods;
         instantiatedCustomer.battleSprite = origin.battleSprite;
+        instantiatedCustomer.speak.happySound = origin.happySound;
+        instantiatedCustomer.speak.angrySound = origin.angrySound;
         instantiatedCustomer.isEvil = origin.isEvil;
         instantiatedCustomer.gameObject.SetActive(false);
         customerQueue.Add(instantiatedCustomer);

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5366969486699398447}
   - component: {fileID: 8476962091216703759}
   - component: {fileID: 7040892230881330229}
+  - component: {fileID: 721939293811531720}
   m_Layer: 0
   m_Name: Bocil Biasa
   m_TagString: Untagged
@@ -139,6 +140,20 @@ MonoBehaviour:
   m_labelHash: 0.0000000020529285
   m_SpriteKey: 0
   m_SpriteHash: 476181584
+--- !u!114 &721939293811531720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159062067418373228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4b3fba02873ef45ac860a1d5aff4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happySound: {fileID: 0}
+  angrySound: {fileID: 0}
 --- !u!1 &3223890190718485590
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +359,7 @@ MonoBehaviour:
   isWalking: 0
   isBuying: 0
   isPaying: 0
+  health: 0
   maxNumberOfGoods: 0
   buyAmountPerGoods: 0
   battleSprite: {fileID: 0}
@@ -353,6 +369,7 @@ MonoBehaviour:
     type: 3}
   boxHolder: {fileID: 3026735369341639619}
   patienceBar: {fileID: 1090567408241755689}
+  speak: {fileID: 721939293811531720}
   dialogueBubbleUI: {fileID: 5850303513213465952}
 --- !u!195 &8495596137044310563
 NavMeshAgent:

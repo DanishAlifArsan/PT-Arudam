@@ -9,10 +9,13 @@ public class PoliceAI : MonoBehaviour
     public Animator anim;
     [SerializeField] private Transform policePoint;
     [SerializeField] private Transform policeHome;
+    [SerializeField] private CharacterSpeak speak;
     public bool isWalking = false;
+    private bool toShop = false;
 
     public void MoveToShop() {
         isWalking = true;
+        toShop = true;
         Walk(false);
         agent.SetDestination(policePoint.position);
     }
@@ -36,6 +39,12 @@ public class PoliceAI : MonoBehaviour
             {
                 anim.SetBool("walking", false);
                 isWalking = false;
+
+                if (toShop)
+                {
+                    toShop = false;
+                    speak.Happy();
+                }
             }
         }
     }

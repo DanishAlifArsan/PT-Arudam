@@ -20,4 +20,6 @@ MonoBehaviour:
   buyAmountPerGoods: 3
   prefab: {fileID: 7864365682551148990, guid: c88d9872146493743ac5fd4e528f0434, type: 3}
   battleSprite: {fileID: 21300000, guid: c7be5ee6a6d7a654597f9ed945dcd4e6, type: 3}
+  happySound: {fileID: 8300000, guid: 52e8249e624355949b5670193ccef970, type: 3}
+  angrySound: {fileID: 8300000, guid: 5da2c2a7476afc448bfe5199a8c9bb2b, type: 3}
   isEvil: 0

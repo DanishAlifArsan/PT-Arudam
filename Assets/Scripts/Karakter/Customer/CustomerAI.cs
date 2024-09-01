@@ -26,6 +26,7 @@ public class CustomerAI : Interactable
     [SerializeField] private DialogueBubble dialogueBubble;
     [SerializeField] private RectTransform boxHolder;
     [SerializeField] private Image patienceBar;
+    public CharacterSpeak speak;
     private List<DialogueBubble> dialogueBubbles = new List<DialogueBubble>();
     public Dictionary<Goods, int> goodsToBuy = new Dictionary<Goods, int>();
     public GameObject dialogueBubbleUI;

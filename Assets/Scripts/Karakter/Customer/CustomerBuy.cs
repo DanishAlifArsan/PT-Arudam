@@ -22,6 +22,7 @@ public class CustomerBuy : IState
         if (customer.isPaying)
         {
             customer.ClearGoodsToBuy();
+            customer.speak.Happy();
             stateManager.SwitchState(customer, stateManager.pay);
         } else if(customer.isWalking) {   
             customer.ClearGoodsToBuy(); 
@@ -38,6 +39,7 @@ public class CustomerBuy : IState
             //kalau endess run gak jadi
             SaleManager.instance.EmptyTable();
             // 
+            customer.speak.Angry();
             stateManager.SwitchState(customer, stateManager.walk);
             CustomerManager.instance.currentCustomer = null;
         }

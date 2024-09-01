@@ -337,6 +337,7 @@ MonoBehaviour:
   isWalking: 0
   isBuying: 0
   isPaying: 0
+  health: 0
   maxNumberOfGoods: 0
   buyAmountPerGoods: 0
   battleSprite: {fileID: 0}
@@ -346,6 +347,7 @@ MonoBehaviour:
     type: 3}
   boxHolder: {fileID: 5544801735326400776}
   patienceBar: {fileID: 5183704812232804458}
+  speak: {fileID: 6068642140615087322}
   dialogueBubbleUI: {fileID: 378798412722703935}
 --- !u!195 &6785065809162888217
 NavMeshAgent:
@@ -418,6 +420,7 @@ GameObject:
   - component: {fileID: 2342035577659830473}
   - component: {fileID: 293071797130852652}
   - component: {fileID: 3483223864301570462}
+  - component: {fileID: 6068642140615087322}
   m_Layer: 0
   m_Name: sma Biasa
   m_TagString: Untagged
@@ -544,6 +547,20 @@ MonoBehaviour:
   m_labelHash: 0
   m_SpriteKey: 0
   m_SpriteHash: 0
+--- !u!114 &6068642140615087322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8581598485141692886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4b3fba02873ef45ac860a1d5aff4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happySound: {fileID: 0}
+  angrySound: {fileID: 0}
 --- !u!1 &8725139260030116640
 GameObject:
   m_ObjectHideFlags: 0

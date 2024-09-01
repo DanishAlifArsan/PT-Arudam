@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568d413027a58c4488f121c6663c7b9b, type: 3}
   m_Name: Nenek
   m_EditorClassIdentifier: 
+  health: 10
   walkSpeed: 0.5
   acceleration: 2
   patience: 10
@@ -19,4 +20,6 @@ MonoBehaviour:
   buyAmountPerGoods: 3
   prefab: {fileID: 7864365682551148990, guid: 5c9ffb3d9e890594a9458038227d388c, type: 3}
   battleSprite: {fileID: 21300000, guid: 8797e6ffeca73e041934742a7d60b6ed, type: 3}
+  happySound: {fileID: 8300000, guid: 93b3d14262f705f4a85f7cd1ed6f6e38, type: 3}
+  angrySound: {fileID: 8300000, guid: 40affb94e2b8a3740bfe4539907fa2a1, type: 3}
   isEvil: 0

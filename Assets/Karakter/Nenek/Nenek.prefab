@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 3481903403991093910}
   - component: {fileID: 7741624057213416360}
   - component: {fileID: 459842069744907545}
+  - component: {fileID: 7883001015035868052}
   m_Layer: 0
   m_Name: Nenek Biasa
   m_TagString: Untagged
@@ -243,6 +244,20 @@ MonoBehaviour:
   m_labelHash: 0
   m_SpriteKey: 0
   m_SpriteHash: 0
+--- !u!114 &7883001015035868052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156834948148814252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4b3fba02873ef45ac860a1d5aff4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happySound: {fileID: 0}
+  angrySound: {fileID: 0}
 --- !u!1 &3355329151710071437
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +491,7 @@ MonoBehaviour:
   isWalking: 0
   isBuying: 0
   isPaying: 0
+  health: 0
   maxNumberOfGoods: 0
   buyAmountPerGoods: 0
   battleSprite: {fileID: 0}
@@ -485,6 +501,7 @@ MonoBehaviour:
     type: 3}
   boxHolder: {fileID: 5544801735326400776}
   patienceBar: {fileID: 5183704812232804458}
+  speak: {fileID: 7883001015035868052}
   dialogueBubbleUI: {fileID: 378798412722703935}
 --- !u!195 &6785065809162888217
 NavMeshAgent:

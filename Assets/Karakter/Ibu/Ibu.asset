@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568d413027a58c4488f121c6663c7b9b, type: 3}
   m_Name: Ibu
   m_EditorClassIdentifier: 
+  health: 10
   walkSpeed: 1
   acceleration: 3
   patience: 10
@@ -19,4 +20,6 @@ MonoBehaviour:
   buyAmountPerGoods: 3
   prefab: {fileID: 7864365682551148990, guid: a94433ab7c0f6794f8d20f7d4d871433, type: 3}
   battleSprite: {fileID: 21300000, guid: 892bafba61ffcd04b8695695b575403c, type: 3}
+  happySound: {fileID: 8300000, guid: 0575e32404445414386e92f1d168e333, type: 3}
+  angrySound: {fileID: 8300000, guid: eb19aa05d4487824fac5bc90d5ba586a, type: 3}
   isEvil: 0

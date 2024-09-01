@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568d413027a58c4488f121c6663c7b9b, type: 3}
   m_Name: wibu
   m_EditorClassIdentifier: 
+  health: 10
   walkSpeed: 1
   acceleration: 3
   patience: 10
@@ -19,4 +20,6 @@ MonoBehaviour:
   buyAmountPerGoods: 2
   prefab: {fileID: 7864365682551148990, guid: a40422ec963cc1040afaf95c30d025f1, type: 3}
   battleSprite: {fileID: 21300000, guid: 34a43879bb2c1c24d9ac91e4c9a93453, type: 3}
+  happySound: {fileID: 8300000, guid: 52e8249e624355949b5670193ccef970, type: 3}
+  angrySound: {fileID: 8300000, guid: 40cb238cc4e1742418b18e84f94266a2, type: 3}
   isEvil: 0

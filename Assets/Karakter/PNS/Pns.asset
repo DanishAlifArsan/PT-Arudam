@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568d413027a58c4488f121c6663c7b9b, type: 3}
   m_Name: Pns
   m_EditorClassIdentifier: 
+  health: 10
   walkSpeed: 1
   acceleration: 3
   patience: 10
@@ -19,4 +20,6 @@ MonoBehaviour:
   buyAmountPerGoods: 4
   prefab: {fileID: 7864365682551148990, guid: 916658fceba62c644ac332e0591183d4, type: 3}
   battleSprite: {fileID: 21300000, guid: 4656487555753fe47ad5401d2641ed43, type: 3}
+  happySound: {fileID: 8300000, guid: 909962353d653ff4290bcf09dca25762, type: 3}
+  angrySound: {fileID: 8300000, guid: ec88a04bb6276054c97264e772251525, type: 3}
   isEvil: 0
