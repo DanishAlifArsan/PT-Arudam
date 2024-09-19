@@ -51,7 +51,7 @@ public class Display : Interactable
             instantiatedDisplayList.Setup(item.goods, listGoods.Count);
             instantiatedDisplayList.OnButtonClick += OnButtonClick;
             listGoods.Add(item.goods);
-            ItemManager.instance.goodsWithPrice.Add(item.goods, item.goods.setPrice);
+            ItemManager.instance.goodsWithPrice.Add(item.goods, item.goods.SellPrice);
         }
     }
 
