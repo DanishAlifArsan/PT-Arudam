@@ -122,7 +122,7 @@ public class CustomerAI : Interactable
             Broom broom = broadcaster.itemInHand?.GetComponent<Broom>();
             if (item!= null && SaleManager.instance.IsGridNull())
             {
-                base.OnInteract(broadcaster);
+                speak.Happy();
                 broadcaster.itemInHand = null;
                 SaleManager.instance.PlaceItem(goodsToBuy, item);
                 patienceBar.fillAmount = 1;

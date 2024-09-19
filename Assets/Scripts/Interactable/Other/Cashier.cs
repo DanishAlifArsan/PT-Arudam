@@ -7,15 +7,15 @@ public class Cashier : Interactable
     public override void OnInteract(ItemInteract broadcaster)
     {
         CustomerAI currentCustomer = CustomerManager.instance.currentCustomer;
-        if (currentCustomer != null && !SaleManager.instance.isTransaction) {
+        if (currentCustomer != null) {
             currentCustomer.OnInteract(broadcaster);
         }
     }
     public override void OnHighlight(ItemInteract broadcaster, bool status)
     {
         CustomerAI currentCustomer = CustomerManager.instance.currentCustomer;
-        if (currentCustomer != null && !SaleManager.instance.isTransaction) {
-            ToggleHighlight(broadcaster.centerIndicator, status, "Interact Place");
+        if (currentCustomer != null) {
+            currentCustomer.OnHighlight(broadcaster, status);
         }
     }
 }

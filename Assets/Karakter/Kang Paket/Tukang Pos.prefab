@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8500321926399127889}
   - component: {fileID: 6920609623701913258}
   - component: {fileID: 1526672859585250070}
+  - component: {fileID: 2213122852211645945}
   m_Layer: 6
   m_Name: Tukang Pos
   m_TagString: People
@@ -147,12 +148,27 @@ MonoBehaviour:
   agent: {fileID: 6920609623701913258}
   sprite: {fileID: 1812349718841285395}
   anim: {fileID: 1529969637386247657}
+  speak: {fileID: 2213122852211645945}
   box: {fileID: 0}
   deliverPoint: {fileID: 0}
   homePoint: {fileID: 0}
   packagePoint: {fileID: 0}
   playerTransform: {fileID: 0}
   id: 0
+--- !u!114 &2213122852211645945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400526148999669279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4b3fba02873ef45ac860a1d5aff4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happySound: {fileID: 8300000, guid: 40cb238cc4e1742418b18e84f94266a2, type: 3}
+  angrySound: {fileID: 0}
 --- !u!1 &7261190323215054241
 GameObject:
   m_ObjectHideFlags: 0
