@@ -15,7 +15,8 @@ MonoBehaviour:
   id: 5
   goodsName: Odol
   displayImage: {fileID: 21300000, guid: b82cafa85385f61448ec97f41faa7a31, type: 3}
-  sellPrice: 10000
+  setPrice: 10000
+  SellPrice: 10000
   buyPrice: 9000
   deliveryPrice: 1000
   amountOnBox: 5

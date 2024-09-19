@@ -105,7 +105,7 @@ public class CustomerAI : Interactable
         int totalPrice = 0;
         for (int i = 0; i < goodsToBuy.Count; i++)
         {
-            int price = goodsToBuy.ElementAt(i).Key.sellPrice;
+            int price = goodsToBuy.ElementAt(i).Key.setPrice;
             int amount = goodsToBuy[goodsToBuy.ElementAt(i).Key];
             totalPrice += price * amount;
         }

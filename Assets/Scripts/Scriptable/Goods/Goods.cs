@@ -8,7 +8,8 @@ public class Goods : ScriptableObject
     public int id;
     public string goodsName;
     public Sprite displayImage;
-    public int sellPrice;
+    public int setPrice;
+    public int SellPrice;
     public int buyPrice;
     public int deliveryPrice;
     public int amountOnBox;

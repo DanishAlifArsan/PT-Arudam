@@ -15,7 +15,8 @@ MonoBehaviour:
   id: 2
   goodsName: Kecap Bangor
   displayImage: {fileID: 21300000, guid: afd9d79f133265e4ea8e12425d4dc963, type: 3}
-  sellPrice: 9000
+  setPrice: 9000
+  SellPrice: 9000
   buyPrice: 8000
   deliveryPrice: 1000
   amountOnBox: 5

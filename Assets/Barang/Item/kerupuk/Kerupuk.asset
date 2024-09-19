@@ -15,7 +15,8 @@ MonoBehaviour:
   id: 3
   goodsName: Kerupuk
   displayImage: {fileID: 21300000, guid: ab3c8b50a43a7ca408407fbebd88749a, type: 3}
-  sellPrice: 2000
+  setPrice: 2000
+  SellPrice: 2000
   buyPrice: 1000
   deliveryPrice: 1000
   amountOnBox: 2

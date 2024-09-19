@@ -80,9 +80,15 @@ public class CustomerManager : MonoBehaviour
     private int SetNumberOfGoods(int maxNumberOfGoods) {
         int goodsCount = ItemManager.instance.listGoodsOnSale.Count;
         if (goodsCount < maxNumberOfGoods) {
-            return Random.Range(1, goodsCount + 1);
+            int rand = Random.Range(1, goodsCount + 1);
+            Debug.Log("less than | " + rand);
+            return rand;
+            // return Random.Range(1, goodsCount + 1);
         } else {
-             return Random.Range(1, maxNumberOfGoods + 1);
+            int rand = Random.Range(1, maxNumberOfGoods + 1);
+             Debug.Log("more than | " + rand);
+             return rand;
+            //  return Random.Range(1, maxNumberOfGoods + 1);
         }
     }
 

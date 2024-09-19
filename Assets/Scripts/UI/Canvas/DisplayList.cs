@@ -18,7 +18,7 @@ public class DisplayList : MonoBehaviour
     public void Setup(Goods item, int index) {    
         goodsImage.sprite = item.displayImage;
         nameText.text = item.name;
-        priceInput.text = item.sellPrice.ToString();
+        priceInput.text = item.setPrice.ToString();
         this.index = index;
     }
 
