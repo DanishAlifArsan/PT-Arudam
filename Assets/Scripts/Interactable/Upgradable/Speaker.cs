@@ -11,6 +11,7 @@ public class Speaker : Electric
     [SerializeField] private PlayableDirector director;
     [SerializeField] private GameObject musicUI;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource bgm;
     [SerializeField] private SongList songList;
     [SerializeField] private RectTransform canvas;
     [SerializeField] private List<Song> musics;
@@ -89,6 +90,7 @@ public class Speaker : Electric
     private void OnButtonClick(AudioClip music) {
         audioSource.clip = music;
         audioSource.Play();
+        bgm.Stop();
         isOn = true;
     }
 
@@ -96,12 +98,14 @@ public class Speaker : Electric
         if (audioSource.clip != null)
         { 
             audioSource.Play();
+            bgm.Stop();
             isOn = true;
         }
     }
 
     private void StopMusic() {
         audioSource.Stop();
+        bgm.Play();
         isOn = false;
     }
 }
