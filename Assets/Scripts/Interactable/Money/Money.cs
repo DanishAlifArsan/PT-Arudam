@@ -25,7 +25,7 @@ public class Money : Interactable
 
     public override void OnHighlight(ItemInteract broadcaster, bool status)
     {
-        if (SaleManager.instance.isTransaction)
+        if (SaleManager.instance.isTransaction && !isAbleToInteract)
         {
             ToggleHighlight(broadcaster.centerIndicator, status, "", false);
         }

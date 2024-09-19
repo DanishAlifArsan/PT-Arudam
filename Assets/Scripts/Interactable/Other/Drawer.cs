@@ -5,16 +5,25 @@ using UnityEngine;
 
 public class Drawer : Interactable
 {
+    [SerializeField] Collider col;
     [SerializeField] AudioClip openSound;
     [SerializeField] AudioClip closeSound;
     private Animator anim;
     public bool isPulled = false;
+    private bool checkFlag = true;
     private void Awake() {
         anim = GetComponent<Animator>();
     }
+
+    private void Update() {
+        if (isPulled)
+        {
+            col.enabled = !SaleManager.instance.isTransaction;
+        }
+    }
+
     public override void OnHighlight(ItemInteract broadcaster, bool status)
     {
-        
         ToggleHighlight(broadcaster.centerIndicator, status, Indicator());
     }
 
@@ -23,7 +32,7 @@ public class Drawer : Interactable
         base.OnInteract(broadcaster);
         isPulled = !isPulled;
         anim.SetBool("isPulled", isPulled);
-        ToggleHighlight(broadcaster.centerIndicator, true, Indicator());
+        ToggleHighlight(broadcaster.centerIndicator, false, Indicator());
     }
 
     private string Indicator() {

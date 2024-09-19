@@ -11,6 +11,7 @@ public class MoneyManager : MonoBehaviour
     private int totalValue = 0;
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private Transform paymentPoint;
+     [SerializeField] private AudioClip takeSound;
      [SerializeField] private AudioClip paySound;
 
     private void Start() {
@@ -18,6 +19,7 @@ public class MoneyManager : MonoBehaviour
     }
 
     public void CountPayment(Money money) {
+        AudioManager.instance.PlaySound(takeSound);
         var temp = Instantiate(money, paymentPoint.position, Quaternion.identity,paymentPoint);
         temp.isAbleToInteract = false;
         temp.SetName("Interact Return");

@@ -19,7 +19,7 @@ public class Storage : Interactable
             itemDictionary.Add(pos, item);
             if (item != null)
             {
-                Vector3 itemPos = new Vector3(pos,0f,0.225f);
+                Vector3 itemPos = new Vector3(pos,0f,0.194f);
                 Item instantiatedItem = Instantiate(item, itemPos + transform.position, Quaternion.identity, transform);
                 instantiatedItem.goods = ItemManager.instance.SetGoods(item.id);
                 instantiatedItem.storage = this;            
@@ -83,7 +83,7 @@ public class Storage : Interactable
         {
             if (itemDictionary[itemDictionary.ElementAt(i).Key] == null)
             {
-                Vector3 itemPos = new Vector3(itemDictionary.ElementAt(i).Key,0f,0.225f);
+                Vector3 itemPos = new Vector3(itemDictionary.ElementAt(i).Key,0f,0.194f);
 
                 item.transform.parent = transform;
                 item.transform.localPosition = itemPos;
