@@ -8858,7 +8858,6 @@ GameObject:
   m_Component:
   - component: {fileID: 797739557}
   - component: {fileID: 797739558}
-  - component: {fileID: 797739559}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -8933,27 +8932,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &797739559
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 797739556}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: aab5ba8de3f4cb243af77f3d7c2e52ef, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &802211048
 GameObject:
   m_ObjectHideFlags: 0
@@ -12735,6 +12713,8 @@ GameObject:
   - component: {fileID: 1144575583}
   - component: {fileID: 1144575582}
   - component: {fileID: 1144575581}
+  - component: {fileID: 1144575584}
+  - component: {fileID: 1144575585}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -12751,7 +12731,7 @@ Transform:
   m_GameObject: {fileID: 1144575579}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.846886, y: 3.2966988, z: -14.098905}
+  m_LocalPosition: {x: -10.84689, y: 3.2966988, z: -14.0989}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12832,6 +12812,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144575579}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1144575584
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144575579}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b42d506f64187404f81fa8d77959dbea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1144575585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144575579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c0fb5151dfe934a91f58f0eacb6de7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSound: {fileID: 8300000, guid: 48b2a80c70362324c9bc8c947eef6716, type: 3}
 --- !u!1 &1149415997
 GameObject:
   m_ObjectHideFlags: 0
@@ -12943,6 +12957,8 @@ GameObject:
   - component: {fileID: 1179959429}
   - component: {fileID: 1179959428}
   - component: {fileID: 1179959427}
+  - component: {fileID: 1179959430}
+  - component: {fileID: 1179959431}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -12959,7 +12975,7 @@ Transform:
   m_GameObject: {fileID: 1179959425}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.026886, y: 3.2966988, z: -15.7189045}
+  m_LocalPosition: {x: -6.026886, y: 3.2966988, z: -15.7189}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13040,6 +13056,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179959425}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1179959430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179959425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c0fb5151dfe934a91f58f0eacb6de7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSound: {fileID: 8300000, guid: 48b2a80c70362324c9bc8c947eef6716, type: 3}
+--- !u!95 &1179959431
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179959425}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8859c4a75c17d84498f2761c458ce693, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1180890234
 GameObject:
   m_ObjectHideFlags: 0
@@ -20811,9 +20861,12 @@ MonoBehaviour:
   enemyHealthBar: {fileID: 1400711517}
   battleEndDirector: {fileID: 790036075}
   isShop: 1
-  playerAttackSound: {fileID: 8300000, guid: 48b2a80c70362324c9bc8c947eef6716, type: 3}
   enemyAttackSound: {fileID: 8300000, guid: ae484882f904ff34284be1a869d4282a, type: 3}
+  player: {fileID: 1144575585}
+  enemy: {fileID: 1179959430}
+  qteBar: {fileID: 544049764}
   victoryMusic: {fileID: 8300000, guid: 0add19b12150fb548a53969b14398dfe, type: 3}
+  loseMusic: {fileID: 8300000, guid: 43f9bc72344626749ab88670a7cf0b90, type: 3}
   battleMusic: {fileID: 2028446707}
 --- !u!114 &1782498951
 MonoBehaviour:
@@ -22261,7 +22314,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1901730229}
   - component: {fileID: 1901730233}
-  - component: {fileID: 1901730234}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -22336,27 +22388,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!95 &1901730234
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901730228}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: aab5ba8de3f4cb243af77f3d7c2e52ef, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1911321034
 GameObject:
   m_ObjectHideFlags: 0
