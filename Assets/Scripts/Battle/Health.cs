@@ -22,7 +22,8 @@ public class Health : MonoBehaviour
 
     public void Setup(float health) {
         currentPlayerHealth = playerHealth;
-        currentEnemyHealth = health;
+        enemyHealth = health;
+        currentEnemyHealth = enemyHealth;
         playerHealthBar.fillAmount = 1;
         enemyHealthBar.fillAmount = 1;
     }
