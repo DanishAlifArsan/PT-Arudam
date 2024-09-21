@@ -4,6 +4,7 @@ using Assets.SimpleLocalization.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class Setting : MonoBehaviour
 {
@@ -12,28 +13,27 @@ public class Setting : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioClip paperSound;
 
+    private int language;
+    private float volume;
     private void Awake() {
-        // LocalizationManager.Read();
-        // LocalizationManager.Language = "English";
-
         langDropdown.onValueChanged.AddListener(delegate {selectvalue(langDropdown);});
     }
     private void OnEnable() {
-        float volume =  PlayerPrefs.GetFloat("volume", 0f);
-        volumeSlider.value = volume;
         AudioManager.instance.PlaySound(paperSound);
     }
 
     private void selectvalue(TMP_Dropdown dropdown)
     {
-        SetLanguage(dropdown.value);
+        language = dropdown.value;
     }
 
-    public void SetVolume(float volume) {
-        audioMixer.SetFloat("volume",volume);
+    public void SetVolume(float _volume) {
+        volume = _volume;
+        audioMixer.SetFloat("volume",_volume);
     }
 
     public void SetLanguage(int index) {
+        language = index;
         switch (index)
         {
             case 0: 
@@ -47,8 +47,11 @@ public class Setting : MonoBehaviour
         }
     }
 
-    private void OnDisable() {
+    public void SaveSetting() {
+        SetVolume(volume);
+        SetLanguage(language);
         PlayerPrefs.SetFloat("volume", volumeSlider.value);
         PlayerPrefs.SetInt("lang", langDropdown.value);
+        SceneManager.LoadScene( SceneManager.GetActiveScene().name );
     }
 }
