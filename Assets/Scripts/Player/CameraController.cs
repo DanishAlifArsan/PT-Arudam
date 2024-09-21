@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         float newRotationY =  transform.localRotation.eulerAngles.y + rotationSpeed * Input.GetAxis("Mouse X");
-        float newRotationZ =  transformZAxis.localRotation.eulerAngles.z - rotationSpeed * Input.GetAxis("Mouse Y");
+        float newRotationZ =  transformZAxis.localRotation.eulerAngles.z + rotationSpeed * Input.GetAxis("Mouse Y");
         newRotationZ = Mathf.Clamp(newRotationZ, minXRotation, maxXRotation);
         newRotationY = Mathf.Clamp(newRotationY, minYRotation, maxYRotation);
         transform.localRotation = Quaternion.Euler(0, newRotationY, 0);

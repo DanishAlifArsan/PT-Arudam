@@ -8,6 +8,7 @@ public class PostmanAI : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform sprite;
     [SerializeField] private Animator anim;
+    [SerializeField] private CharacterSpeak speak;
     public Box box;
     public Transform deliverPoint;
     public Transform homePoint;
@@ -35,6 +36,7 @@ public class PostmanAI : MonoBehaviour
                 agent.SetDestination(homePoint.position);    
                 anim.SetBool("deliver",false);
                 isDelivering = false;
+                speak.Happy();
                 DeliveryManager.instance.PlaceDelivery(id, box);
             } else {
                 DeliveryManager.instance.FinishDelivery(this);

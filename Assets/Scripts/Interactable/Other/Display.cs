@@ -27,16 +27,18 @@ public class Display : Interactable
     }
 
     private int OnButtonClick(int index, int price, bool isPlus) {
-        int buyPrice = listGoods[index].buyPrice;
+        int buyPrice = listGoods[index].SellPrice;
         int minPrice = (int) (buyPrice - (buyPrice * priceRate));
         int maxPrice = (int) (buyPrice + (buyPrice * priceRate));
 
         if(isPlus){
-            int tempPrice = Mathf.Clamp(listGoods[index].sellPrice += 500, minPrice, maxPrice);
+            int tempPrice = Mathf.Clamp(listGoods[index].setPrice + 500, minPrice, maxPrice);
+            listGoods[index].setPrice = tempPrice;
             ItemManager.instance.goodsWithPrice[ItemManager.instance.goodsWithPrice.ElementAt(index).Key] = tempPrice;
             return tempPrice;
         } else {
-            int tempPrice = Mathf.Clamp(listGoods[index].sellPrice -= 500, minPrice, maxPrice);
+            int tempPrice = Mathf.Clamp(listGoods[index].setPrice - 500, minPrice, maxPrice);
+            listGoods[index].setPrice = tempPrice;
            ItemManager.instance.goodsWithPrice[ItemManager.instance.goodsWithPrice.ElementAt(index).Key] = tempPrice;
             return tempPrice;
         }
@@ -49,13 +51,13 @@ public class Display : Interactable
             instantiatedDisplayList.Setup(item.goods, listGoods.Count);
             instantiatedDisplayList.OnButtonClick += OnButtonClick;
             listGoods.Add(item.goods);
-            ItemManager.instance.goodsWithPrice.Add(item.goods, item.goods.sellPrice);
+            ItemManager.instance.goodsWithPrice.Add(item.goods, item.goods.SellPrice);
         }
     }
 
     public void GenerateList(Goods goods, int price) {
         DisplayList instantiatedDisplayList =  Instantiate(displayList, canvas);
-        goods.sellPrice = price;
+        goods.setPrice = price;
         instantiatedDisplayList.Setup(goods, listGoods.Count);
         instantiatedDisplayList.OnButtonClick += OnButtonClick;
         listGoods.Add(goods);

@@ -41,7 +41,7 @@ public class Table : MonoBehaviour
         {
             if (item.Value != null)
             {
-                returnedItemPrice += item.Value.goods.sellPrice;
+                returnedItemPrice += item.Value.goods.setPrice;
             }
             Destroy(item.Value?.gameObject);
         }

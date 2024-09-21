@@ -15,7 +15,8 @@ MonoBehaviour:
   id: 0
   goodsName: Aquih
   displayImage: {fileID: 21300000, guid: c231cbae41f67d446b707e2db3999673, type: 3}
-  sellPrice: 3000
+  setPrice: 3000
+  SellPrice: 3000
   buyPrice: 2000
   deliveryPrice: 1000
   amountOnBox: 5

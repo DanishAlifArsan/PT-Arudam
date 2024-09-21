@@ -13,16 +13,19 @@ public class Health : MonoBehaviour
     [SerializeField] private Image enemyHealthBar;
     [SerializeField] private PlayableDirector battleEndDirector;
     [SerializeField] private bool isShop = false;
-    [SerializeField] private AudioClip playerAttackSound;
     [SerializeField] private AudioClip enemyAttackSound;
+    [SerializeField] private Battler player, enemy;
+    public RectTransform qteBar;
     [SerializeField] private AudioClip victoryMusic;
+    [SerializeField] private AudioClip loseMusic;
     [SerializeField] private AudioSource battleMusic;
     private float currentPlayerHealth, currentEnemyHealth;
     private bool isWin;
 
     public void Setup(float health) {
         currentPlayerHealth = playerHealth;
-        currentEnemyHealth = health;
+        enemyHealth = health;
+        currentEnemyHealth = enemyHealth;
         playerHealthBar.fillAmount = 1;
         enemyHealthBar.fillAmount = 1;
     }
@@ -41,39 +44,47 @@ public class Health : MonoBehaviour
         switch (status)
         {
             case Slider.Status.Full:
-                DamageEnemy(2);
+                AttackEnemy(2);
                 break;
             case Slider.Status.Half:
-                DamageEnemy(1);
+                AttackEnemy(1);
                 break;
             case Slider.Status.Miss:
-                DamagePlayer(1);
+                AttackPlayer(1);
                 break;
         }
     }
 
-    private void DamagePlayer(int damage) {
+    private void AttackPlayer(int damage) {
+        
         AudioManager.instance.PlaySound(enemyAttackSound);
-        currentPlayerHealth -= damage;
-        playerHealthBar.fillAmount = currentPlayerHealth/playerHealth;
-
-        if (currentPlayerHealth <= 0)
+        enemy.StartAttack(this, damage, false);
+    }
+    private void AttackEnemy(int damage) {
+        player.StartAttack(this, damage, true);
+    }
+    public void CalculateDamage(int damage, bool isEnemy) {
+        if (isEnemy)
         {
-            isWin = false;
-            battleMusic.Stop();
-            battleEndDirector.Play();
+            currentEnemyHealth -= damage;
+            enemyHealthBar.fillAmount = currentEnemyHealth/enemyHealth;
+        } else {
+            currentPlayerHealth -= damage;
+            playerHealthBar.fillAmount = currentPlayerHealth/playerHealth;
         }
     }
 
-    private void DamageEnemy(int damage) {
-        AudioManager.instance.PlaySound(playerAttackSound);
-        currentEnemyHealth -= damage;
-        enemyHealthBar.fillAmount = currentEnemyHealth/enemyHealth;
-
+    public void EndAttack() {
         if (currentEnemyHealth <= 0)
         {
             isWin = true;
             AudioManager.instance.PlaySound(victoryMusic);
+            battleMusic.Stop();
+            battleEndDirector.Play();
+        } else if (currentPlayerHealth <= 0)
+        {
+            isWin = false;
+            AudioManager.instance.PlaySound(loseMusic);
             battleMusic.Stop();
             battleEndDirector.Play();
         }

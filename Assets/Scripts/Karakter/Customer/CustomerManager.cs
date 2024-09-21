@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -70,9 +71,11 @@ public class CustomerManager : MonoBehaviour
 
     public Dictionary<Goods, int> SetGoodsToBuy(int maxNumberOfGoods, int buyAmountPerGoods) {
         Dictionary<Goods, int> goodsToBuy = new Dictionary<Goods, int>();
-        for (int i = 0; i < SetNumberOfGoods(maxNumberOfGoods); i++)
+        int numberOfGoods = SetNumberOfGoods(maxNumberOfGoods);
+        List<Goods> randomGoods = SetGoodsToBuy(ItemManager.instance.listGoodsOnSale, numberOfGoods);
+        for (int i = 0; i < numberOfGoods; i++)
         {
-            goodsToBuy.Add(ItemManager.instance.listGoodsOnSale[i], SetAmountOfGoods(buyAmountPerGoods));
+            goodsToBuy.Add(randomGoods[i], SetAmountOfGoods(buyAmountPerGoods));
         }
         return goodsToBuy;
     }
@@ -81,9 +84,22 @@ public class CustomerManager : MonoBehaviour
         int goodsCount = ItemManager.instance.listGoodsOnSale.Count;
         if (goodsCount < maxNumberOfGoods) {
             return Random.Range(1, goodsCount + 1);
-        } else {
-             return Random.Range(1, maxNumberOfGoods + 1);
+        } else {  
+           return Random.Range(1, maxNumberOfGoods + 1);
         }
+    }
+
+    private List<Goods> SetGoodsToBuy(List<Goods> list, int k) {
+        List<Goods> collection = list;
+        int n = collection.Count;
+        for (int i = 0; i < k; i++)
+        {
+            int j = Random.Range(i, n - 1);
+            Goods temp = collection[i];
+            collection[i] = collection[j];
+            collection[j] = temp;
+        }
+        return collection;
     }
 
     private int SetAmountOfGoods(int buyAmountPerGoods) {
