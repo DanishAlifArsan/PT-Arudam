@@ -17571,7 +17571,7 @@ MonoBehaviour:
     type: 3}
   canvas: {fileID: 968207214}
   musics:
-  - {fileID: 11400000, guid: 23343b70870efde4b9d7eae69f824411, type: 2}
+  - {fileID: 11400000, guid: be3e063a37caaf743a722a296c07c64b, type: 2}
   playButton: {fileID: 543580227}
   StopButton: {fileID: 1812945191}
 --- !u!82 &1565420585
@@ -22216,9 +22216,9 @@ MonoBehaviour:
     type: 3}
   canvas: {fileID: 968207214}
   musics:
+  - {fileID: 11400000, guid: be3e063a37caaf743a722a296c07c64b, type: 2}
   - {fileID: 11400000, guid: cc4fd24cd180dfa429ee82c23e7f297f, type: 2}
   - {fileID: 11400000, guid: a00183ddea9491741b46180a9838e247, type: 2}
-  - {fileID: 11400000, guid: be3e063a37caaf743a722a296c07c64b, type: 2}
   playButton: {fileID: 543580227}
   StopButton: {fileID: 1812945191}
 --- !u!1 &1899151254

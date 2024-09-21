@@ -20,6 +20,7 @@ public class Speaker : Electric
     private ItemInteract broadcaster;
     private bool isInteract = false;
     private bool isOn = false;
+    private List<SongList> songListCanvasLists = new List<SongList>();
 
     private void OnEnable() {
         playButton.onClick.AddListener( delegate {PlayMusic();});
@@ -29,6 +30,7 @@ public class Speaker : Electric
 
     private void OnDisable() {
         isOn = false; 
+        RemoveList();
     }
 
     private void Update() {
@@ -84,6 +86,14 @@ public class Speaker : Electric
             SongList instantiatedSongList = Instantiate(songList, canvas);
             instantiatedSongList.Setup(item);
             instantiatedSongList.OnButtonClick += OnButtonClick;
+            songListCanvasLists.Add(instantiatedSongList);
+        }
+    }
+
+    private void RemoveList() {
+        foreach (var item in songListCanvasLists)
+        {
+            Destroy(item.gameObject);
         }
     }
 
