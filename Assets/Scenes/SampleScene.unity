@@ -9888,7 +9888,7 @@ MonoBehaviour:
   interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   electricCost: 1000
-  costRate: 300
+  costRate: 120
   director: {fileID: 1486464104}
   tvUI: {fileID: 219320795}
   videoInput: {fileID: 1617262827}
@@ -12111,7 +12111,7 @@ MonoBehaviour:
   interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   electricCost: 1000
-  costRate: 300
+  costRate: 120
   director: {fileID: 1486464104}
   tvUI: {fileID: 219320795}
   videoInput: {fileID: 1617262827}
@@ -17562,7 +17562,7 @@ MonoBehaviour:
   interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   electricCost: 500
-  costRate: 300
+  costRate: 120
   director: {fileID: 96562993}
   musicUI: {fileID: 1578597251}
   audioSource: {fileID: 1565420585}
@@ -22207,7 +22207,7 @@ MonoBehaviour:
   interactSound: {fileID: 8300000, guid: c49e3e2b1d524124999be32f59ff66b7, type: 3}
   itemType: 0
   electricCost: 500
-  costRate: 300
+  costRate: 120
   director: {fileID: 96562993}
   musicUI: {fileID: 1578597251}
   audioSource: {fileID: 1894220159}
